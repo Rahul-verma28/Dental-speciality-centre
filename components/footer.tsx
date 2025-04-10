@@ -4,7 +4,7 @@ import { Facebook, Instagram, Twitter, MapPin, Phone, Mail, Clock } from "lucide
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300">
+    <footer className=" bg-linear-to-br from-gray-800 to-gray-950 text-gray-300">
       <div className="max-w-screen-2xl px-5 md:px-10 mx-auto py-12 ">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div>

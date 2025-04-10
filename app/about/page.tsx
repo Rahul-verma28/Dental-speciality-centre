@@ -16,7 +16,7 @@ export default function AboutPage() {
           priority
         />
         <div className="absolute inset-0 flex items-center justify-center bg-black/30">
-          <div className="container mx-auto text-center">
+          <div className="max-w-screen-2xl px-5 md:px-10 mx-auto text-center">
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">About Our Clinic</h1>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
               Get to know our story, our team, and our commitment to exceptional dental care
@@ -27,7 +27,7 @@ export default function AboutPage() {
 
       {/* Our Story */}
       <section className="py-16">
-        <div className="container mx-auto">
+        <div className="max-w-screen-2xl px-5 md:px-10 mx-auto">
           <div className="grid gap-12 md:grid-cols-2">
             <div className="flex flex-col justify-center">
               <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">Our Story</h2>
@@ -76,7 +76,7 @@ export default function AboutPage() {
 
       {/* Values */}
       <section className="bg-gray-50 py-16">
-        <div className="container mx-auto">
+        <div className="max-w-screen-2xl px-5 md:px-10 mx-auto">
           <div className="mb-12 text-center">
             <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Our Core Values</h2>
             <p className="mx-auto max-w-2xl text-gray-600">
@@ -99,7 +99,7 @@ export default function AboutPage() {
 
       {/* Meet the Team */}
       <section className="py-16">
-        <div className="container mx-auto">
+        <div className="max-w-screen-2xl px-5 md:px-10 mx-auto">
           <div className="mb-12 text-center">
             <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Meet Our Team</h2>
             <p className="mx-auto max-w-2xl text-gray-600">
@@ -133,7 +133,7 @@ export default function AboutPage() {
 
       {/* Accreditations */}
       <section className="bg-gray-50 py-16">
-        <div className="container mx-auto">
+        <div className="max-w-screen-2xl px-5 md:px-10 mx-auto">
           <div className="mb-12 text-center">
             <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Our Accreditations</h2>
             <p className="mx-auto max-w-2xl text-gray-600">
@@ -160,7 +160,7 @@ export default function AboutPage() {
 
       {/* CTA Section */}
       <section className="bg-gradient-to-r from-blue-600 to-teal-500 py-16 text-white">
-        <div className="container mx-auto text-center">
+        <div className="max-w-screen-2xl px-5 md:px-10 mx-auto text-center">
           <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">Ready to Experience Our Care?</h2>
           <p className="mx-auto mb-8 max-w-2xl text-white/90">
             Schedule your appointment today and see the Bright Smile difference
