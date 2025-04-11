@@ -1,10 +1,17 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Star, Users } from "lucide-react";
+import {
+  BanknoteX,
+  Bed,
+  BriefcaseMedicalIcon,
+  Clock,
+  Star,
+} from "lucide-react";
 import TestimonialCarousel from "@/components/testimonial-carousel";
 import StatCounter from "@/components/stat-counter";
 import Carousel from "@/components/carousel";
+import Slider from "@/components/UnderstandSwiper";
 
 export default function Home() {
   return (
@@ -78,6 +85,43 @@ export default function Home() {
         </div>
       </section> */}
 
+      {/* Meet the Team */}
+      <section className="py-16">
+        <div className="max-w-screen-2xl px-5 md:px-10 mx-auto">
+          <div className="mb-12 text-center">
+            <h2 className="mb-3 text-3xl font-bold tracking-tight sm:text-5xl">
+              Meet Our Team
+            </h2>
+            <p className="mx-auto max-w-2xl text-gray-600 text-xl">
+              Our experienced professionals are dedicated to providing you with
+              the best dental care
+            </p>
+          </div>
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+            {team.map((member, index) => (
+              <div
+                key={index}
+                className="group overflow-hidden rounded-lg transition-all hover:shadow-xl text-center py-3"
+              >
+                <div className="relative h-30 w-30 mx-auto overflow-hidden rounded-full border bg-radial-[at_50%_75%] from-sky-200 via-blue-400 to-indigo-900 to-90%">
+                  <Image
+                    src={member.image || "/placeholder.svg"}
+                    alt={member.name}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-3">
+                  <h3 className="mb-1 text-xl font-semibold">{member.name}</h3>
+                  <p className="text-gray-500 font-semibold">{member.role}</p>
+                  {/* <p className="text-gray-600">{member.bio}</p> */}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Productivity  */}
 
       <div className="bg-white">
@@ -129,7 +173,7 @@ export default function Home() {
             </div>
             <div className="">
               <Image
-                className=" w-200 "
+                // className=" w-200 h-200 "
                 src="/images/docter.png"
                 alt="App screenshot"
                 fill
@@ -139,8 +183,45 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Services Overview */}
+      {/* Your Comfort */}
       <section className="bg-gray-50 py-16">
+        <div className="max-w-screen-2xl px-5 md:px-10 mx-auto">
+          <div className="mb-12 text-center">
+            <h2 className="mb-3 text-3xl font-bold tracking-tight sm:text-5xl">
+            We care for your Comfort
+            </h2>
+            {/* <p className="mx-auto max-w-2xl text-gray-600 font-semibold text-xl">
+              Your Concerns
+            </p> */}
+          </div>
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+            {comfort.map((value, index) => (
+              <div
+                key={index}
+                className="relative rounded-2xl overflow-hidden shadow-sm group"
+              >
+                {/* Image */}
+                <Image
+                  fill
+                  className="absolute w-full h-full inset-0 object-cover brightness-90 transition-transform duration-300 group-hover:scale-105"
+                  src={value.imgSrc}
+                  alt={"Value image"}
+                />
+                {/* Text Content */}
+                <div className="relative z-10 p-6 pt-40 text-white">
+                  {/* <div className=" w-fit"> */}
+                  {/* <value.icon className="h-9 w-9 font-bold mb-2" /> */}
+                  {/* </div> */}
+                  <p className=" w-[70%] text-gray-100">{value.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services Overview */}
+      {/* <section className="bg-gray-50 py-16">
         <div className="max-w-screen-2xl px-5 md:px-10 mx-auto">
           <div className="mb-12 text-center">
             <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -177,12 +258,12 @@ export default function Home() {
             </Button>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Stats Section */}
-      <section className="bg-blue-600 py-16 text-white">
-        <div className="max-w-screen-2xl px-5 md:px-10 mx-auto">
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+      <section className="py-16 text-white bg-gray-50">
+        <div className="max-w-screen-2xl px-5 md:px-10 mx-auto ">
+          <div className="grid grid-cols-2 gap-8 md:grid-cols-4 bg-blue-900 rounded-2xl p-8 py-25">
             <StatCounter end={15} suffix="+" label="Years Experience" />
             <StatCounter end={10000} suffix="+" label="Happy Patients" />
             <StatCounter end={25} suffix="+" label="Dental Experts" />
@@ -190,6 +271,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+{/* Comfort Section */}
+      <Slider/>
 
       {/* About Overview */}
       <section className="py-16">
@@ -271,23 +355,130 @@ export default function Home() {
   );
 }
 
-const services = [
+// const services = [
+//   {
+//     title: "General Dentistry",
+//     description:
+//       "Comprehensive care including check-ups, cleanings, and preventative treatments to maintain your oral health.",
+//     icon: Users,
+//   },
+//   {
+//     title: "Cosmetic Dentistry",
+//     description:
+//       "Transform your smile with our range of cosmetic procedures including whitening, veneers, and more.",
+//     icon: Star,
+//   },
+//   {
+//     title: "Orthodontics",
+//     description:
+//       "Straighten your teeth and correct bite issues with our modern orthodontic solutions.",
+//     icon: ArrowRight,
+//   },
+// ];
+
+const team = [
   {
-    title: "General Dentistry",
-    description:
-      "Comprehensive care including check-ups, cleanings, and preventative treatments to maintain your oral health.",
-    icon: Users,
+    name: "Dr Rajkumari Eliza Devi",
+    role: "MDS Oral Medicine and Radiology",
+    bio: "Dr. Johnson has over 15 years of experience in general and cosmetic dentistry. She founded Bright Smile Dental with a vision of patient-centered care.",
+    image: "/images/docter.png",
   },
   {
-    title: "Cosmetic Dentistry",
-    description:
-      "Transform your smile with our range of cosmetic procedures including whitening, veneers, and more.",
-    icon: Star,
+    name: "Dr Tarun Mittal",
+    role: "MDS Periodontology",
+    bio: "Specializing in orthodontics, Dr. Chen helps patients achieve perfectly aligned smiles using the latest techniques and technologies.",
+    image: "/images/docter.png",
   },
   {
-    title: "Orthodontics",
-    description:
-      "Straighten your teeth and correct bite issues with our modern orthodontic solutions.",
-    icon: ArrowRight,
+    name: "Dr Pritam Mohanty",
+    role: "MDS Orthodontics and Dentofacial Orthopaedics, Invisalign Provider, Cleft Specialist",
+    bio: "With a gentle approach and special training in pediatric dentistry, Dr. Rodriguez makes dental visits enjoyable for our youngest patients.",
+    image: "/images/docter.png",
   },
+  {
+    name: "Dr Debarghya Bhattacharya ",
+    role: "MDS Prosthodontics ",
+    bio: "Dr. Johnson has over 15 years of experience in general and cosmetic dentistry. She founded Bright Smile Dental with a vision of patient-centered care.",
+    image: "/images/docter.png",
+  },
+  {
+    name: "Dr Priyanka Goswami",
+    role: "MDS Pedodontics and Preventive Dentistry",
+    bio: "Specializing in orthodontics, Dr. Chen helps patients achieve perfectly aligned smiles using the latest techniques and technologies.",
+    image: "/images/docter.png",
+  },
+  {
+    name: "Dr Mayank Sharma",
+    role: "MDS Periodontology",
+    bio: "With a gentle approach and special training in pediatric dentistry, Dr. Rodriguez makes dental visits enjoyable for our youngest patients.",
+    image: "/images/docter.png",
+  },
+  {
+    name: "Dr Shivani",
+    role: "MDS Endodontics ",
+    bio: "With a gentle approach and special training in pediatric dentistry, Dr. Rodriguez makes dental visits enjoyable for our youngest patients.",
+    image: "/images/docter.png",
+  },
+  {
+    name: "Dr Subhabrata Lodh",
+    role: "Consultant Anaesthetist ",
+    bio: "With a gentle approach and special training in pediatric dentistry, Dr. Rodriguez makes dental visits enjoyable for our youngest patients.",
+    image: "/images/docter.png",
+  },
+];
+
+// const values = [
+//   {
+//     imgSrc: "/images/concert_image1.png",
+
+//     description: "We understand you are worried and need time with the doctor",
+//     icon: Clock,
+//   },
+//   {
+//     imgSrc: "/images/concert_image2.png",
+
+//     description: "We make sure you are comfortable while you are with us",
+//     icon: Bed,
+//   },
+//   {
+//     imgSrc: "/images/concert_image3.png",
+//     description: "We won’t surprise you with any extra meds/tests",
+//     icon: BriefcaseMedicalIcon,
+//   },
+//   {
+//     imgSrc: "/images/concert_image4.png",
+//     description: "Transparency is the base of trust – no hidden cost",
+//     icon: BanknoteX,
+//   },
+//   {
+//     imgSrc: "/images/concert_image5.png",
+//     description: "We care for you like family",
+//     icon: HandHeart,
+//   },
+// ];
+
+
+const comfort = [
+  {
+    imgSrc: "/images/servicesnew01.png",
+
+    description: "World Class Infrastructure",
+    icon: Clock,
+  },
+  {
+    imgSrc: "/images/servicesnew02.png",
+
+    description: "Expert Dentists",
+    icon: Bed,
+  },
+  {
+    imgSrc: "/images/servicesnew03.png",
+    description: "Comfortable Ambience",
+    icon: BriefcaseMedicalIcon,
+  },
+  {
+    imgSrc: "/images/servicesnew03.png",
+    description: "Regular Audits",
+    icon: BanknoteX,
+  }
 ];

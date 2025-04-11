@@ -99,37 +99,40 @@ export default function AboutPage() {
 
       {/* Meet the Team */}
       <section className="py-16">
-        <div className="max-w-screen-2xl px-5 md:px-10 mx-auto">
-          <div className="mb-12 text-center">
-            <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Meet Our Team</h2>
-            <p className="mx-auto max-w-2xl text-gray-600">
-              Our experienced professionals are dedicated to providing you with the best dental care
-            </p>
-          </div>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {team.map((member, index) => (
-              <div
-                key={index}
-                className="group overflow-hidden rounded-lg bg-white shadow-sm transition-all hover:shadow-md"
-              >
-                <div className="relative h-80 w-full overflow-hidden">
-                  <Image
-                    src={member.image || "/placeholder.svg"}
-                    alt={member.name}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
+              <div className="max-w-screen-2xl px-5 md:px-10 mx-auto">
+                <div className="mb-12 text-center">
+                  <h2 className="mb-3 text-3xl font-bold tracking-tight sm:text-5xl">
+                    Meet Our Team
+                  </h2>
+                  <p className="mx-auto max-w-2xl text-gray-600 text-xl">
+                    Our experienced professionals are dedicated to providing you with
+                    the best dental care
+                  </p>
                 </div>
-                <div className="p-6">
-                  <h3 className="mb-1 text-xl font-semibold">{member.name}</h3>
-                  <p className="mb-3 text-blue-600">{member.role}</p>
-                  <p className="text-gray-600">{member.bio}</p>
+                <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-4">
+                  {team.map((member, index) => (
+                    <div
+                      key={index}
+                      className="group overflow-hidden rounded-lg transition-all hover:shadow-xl text-center py-3"
+                    >
+                      <div className="relative h-30 w-30 mx-auto overflow-hidden rounded-full border bg-radial-[at_50%_75%] from-sky-200 via-blue-400 to-indigo-900 to-90%">
+                        <Image
+                          src={member.image || "/placeholder.svg"}
+                          alt={member.name}
+                          fill
+                          className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        />
+                      </div>
+                      <div className="p-3">
+                        <h3 className="mb-1 text-xl font-semibold">{member.name}</h3>
+                        <p className="text-gray-500 font-semibold">{member.role}</p>
+                        {/* <p className="text-gray-600">{member.bio}</p> */}
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
+            </section>
 
       {/* Accreditations */}
       <section className="bg-gray-50 py-16">
@@ -199,24 +202,54 @@ const values = [
 
 const team = [
   {
-    name: "Dr. Sarah Johnson",
-    role: "Lead Dentist & Founder",
+    name: "Dr Rajkumari Eliza Devi",
+    role: "MDS Oral Medicine and Radiology",
     bio: "Dr. Johnson has over 15 years of experience in general and cosmetic dentistry. She founded Bright Smile Dental with a vision of patient-centered care.",
-    image: "/images/dentist-1.jpg",
+    image: "/images/docter.png",
   },
   {
-    name: "Dr. Michael Chen",
-    role: "Orthodontist",
+    name: "Dr Tarun Mittal",
+    role: "MDS Periodontology",
     bio: "Specializing in orthodontics, Dr. Chen helps patients achieve perfectly aligned smiles using the latest techniques and technologies.",
-    image: "/images/dentist-2.jpg",
+    image: "/images/docter.png",
   },
   {
-    name: "Dr. Emily Rodriguez",
-    role: "Pediatric Dentist",
+    name: "Dr Pritam Mohanty",
+    role: "MDS Orthodontics and Dentofacial Orthopaedics, Invisalign Provider, Cleft Specialist",
     bio: "With a gentle approach and special training in pediatric dentistry, Dr. Rodriguez makes dental visits enjoyable for our youngest patients.",
-    image: "/images/dentist-3.jpg",
+    image: "/images/docter.png",
   },
-]
+  {
+    name: "Dr Debarghya Bhattacharya ",
+    role: "MDS Prosthodontics ",
+    bio: "Dr. Johnson has over 15 years of experience in general and cosmetic dentistry. She founded Bright Smile Dental with a vision of patient-centered care.",
+    image: "/images/docter.png",
+  },
+  {
+    name: "Dr Priyanka Goswami",
+    role: "MDS Pedodontics and Preventive Dentistry",
+    bio: "Specializing in orthodontics, Dr. Chen helps patients achieve perfectly aligned smiles using the latest techniques and technologies.",
+    image: "/images/docter.png",
+  },
+  {
+    name: "Dr Mayank Sharma",
+    role: "MDS Periodontology",
+    bio: "With a gentle approach and special training in pediatric dentistry, Dr. Rodriguez makes dental visits enjoyable for our youngest patients.",
+    image: "/images/docter.png",
+  },
+  {
+    name: "Dr Shivani",
+    role: "MDS Endodontics ",
+    bio: "With a gentle approach and special training in pediatric dentistry, Dr. Rodriguez makes dental visits enjoyable for our youngest patients.",
+    image: "/images/docter.png",
+  },
+  {
+    name: "Dr Subhabrata Lodh",
+    role: "Consultant Anaesthetist ",
+    bio: "With a gentle approach and special training in pediatric dentistry, Dr. Rodriguez makes dental visits enjoyable for our youngest patients.",
+    image: "/images/docter.png",
+  },
+];
 
 const accreditations = [
   {

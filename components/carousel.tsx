@@ -58,10 +58,10 @@ const Carousel = () => {
             {/* Title and description */}
             <div className="lg:px-20 lg:py-14 absolute inset-0 z-10 flex flex-col items-center justify-evenly gap-2 bg-gradient-to-t from-black/85 to-transparent px-10 py-12">
               <div className="w-full lg:w-[90%] flex flex-col gap-2">
-                <h3 className="text-3xl lg:text-7xl font-bold text-white">
+                <h3 className="text-3xl md:text-7xl font-bold text-white">
                   {slide.title}
                 </h3>
-                <p className="lg:w-1/2 w-full text-lg text-gray-300">
+                <p className="md:w-1/2 w-full text-xl font-semibold text-gray-300">
                   {slide.description}
                 </p>
               </div>
