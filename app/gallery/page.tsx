@@ -9,7 +9,7 @@ export default function GalleryPage() {
   return (
     <main className="flex min-h-screen flex-col">
       {/* Hero Section */}
-      <section className="relative h-[400px] w-full overflow-hidden">
+      <section className="relative h-[450px] w-full overflow-hidden">
         <Image
           src="/images/gallery-hero.jpg"
           alt="Smiling patient"
@@ -254,14 +254,20 @@ export default function GalleryPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-teal-500 py-16 text-white">
+      <section className="bg-gradient-to-r from-blue-900 to-teal-500 py-16 text-white">
         <div className="max-w-screen-2xl px-5 md:px-10 mx-auto text-center">
-          <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">Ready to Transform Your Smile?</h2>
-          <p className="mx-auto mb-8 max-w-2xl text-white/90">
-            Join our satisfied patients and experience the Bright Smile difference
+          <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-5xl">
+            Ready for a Brighter Smile?
+          </h2>
+          <p className="mx-auto mb-8 max-w-2xl text-white/90 text-lg">
+            Schedule your appointment today and take the first step towards
+            optimal dental health
           </p>
-          <Button size="lg" variant="secondary" asChild>
-            <Link href="/contact">Book Your Appointment</Link>
+          <Button className="bg-gradient-to-br from-white to-teal-100 hover:bg-gray-100 text-teal-500 hover:text-teal-600 px-10 py-7 text-lg font-semibold rounded-full cursor-pointer mr-5">
+            <Link href="/appointment">Request An Appointment</Link>
+          </Button>
+          <Button className="bg-gradient-to-br from-blue-800 to-blue-950 hover:bg-gray-100 text-white  px-10 py-7 text-lg font-semibold rounded-full cursor-pointer">
+            <Link href="/contact">Contact Us For Details</Link>
           </Button>
         </div>
       </section>

@@ -6,22 +6,29 @@ const Carousel = () => {
   const [slides] = useState([
     {
       imgSrc: "/images/hero-01.jpeg",
-      imgAlt: "Vibrant abstract painting with swirling blue and light pink hues on a canvas.",
-      title: "Front end developers",
-      description: "The architects of the digital world, constantly battling against their mortal enemy – browser compatibility.",
+      imgAlt: "A smiling dental professional with a patient in a modern clinic.",
+      title: "Your Smile, Our Priority",
+      description: "At Dental Speciality Centre, we blend advanced technology with gentle care to give you the confidence to smile brighter.",
+    },    
+    {
+      imgSrc: "/images/hero-02.jpeg",
+      imgAlt: "Close-up of dental tools being used by a specialist.",
+      title: "Expert Dental Care",
+      description: "Our team of experienced dentists specializes in creating personalized treatments that are as unique as your smile.",
+    },    
+    {
+      imgSrc: "/images/hero-05.jpg",
+      imgAlt: "A happy family with perfect smiles, sitting together.",
+      title: "Smiles for the Whole Family",
+      description: "From kids to seniors, we’re here for every stage of your dental journey with comfort, care, and compassion.",
     },
     {
-      imgSrc: "images/hero-02.jpeg",
-      imgAlt: "Vibrant abstract painting with swirling red, yellow, and pink hues on a canvas.",
-      title: "Back end developers",
-      description: "Because not all superheroes wear capes, some wear headphones and stare at terminal screens.",
-    },
-    {
-      imgSrc: "/images/hero-03.jpeg",
-      imgAlt: "Vibrant abstract painting with swirling blue and purple hues on a canvas.",
-      title: "Full stack developers",
-      description: "Where 'burnout' is just a fancy term for 'Tuesday'.",
-    },
+      imgSrc: "/images/hero-04.webp",
+      imgAlt: "Modern dental clinic reception with a welcoming staff member.",
+      title: "Book Your Appointment Today",
+      description: "Your perfect smile is just one visit away. Schedule now and experience dental care that puts *you* first.",
+    }
+    
   ]);
 
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
@@ -53,7 +60,7 @@ const Carousel = () => {
         {slides.map((slide, index) => (
           <div
             key={index}
-            className="min-w-full flex-shrink-0 relative h-[75vh]"
+            className="min-w-full flex-shrink-0 relative h-[85vh]"
           >
             {/* Title and description */}
             <div className="lg:px-20 lg:py-14 absolute inset-0 z-10 flex flex-col items-center justify-evenly gap-2 bg-gradient-to-t from-black/85 to-transparent px-10 py-12">
@@ -61,13 +68,13 @@ const Carousel = () => {
                 <h3 className="text-3xl md:text-7xl font-bold text-white">
                   {slide.title}
                 </h3>
-                <p className="md:w-1/2 w-full text-xl font-semibold text-gray-300">
+                <p className="md:w-1/2 w-full text-xl text-gray-300">
                   {slide.description}
                 </p>
               </div>
             </div>
             <img
-              className="absolute w-full h-full inset-0 object-cover brightness-75"
+              className="absolute w-full h-full inset-0 object-cover brightness-80"
               src={slide.imgSrc}
               alt={slide.imgAlt}
             />

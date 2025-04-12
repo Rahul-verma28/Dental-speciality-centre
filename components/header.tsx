@@ -1,29 +1,29 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu, Phone, X } from "lucide-react"
-import { usePathname } from "next/navigation"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Menu, Phone, X } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const pathname = usePathname()
+  const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
-        setIsScrolled(true)
+        setIsScrolled(true);
       } else {
-        setIsScrolled(false)
+        setIsScrolled(false);
       }
-    }
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -31,19 +31,24 @@ export default function Header() {
     { name: "Services", href: "/services" },
     { name: "Gallery", href: "/gallery" },
     { name: "Contact", href: "/contact" },
-  ]
+  ];
 
   return (
     <header
       // className="sticky top-0 z-50 w-full transition-all duration-200"
-      className={`sticky top-0 z-50 w-full transition-all duration-200 bg-gradient-to-r from-[#03045E]  to-[#1a2e4c] ${
-        isScrolled ? "bg-white shadow-md" : "bg-white/80 backdrop-blur-md"
+      className={`fixed top-0 z-50 w-full transition-all duration-200 backdrop-blur-sm  ${
+        isScrolled && "bg-blue-300/80 shadow-2xl"
       }`}
     >
       <div className="max-w-screen-2xl px-5 md:px-10 mx-auto flex h-20 items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <div className="relative h-30 w-30">
-            <Image src="/logo.png" alt="Bright Smile Dental Logo" fill className="object-contain" />
+          <div className="relative h-20 w-40">
+            <Image
+              src="/logo.png"
+              alt="Bright Smile Dental Logo"
+              fill
+              className="object-contain"
+            />
           </div>
           {/* <span className="text-xl font-bold text-blue-600">Bright Smile Dental</span> */}
         </Link>
@@ -53,8 +58,10 @@ export default function Header() {
             <Link
               key={link.name}
               href={link.href}
-              className={`text-lg font-medium transition-colors hover:text-blue-600 hover:border-b-2 py-6 ${
-                pathname === link.href ? "text-[#0077B6] border-b-2" : "text-white"
+              className={`text-lg font-medium transition-colors hover:text-blue-900 hover:border-b-2 border-blue-950 py-6 ${
+                pathname === link.href
+                  ? "text-blue-900 border-b-2"
+                  : "text-white"
               }`}
             >
               {link.name}
@@ -65,10 +72,12 @@ export default function Header() {
         <div className="hidden items-center gap-4 md:flex text-white">
           <div className="flex items-center gap-2">
             <Phone className="h-4 w-4 " />
-            <span className="text-sm font-medium">(555) 123-4567</span>
+            <span className="text-sm font-medium hover:underline">
+              (555) 123-4567
+            </span>
           </div>
-          <Button asChild>
-            <Link href="/contact">Book Appointment</Link>
+          <Button className="bg-gradient-to-br from-white to-blue-100 hover:bg-gray-100 text-blue-900 hover:text-teal-600 px-5 py-6 text-md font-semibold rounded-full cursor-pointer">
+            <Link href="/appointment">Request an Appointment</Link>
           </Button>
         </div>
 
@@ -84,9 +93,16 @@ export default function Header() {
               <div className="flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-2">
                   <div className="relative h-8 w-8">
-                    <Image src="/images/logo.png" alt="Bright Smile Dental Logo" fill className="object-contain" />
+                    <Image
+                      src="/images/logo.png"
+                      alt="Bright Smile Dental Logo"
+                      fill
+                      className="object-contain"
+                    />
                   </div>
-                  <span className="text-lg font-bold text-blue-600">Bright Smile</span>
+                  <span className="text-lg font-bold text-blue-600">
+                    Bright Smile
+                  </span>
                 </Link>
                 <SheetTrigger asChild>
                   <Button variant="ghost" size="icon">
@@ -113,10 +129,12 @@ export default function Header() {
               <div className="mt-8 flex flex-col gap-4">
                 <div className="flex items-center gap-2 ">
                   <Phone className="h-4 w-4 text-blue-600" />
-                  <span className="text-sm font-medium">(555) 123-4567</span>
+                  <span className="text-sm font-medium hover:underline">
+                    (555) 123-4567
+                  </span>
                 </div>
-                <Button asChild className="w-full">
-                  <Link href="/contact">Book Appointment</Link>
+                <Button className="bg-white hover:bg-gray-100 text-teal-500 hover:text-teal-600 px-10 py-7 text-lg font-semibold rounded-full cursor-pointer">
+                  <Link href="/appointment">Request an Appointment</Link>
                 </Button>
               </div>
             </div>
@@ -124,9 +142,8 @@ export default function Header() {
         </Sheet>
       </div>
     </header>
-  )
+  );
 }
-
 
 // "use client";
 

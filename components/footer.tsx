@@ -4,15 +4,15 @@ import { Facebook, Instagram, Twitter, MapPin, Phone, Mail, Clock } from "lucide
 
 export default function Footer() {
   return (
-    <footer className=" bg-linear-to-br from-gray-800 to-gray-950 text-gray-300">
+    <footer className=" bg-linear-to-br from-gray-700 to-gray-950 text-gray-300">
       <div className="max-w-screen-2xl px-5 md:px-10 mx-auto py-12 ">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <Link href="/" className="mb-4 flex items-center gap-2">
-              <div className="relative h-10 w-10">
-                <Image src="/images/logo-white.png" alt="Bright Smile Dental Logo" fill className="object-contain" />
+            <Link href="/">
+              <div className="relative h-20 w-40">
+                <Image src="/logo.png" alt="Dental Speciality cntre Logo" fill className="object-contain" />
               </div>
-              <span className="text-xl font-bold text-white">Bright Smile Dental</span>
+              {/* <span className="text-xl font-bold text-white">Dental Speciality cntre</span> */}
             </Link>
             <p className="mb-4 text-gray-400">
               Providing exceptional dental care with a gentle touch for over 15 years.
@@ -126,8 +126,7 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <Clock className="mt-1 h-5 w-5 flex-shrink-0 text-blue-400" />
                 <div>
-                  <div>Mon-Fri: 8am-6pm</div>
-                  <div>Sat: 9am-2pm</div>
+                  <div>Mon-Sat: 8am-9pm</div>
                   <div>Sun: Closed</div>
                 </div>
               </li>
@@ -138,7 +137,7 @@ export default function Footer() {
 
       <div className="border-t border-gray-800 py-6">
         <div className="max-w-screen-2xl px-5 md:px-10 mx-auto flex flex-col items-center justify-between gap-4 text-sm md:flex-row">
-          <div>© {new Date().getFullYear()} Bright Smile Dental. All rights reserved.</div>
+          <div>© {new Date().getFullYear()} Dental Speciality cntre. All rights reserved.</div>
           <div className="flex gap-4">
             <Link href="/privacy-policy" className="hover:text-blue-400">
               Privacy Policy

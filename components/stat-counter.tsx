@@ -68,7 +68,7 @@ export default function StatCounter({ end, suffix = "", label, duration = 2000 }
         {formattedCount}
         {suffix}
       </div>
-      <div className="mt-2 text-sm md:text-base">{label}</div>
+      <div className="mt-2 text-xl md:text-base">{label}</div>
     </div>
   )
 }

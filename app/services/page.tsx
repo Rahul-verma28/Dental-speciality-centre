@@ -1,14 +1,27 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Sparkles, Smile, ArrowRight, Baby, SmileIcon as Tooth, Zap, ShieldCheck } from "lucide-react"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import {
+  Sparkles,
+  Smile,
+  ArrowRight,
+  Baby,
+  SmileIcon as Tooth,
+  Zap,
+  ShieldCheck,
+} from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export default function ServicesPage() {
   return (
     <main className="flex min-h-screen flex-col">
       {/* Hero Section */}
-      <section className="relative h-[400px] w-full overflow-hidden">
+      <section className="relative h-[450px] w-full overflow-hidden">
         <Image
           src="/service-images/services-hero.jpg"
           alt="Dental treatment"
@@ -18,7 +31,9 @@ export default function ServicesPage() {
         />
         <div className="absolute inset-0 flex items-center justify-center bg-black/30">
           <div className="max-w-screen-2xl px-5 md:px-10 mx-auto text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">Our Services</h1>
+            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
+              Our Services
+            </h1>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
               Comprehensive dental care for patients of all ages
             </p>
@@ -30,27 +45,47 @@ export default function ServicesPage() {
       <section className="py-16">
         <div className="max-w-screen-2xl px-5 md:px-10 mx-auto">
           <div className="mb-12 text-center">
-            <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Comprehensive Dental Care</h2>
-            <p className="mx-auto max-w-2xl text-gray-600">
-              At Bright Smile Dental, we offer a wide range of services to meet all your dental needs
+            <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-5xl">
+              Comprehensive Dental Care
+            </h2>
+            <p className="mx-auto max-w-2xl text-gray-600 text-xl mt-5">
+              At Bright Smile Dental, we offer a wide range of services to meet
+              all your dental needs
             </p>
           </div>
 
           <div className="grid gap-12">
             {services.map((service, index) => (
-              <div key={index} className="grid gap-8 md:grid-cols-2" id={service.id}>
-                <div className={`relative h-[300px] overflow-hidden rounded-lg ${index % 2 === 1 ? "md:order-2" : ""}`}>
-                  <Image src={service.image || "/placeholder.svg"} alt={service.title} fill className="object-cover" />
+              <div
+                key={index}
+                className="grid gap-8 md:grid-cols-2"
+                id={service.id}
+              >
+                <div
+                  className={`relative h-[400px] overflow-hidden rounded-lg ${
+                    index % 2 === 1 ? "md:order-2" : ""
+                  }`}
+                >
+                  <Image
+                    src={service.image || "/placeholder.svg"}
+                    alt={service.title}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <div className="flex flex-col justify-center">
-                  <div className="mb-4 w-fit rounded-full bg-blue-100 p-3 text-blue-600">
-                    <service.icon className="h-6 w-6" />
+                  <div className="mb-3 flex items-center gap-3">
+                    <div className=" w-fit rounded-full bg-blue-100 p-3 text-blue-600">
+                      <service.icon className="h-6 w-6" />
+                    </div>
+                    <h3 className=" text-4xl font-bold">{service.title}</h3>
                   </div>
-                  <h3 className="mb-3 text-2xl font-bold">{service.title}</h3>
-                  <p className="mb-4 text-gray-600">{service.description}</p>
+                  <p className="mb-4 text-gray-600 text-lg">
+                    {service.description}
+                  </p>
                   <ul className="mb-6 space-y-2">
                     {service.features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-2">
+                      <li key={i} className="flex items-start gap-2 text-lg">
                         <ArrowRight className="mt-1 h-4 w-4 flex-shrink-0 text-teal-500" />
                         <span>{feature}</span>
                       </li>
@@ -63,12 +98,58 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* General Dentistry */}
+      <section className="bg-gray-50 py-16">
+        <div className="max-w-screen-2xl px-5 md:px-10 mx-auto">
+          <div className="mb-12 text-center">
+            <h2 className="mb-3 text-3xl font-bold tracking-tight sm:text-5xl">
+              General Dentistry
+            </h2>
+            <p className="mx-auto max-w-2xl text-gray-600 font-semibold text-xl">
+              Make your smile shine with our comprehensive general dentistry
+              services
+            </p>
+          </div>
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+            {general.map((general, index) => (
+              <div
+                key={index}
+                className={`relative rounded-3xl overflow-hidden shadow-sm group ${
+                  index % 2 === 0 ? "text-left" : "text-right"
+                }`}
+              >
+                {/* Image */}
+                <Image
+                  fill
+                  className="absolute w-full h-full inset-0 object-cover brightness-90 transition-transform duration-300"
+                  src={general.imgSrc}
+                  alt={"Value image"}
+                />
+                {/* Text Content */}
+                <div
+                  className={`relative z-10 p-6 pb-20 text-blue-950 ${
+                    index % 2 === 0 ? "text-left pr-40" : "text-right pl-40"
+                  }`}
+                >
+                  <h2 className="text-xl font-semibold mb-2">
+                    {general.title}
+                  </h2>
+                  <p className="text-md">{general.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="bg-gray-50 py-16">
         <div className="max-w-screen-2xl px-5 md:px-10 mx-auto">
           <div className="mb-12 text-center">
-            <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Frequently Asked Questions</h2>
-            <p className="mx-auto max-w-2xl text-gray-600">
+            <h2 className="mb-5 text-3xl font-bold tracking-tight sm:text-5xl">
+              Frequently Asked Questions
+            </h2>
+            <p className="mx-auto max-w-2xl text-gray-600 text-lg">
               Find answers to common questions about our dental services
             </p>
           </div>
@@ -77,8 +158,12 @@ export default function ServicesPage() {
             <Accordion type="single" collapsible className="w-full">
               {faqs.map((faq, index) => (
                 <AccordionItem key={index} value={`item-${index}`}>
-                  <AccordionTrigger className="text-left">{faq.question}</AccordionTrigger>
-                  <AccordionContent>{faq.answer}</AccordionContent>
+                  <AccordionTrigger className="text-left text-xl">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-lg text-gray-700">
+                    {faq.answer}
+                  </AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>
@@ -91,11 +176,14 @@ export default function ServicesPage() {
         <div className="max-w-screen-2xl px-5 md:px-10 mx-auto">
           <div className="grid gap-8 md:grid-cols-2">
             <div className="flex flex-col justify-center">
-              <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">Insurance & Payment Options</h2>
-              <p className="mb-6 text-gray-600">
-                We accept most major dental insurance plans and offer flexible payment options to make dental care
-                accessible to everyone. Our team will work with you to maximize your benefits and minimize out-of-pocket
-                expenses.
+              <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-5xl">
+                Insurance & Payment Options
+              </h2>
+              <p className="mb-6 text-gray-600 text-lg">
+                We accept most major dental insurance plans and offer flexible
+                payment options to make dental care accessible to everyone. Our
+                team will work with you to maximize your benefits and minimize
+                out-of-pocket expenses.
               </p>
               <div className="mb-6 space-y-3">
                 <div className="flex items-center gap-2">
@@ -110,43 +198,25 @@ export default function ServicesPage() {
                   <ShieldCheck className="h-5 w-5 text-teal-500" />
                   <span>We&apos;ll help you understand your coverage</span>
                 </div>
-              </div>
-              <Button asChild className="w-fit">
+              <Button className="mt-8 bg-gradient-to-br from-blue-800 to-blue-950 hover:bg-gray-100 text-white  px-10 py-7 text-lg font-semibold rounded-full cursor-pointer">
                 <Link href="/contact">Contact Us For Details</Link>
               </Button>
+              </div>
             </div>
-            <div className="grid grid-cols-2 gap-4 sm:gap-6">
-              {insurances.map((insurance, index) => (
-                <div key={index} className="flex items-center justify-center rounded-lg bg-white p-4 shadow-sm">
-                  <div className="relative h-12 w-32">
-                    <Image
-                      src={insurance.logo || "/placeholder.svg"}
-                      alt={insurance.name}
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                </div>
-              ))}
+            <div className="flex justify-center items-center">
+              <Image
+                src="/service-images/insurance.png"
+                alt="Insurance options"
+                width={400}
+                height={400}
+                className="rounded-lg object-cover"
+              />
             </div>
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-teal-500 py-16 text-white">
-        <div className="max-w-screen-2xl px-5 md:px-10 mx-auto text-center">
-          <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">Ready to Schedule Your Visit?</h2>
-          <p className="mx-auto mb-8 max-w-2xl text-white/90">
-            Contact us today to book an appointment for any of our dental services
-          </p>
-          <Button size="lg" variant="secondary" asChild>
-            <Link href="/contact">Book Your Appointment</Link>
-          </Button>
-        </div>
-      </section>
     </main>
-  )
+  );
 }
 
 const services = [
@@ -225,7 +295,7 @@ const services = [
     image: "/service-images/emergency-dental.jpg",
     icon: Zap,
   },
-]
+];
 
 const faqs = [
   {
@@ -253,23 +323,29 @@ const faqs = [
     answer:
       "Prevent cavities by brushing twice daily with fluoride toothpaste, flossing daily, limiting sugary foods and drinks, getting regular dental check-ups, and considering preventive treatments like dental sealants and fluoride applications.",
   },
-]
+];
 
-const insurances = [
+const general = [
   {
-    name: "Delta Dental",
-    logo: "/service-images/delta-dental.png",
+    imgSrc: "/images/denatials01.png",
+    title: "General Dentistry",
+    description: "Cosmetic treatment to enhance the whiteness of teeth",
   },
   {
-    name: "Cigna",
-    logo: "/service-images/cigna.png",
+    imgSrc: "/images/denatials02.png",
+    title: "Oral Surgery",
+    description:
+      "Surgical procedures, including extractios and dental implants",
   },
   {
-    name: "Aetna",
-    logo: "/service-images/aetna.png",
+    imgSrc: "/images/denatials03.png",
+    title: "Crown and Bridges",
+    description: "Restoration options for damaged or missing teeth",
   },
   {
-    name: "MetLife",
-    logo: "/service-images/metlife.png",
+    imgSrc: "/images/denatials04.png",
+    title: "Periodontal Care",
+    description:
+      "Services for gum health, including scaling and root canal treatment",
   },
-]
+];
