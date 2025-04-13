@@ -173,12 +173,14 @@ export default function Home() {
                 surgeries, we’ve got you covered.
               </p>
               <div className="mt-10 flex gap-x-6 items-center">
-                <Button className="bg-gradient-to-br from-[#e6f0ff] to-[#ffffff] hover:bg-gray-100 text-teal-500 hover:text-teal-600 px-10 py-7 text-lg font-semibold rounded-full cursor-pointer">
-                  <Link href="/appointment">Request an Appointment</Link>
-                </Button>
+                <Link href="/appointment">
+                  <Button className="bg-gradient-to-br from-[#e6f0ff] to-[#ffffff] hover:bg-gray-100 text-teal-500 hover:text-teal-600 px-10 py-7 text-lg font-semibold rounded-full cursor-pointer">
+                    Request an Appointment
+                  </Button>
+                </Link>
                 <Link
                   href="services"
-                  className="text-sm font-semibold text-white hover:underline"
+                  className="text-lg font-semibold text-white hover:underline"
                 >
                   Explore Services <span aria-hidden="true">→</span>
                 </Link>
@@ -268,7 +270,7 @@ export default function Home() {
               services
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {general.map((general, index) => (
               <div
                 key={index}
@@ -405,12 +407,18 @@ export default function Home() {
             Schedule your appointment today and take the first step towards
             optimal dental health
           </p>
-          <Button className="bg-gradient-to-br from-white to-teal-100 hover:bg-gray-100 text-teal-500 hover:text-teal-600 px-10 py-7 text-lg font-semibold rounded-full cursor-pointer mr-5">
-            <Link href="/appointment">Request An Appointment</Link>
-          </Button>
-          <Button className="bg-gradient-to-br from-blue-800 to-blue-950 hover:bg-gray-100 text-white  px-10 py-7 text-lg font-semibold rounded-full cursor-pointer">
-            <Link href="/contact">Contact Us For Details</Link>
-          </Button>
+          <div className="sm:flex justify-center gap-4">
+            <Link href="/appointment">
+              <Button className="bg-gradient-to-br from-white to-teal-100 hover:bg-gray-100 text-teal-500 hover:text-teal-600 px-10 py-7 text-lg font-semibold rounded-full cursor-pointer mb-4">
+                Request An Appointment
+              </Button>
+            </Link>
+            <Link href="/contact">
+              <Button className="bg-gradient-to-br from-blue-800 to-blue-950 hover:bg-gray-100 text-white  px-10 py-7 text-lg font-semibold rounded-full cursor-pointer">
+                Contact Us For Details
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
     </main>

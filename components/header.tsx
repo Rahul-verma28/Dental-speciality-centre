@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Phone, X } from "lucide-react";
+import { Menu, Phone } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 export default function Header() {
@@ -70,7 +70,7 @@ export default function Header() {
         </nav>
 
         <div className="hidden items-center gap-4 md:flex text-white">
-          <div className="flex items-center gap-2">
+          <div className="hidden lg:flex items-center gap-2">
             <Phone className="h-4 w-4 " />
             <span className="text-sm font-medium hover:underline">
               (555) 123-4567
@@ -83,33 +83,24 @@ export default function Header() {
 
         <Sheet>
           <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="icon">
-              <Menu className="h-6 w-6" />
+            <Button size="icon">
+              <Menu className="h-9 w-9 text-white" />
               <span className="sr-only">Toggle menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="right">
-            <div className="flex flex-col">
+          <SheetContent side="left" className="bg-blue-300/80 shadow-2xl backdrop-blur-sm md:hidden">
+            <div className="flex flex-col px-5">
               <div className="flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-2">
-                  <div className="relative h-8 w-8">
+                  <div className="relative h-20 w-40">
                     <Image
-                      src="/images/logo.png"
+                      src="/logo.png"
                       alt="Bright Smile Dental Logo"
                       fill
                       className="object-contain"
                     />
                   </div>
-                  <span className="text-lg font-bold text-blue-600">
-                    Bright Smile
-                  </span>
                 </Link>
-                <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon">
-                    <X className="h-5 w-5" />
-                    <span className="sr-only">Close menu</span>
-                  </Button>
-                </SheetTrigger>
               </div>
 
               <nav className="mt-8 flex flex-col gap-4">
@@ -118,7 +109,7 @@ export default function Header() {
                     key={link.name}
                     href={link.href}
                     className={`text-base font-medium transition-colors hover:text-blue-600 ${
-                      pathname === link.href ? "text-blue-600" : "text-gray-600"
+                      pathname === link.href ? "text-blue-600" : "text-white"
                     }`}
                   >
                     {link.name}
@@ -126,17 +117,11 @@ export default function Header() {
                 ))}
               </nav>
 
-              <div className="mt-8 flex flex-col gap-4">
-                <div className="flex items-center gap-2 ">
-                  <Phone className="h-4 w-4 text-blue-600" />
-                  <span className="text-sm font-medium hover:underline">
-                    (555) 123-4567
-                  </span>
-                </div>
-                <Button className="bg-white hover:bg-gray-100 text-teal-500 hover:text-teal-600 px-10 py-7 text-lg font-semibold rounded-full cursor-pointer">
-                  <Link href="/appointment">Request an Appointment</Link>
+              <Link href="/appointment">
+                <Button className="mt-5 bg-gradient-to-br from-blue-800 to-blue-950 hover:bg-gray-100 text-white  px-10 py-7 text-lg font-semibold rounded-full cursor-pointer">
+                  Request an Appointment
                 </Button>
-              </div>
+              </Link>
             </div>
           </SheetContent>
         </Sheet>

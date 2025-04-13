@@ -12,25 +12,11 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
 
     // Expected body structure
-    const {
-      firstName,
-      lastName,
-      email,
-      phone,
-      preferredDate,
-      preferredTime,
-      termsAccepted,
-    } = body;
+    const { firstName, lastName, email, phone, preferredDate, preferredTime } =
+      body;
 
     // Ensure required fields are present
-    if (
-      !firstName ||
-      !email ||
-      !phone ||
-      !preferredDate ||
-      !preferredTime ||
-      termsAccepted !== true
-    ) {
+    if (!firstName || !email || !phone || !preferredDate || !preferredTime) {
       return NextResponse.json(
         {
           success: false,
@@ -49,7 +35,6 @@ export async function POST(request: NextRequest) {
       phone,
       preferredDate,
       preferredTime,
-      termsAccepted,
     });
 
     console.log("Appointment created:", appointment);

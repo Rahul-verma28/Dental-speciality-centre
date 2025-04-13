@@ -189,12 +189,18 @@ export default function AboutPage() {
             Schedule your appointment today and take the first step towards
             optimal dental health
           </p>
-          <Button className="bg-gradient-to-br from-white to-teal-100 hover:bg-gray-100 text-teal-500 hover:text-teal-600 px-10 py-7 text-lg font-semibold rounded-full cursor-pointer mr-5">
-            <Link href="/appointment">Request An Appointment</Link>
-          </Button>
-          <Button className="bg-gradient-to-br from-blue-800 to-blue-950 hover:bg-gray-100 text-white  px-10 py-7 text-lg font-semibold rounded-full cursor-pointer">
-            <Link href="/contact">Contact Us For Details</Link>
-          </Button>
+          <div className="sm:flex justify-center gap-4">
+            <Link href="/appointment">
+              <Button className="bg-gradient-to-br from-white to-teal-100 hover:bg-gray-100 text-teal-500 hover:text-teal-600 px-10 py-7 text-lg font-semibold rounded-full cursor-pointer mb-4">
+                Request An Appointment
+              </Button>
+            </Link>
+            <Link href="/contact">
+              <Button className="bg-gradient-to-br from-blue-800 to-blue-950 hover:bg-gray-100 text-white  px-10 py-7 text-lg font-semibold rounded-full cursor-pointer">
+                Contact Us For Details
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
     </main>

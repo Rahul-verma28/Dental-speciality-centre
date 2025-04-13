@@ -40,7 +40,7 @@ export default function ContactPage() {
       {/* Contact Form Section */}
       <section className="py-16">
         <div className="max-w-screen-2xl px-5 md:px-10 mx-auto">
-          <div className="mx-auto overflow-hidden rounded-lg shadow-lg lg:max-w-6xl">
+          <div className="mx-auto overflow-hidden rounded-2xl shadow-lg lg:max-w-6xl">
             <div className="grid md:grid-cols-2">
               {/* Left Panel - Contact Information */}
               {/* <div className="bg-[#1a2e4c] p-8 text-white md:p-12">
@@ -83,19 +83,19 @@ export default function ContactPage() {
               </div> */}
 
               <div className="bg-[#1a2e4c] p-8 text-white">
-                <h2 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl">
+                <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
                   Get In Touch
                 </h2>
-                {/* <p className="mb-8 text-gray-200">
+                <p className="mb-8 text-gray-200">
                   Whether you&apos;re a new patient or a returning one,
                   we&apos;re here to help you with any questions or concerns.
                   Feel free to reach out to us using any of the methods below.
-                </p> */}
+                </p>
 
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <div className="rounded-full bg-blue-100 p-3 text-blue-600">
-                      <Phone className="h-6 w-6" />
+                      <Phone className="h-6 w-6" /> 
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold">Phone</h3>
