@@ -66,3 +66,31 @@ export async function POST(request: NextRequest) {
     );
   }
 }
+
+export async function GET(request: NextRequest) {
+  try {
+    // Connect to the database
+    await connectToDB();
+
+    // Fetch all appointments from the database
+    const appointments = await Appointment.find({}).sort({ createdAt: -1 });
+
+    console.log("Fetched appointments:", appointments);
+
+    // Return success response with appointments data
+    return NextResponse.json({
+      success: true,
+      message: "Appointments fetched successfully",
+      appointments: appointments,
+    });
+  } catch (error) {
+    console.error("Error fetching appointments:", error);
+    return NextResponse.json(
+      {
+        success: false,
+        message: "Failed to fetch appointments",
+      },
+      { status: 500 }
+    );
+  }
+}

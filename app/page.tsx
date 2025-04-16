@@ -13,6 +13,9 @@ import StatCounter from "@/components/stat-counter";
 import Carousel from "@/components/carousel";
 import UnderstandSwiper from "@/components/UnderstandSwiper";
 import MeetOurTeam from "@/components/MeetOurTeam";
+import BrighterSmile from "@/components/BrighterSmile";
+import YourComfort from "@/components/YourComfort";
+import GeneralDentistry from "@/components/GeneralDentistry";
 
 export default function Home() {
   return (
@@ -37,7 +40,6 @@ export default function Home() {
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Button size="lg" className="bg-teal-500 hover:bg-teal-600">
                 Book Appointment
-                <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-gradient-to-br from-[#e6f0ff] to-[#ffffff]/10">
                 Our Services
@@ -47,44 +49,6 @@ export default function Home() {
         </div>
       </section> */}
       <Carousel />
-      {/* Quick Info Section */}
-      {/* <section className="bg-gradient-to-br from-[#e6f0ff] to-[#ffffff] py-12">
-        <div className="max-w-screen-2xl px-5 md:px-10 mx-auto grid grid-cols-1 gap-8 md:grid-cols-3">
-          <div className="flex items-center gap-4 rounded-lg bg-blue-50 p-6">
-            <div className="rounded-full bg-blue-100 p-3">
-              <Phone className="h-6 w-6 text-blue-600" />
-            </div>
-            <div>
-              <h3 className="font-medium">Call Us</h3>
-              <p className="text-lg font-semibold text-blue-600">
-                (555) 123-4567
-              </p>
-            </div>
-          </div>
-          <div className="flex items-center gap-4 rounded-lg bg-green-50 p-6">
-            <div className="rounded-full bg-green-100 p-3">
-              <Clock className="h-6 w-6 text-green-600" />
-            </div>
-            <div>
-              <h3 className="font-medium">Opening Hours</h3>
-              <p className="text-lg font-semibold text-green-600">
-                Mon-Fri: 8am-6pm
-              </p>
-            </div>
-          </div>
-          <div className="flex items-center gap-4 rounded-lg bg-teal-50 p-6">
-            <div className="rounded-full bg-teal-100 p-3">
-              <MapPin className="h-6 w-6 text-teal-600" />
-            </div>
-            <div>
-              <h3 className="font-medium">Location</h3>
-              <p className="text-lg font-semibold text-teal-600">
-                123 Smile Street
-              </p>
-            </div>
-          </div>
-        </div>
-      </section> */}
 
       {/* About Overview */}
       <section className="py-25">
@@ -92,7 +56,7 @@ export default function Home() {
           <div className="grid gap-12 md:grid-cols-2">
             <div className="relative h-[400px] overflow-hidden rounded-lg">
               <Image
-                src="/images/clinic-interior.jpg"
+                src="/images/gallery-01.jpeg"
                 alt="Modern dental clinic interior"
                 fill
                 className="object-cover"
@@ -259,48 +223,7 @@ export default function Home() {
       </div> */}
 
       {/* General Dentistry */}
-      <section className="bg-gray-50 py-16">
-        <div className="max-w-screen-2xl px-5 md:px-10 mx-auto">
-          <div className="mb-12 text-center">
-            <h2 className="mb-3 text-3xl font-bold tracking-tight sm:text-5xl">
-              General Dentistry
-            </h2>
-            <p className="mx-auto max-w-2xl text-gray-600 font-semibold text-xl">
-              Make your smile shine with our comprehensive general dentistry
-              services
-            </p>
-          </div>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {general.map((general, index) => (
-              <div
-                key={index}
-                className={`relative rounded-3xl overflow-hidden shadow-sm group ${
-                  index % 2 === 0 ? "text-left" : "text-right"
-                }`}
-              >
-                {/* Image */}
-                <Image
-                  fill
-                  className="absolute w-full h-full inset-0 object-cover brightness-90 transition-transform duration-300"
-                  src={general.imgSrc}
-                  alt={"Value image"}
-                />
-                {/* Text Content */}
-                <div
-                  className={`relative z-10 p-6 pb-20 text-blue-950 ${
-                    index % 2 === 0 ? "text-left pr-40" : "text-right pl-40"
-                  }`}
-                >
-                  <h2 className="text-xl font-semibold mb-2">
-                    {general.title}
-                  </h2>
-                  <p className="text-md">{general.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <GeneralDentistry />
 
       {/* Services Overview */}
       {/* <section className="bg-gray-50 py-16">
@@ -355,41 +278,7 @@ export default function Home() {
       </section>
 
       {/* Your Comfort */}
-      <section className="bg-gray-50 py-16">
-        <div className="max-w-screen-2xl px-5 md:px-10 mx-auto">
-          <div className="mb-12 text-center">
-            <h2 className="mb-3 text-3xl font-bold tracking-tight sm:text-5xl">
-              We care for your Comfort
-            </h2>
-            {/* <p className="mx-auto max-w-2xl text-gray-600 font-semibold text-xl">
-              Your Concerns
-            </p> */}
-          </div>
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-            {comfort.map((value, index) => (
-              <div
-                key={index}
-                className="relative rounded-2xl overflow-hidden shadow-sm group"
-              >
-                {/* Image */}
-                <Image
-                  fill
-                  className="absolute w-full h-full inset-0 object-cover brightness-90 transition-transform duration-300 group-hover:scale-105"
-                  src={value.imgSrc}
-                  alt={"Value image"}
-                />
-                {/* Text Content */}
-                <div className="relative z-10 p-6 pt-40 text-white">
-                  {/* <div className=" w-fit"> */}
-                  {/* <value.icon className="h-9 w-9 font-bold mb-2" /> */}
-                  {/* </div> */}
-                  <p className=" w-[70%] text-gray-100">{value.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <YourComfort />
 
       {/* Comfort Section */}
       <UnderstandSwiper />
@@ -398,29 +287,7 @@ export default function Home() {
       <TestimonialCarousel />
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-blue-900 to-teal-500 py-16 text-white">
-        <div className="max-w-screen-2xl px-5 md:px-10 mx-auto text-center">
-          <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-5xl">
-            Ready for a Brighter Smile?
-          </h2>
-          <p className="mx-auto mb-8 max-w-2xl text-white/90 text-lg">
-            Schedule your appointment today and take the first step towards
-            optimal dental health
-          </p>
-          <div className="sm:flex justify-center gap-4">
-            <Link href="/appointment">
-              <Button className="bg-gradient-to-br from-white to-teal-100 hover:bg-gray-100 text-teal-500 hover:text-teal-600 px-10 py-7 text-lg font-semibold rounded-full cursor-pointer mb-4">
-                Request An Appointment
-              </Button>
-            </Link>
-            <Link href="/contact">
-              <Button className="bg-gradient-to-br from-blue-800 to-blue-950 hover:bg-gray-100 text-white  px-10 py-7 text-lg font-semibold rounded-full cursor-pointer">
-                Contact Us For Details
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <BrighterSmile />
     </main>
   );
 }
@@ -527,52 +394,4 @@ export default function Home() {
 //   },
 // ];
 
-const comfort = [
-  {
-    imgSrc: "/images/servicesnew01.png",
 
-    description: "World Class Infrastructure",
-    icon: Clock,
-  },
-  {
-    imgSrc: "/images/servicesnew02.png",
-
-    description: "Expert Dentists",
-    icon: Bed,
-  },
-  {
-    imgSrc: "/images/servicesnew03.png",
-    description: "Comfortable Ambience",
-    icon: BriefcaseMedicalIcon,
-  },
-  {
-    imgSrc: "/images/servicesnew04.png",
-    description: "Regular Audits",
-    icon: BanknoteX,
-  },
-];
-
-const general = [
-  {
-    imgSrc: "/images/denatials01.png",
-    title: "General Dentistry",
-    description: "Cosmetic treatment to enhance the whiteness of teeth",
-  },
-  {
-    imgSrc: "/images/denatials02.png",
-    title: "Oral Surgery",
-    description:
-      "Surgical procedures, including extractios and dental implants",
-  },
-  {
-    imgSrc: "/images/denatials03.png",
-    title: "Crown and Bridges",
-    description: "Restoration options for damaged or missing teeth",
-  },
-  {
-    imgSrc: "/images/denatials04.png",
-    title: "Periodontal Care",
-    description:
-      "Services for gum health, including scaling and root canal treatment",
-  },
-];

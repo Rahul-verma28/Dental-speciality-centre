@@ -4,7 +4,16 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 // import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { Phone, Mail, MapPin, Link, Clock, Twitter, Instagram, Facebook } from "lucide-react";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Link,
+  Clock,
+  Twitter,
+  Instagram,
+  Facebook,
+} from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -38,55 +47,15 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-16">
+      <section className="py-16 light-mode-background-services">
         <div className="max-w-screen-2xl px-5 md:px-10 mx-auto">
           <div className="mx-auto overflow-hidden rounded-2xl shadow-lg lg:max-w-6xl">
             <div className="grid md:grid-cols-2">
-              {/* Left Panel - Contact Information */}
-              {/* <div className="bg-[#1a2e4c] p-8 text-white md:p-12">
-                <div className="flex h-full flex-col justify-between">
-                  <div>
-                    <h2 className="mb-8 text-center text-3xl font-bold md:text-4xl">
-                      Contact Our
-                      <br />
-                      Dental Office
-                    </h2>
-
-                    <div className="mt-12 flex flex-col items-center space-y-10">
-                      <div className="flex flex-col items-center text-center">
-                        <div className="mb-3 rounded-full border-2 border-white/20 p-3">
-                          <Phone className="h-6 w-6" />
-                        </div>
-                        <p className="text-lg">(555) 123-4567</p>
-                      </div>
-
-                      <div className="flex flex-col items-center text-center">
-                        <div className="mb-3 rounded-full border-2 border-white/20 p-3">
-                          <Mail className="h-6 w-6" />
-                        </div>
-                        <p className="text-lg">info@brightsmile.com</p>
-                      </div>
-
-                      <div className="flex flex-col items-center text-center">
-                        <div className="mb-3 rounded-full border-2 border-white/20 p-3">
-                          <MapPin className="h-6 w-6" />
-                        </div>
-                        <p className="max-w-xs text-center text-lg">
-                          123 Smile Street, Dental District
-                          <br />
-                          Cityville, State 12345
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div> */}
-
               <div className="bg-[#1a2e4c] p-8 text-white">
-                <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
+                <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-5xl">
                   Get In Touch
                 </h2>
-                <p className="mb-8 text-gray-200">
+                <p className="mb-8 text-gray-200 text-lg">
                   Whether you&apos;re a new patient or a returning one,
                   we&apos;re here to help you with any questions or concerns.
                   Feel free to reach out to us using any of the methods below.
@@ -95,7 +64,7 @@ export default function ContactPage() {
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <div className="rounded-full bg-blue-100 p-3 text-blue-600">
-                      <Phone className="h-6 w-6" /> 
+                      <Phone className="h-6 w-6" />
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold">Phone</h3>
@@ -186,108 +155,69 @@ export default function ContactPage() {
               </div>
 
               {/* Right Panel - Contact Form */}
-              <div className="bg-white p-8 md:p-12">
+              <div className=" p-8 md:p-12">
                 <form className="space-y-6">
                   <div className="grid gap-6 md:grid-cols-2">
                     <div className="space-y-2">
-                      <Label htmlFor="first-name" className="text-base">
+                      <Label htmlFor="first-name" className="text-lg">
                         First Name <span className="text-blue-600">*</span>
                       </Label>
                       <Input
                         id="first-name"
                         required
-                        className="border-gray-300"
+                        className="border-gray-300 h-12"
                       />
-                      {/* <p className="text-xs text-gray-500">
-                        This field is required.
-                      </p> */}
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="last-name" className="text-base">
+                      <Label htmlFor="last-name" className="text-lg">
                         Last Name
                       </Label>
-                      <Input id="last-name" className="border-gray-300" />
-                      {/* <p className="text-xs text-gray-500">
-                        This field is required.
-                      </p> */}
+                      <Input id="last-name" className="border-gray-300 h-12" />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="email" className="text-base">
+                    <Label htmlFor="email" className="text-lg">
                       Email <span className="text-blue-600">*</span>
                     </Label>
                     <Input
                       id="email"
                       type="email"
                       required
-                      className="border-gray-300"
+                      className="border-gray-300 h-12"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="phone" className="text-base">
+                    <Label htmlFor="phone" className="text-lg">
                       Phone Number <span className="text-blue-600">*</span>
                     </Label>
                     <Input
                       id="phone"
                       type="tel"
                       required
-                      className="border-gray-300"
+                      className="border-gray-300 h-12"
                     />
                   </div>
 
-                  {/* <div className="space-y-3">
-                    <Label className="text-base">
-                      Select Subject? <span className="text-blue-600">*</span>
-                    </Label>
-                    <RadioGroup defaultValue="general" className="flex flex-wrap gap-6">
-                      <div className="flex items-center space-x-2">
-                        <RadioGroupItem value="doctor" id="doctor" />
-                        <Label htmlFor="doctor" className="font-normal">
-                          Doctor Inquiry
-                        </Label>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <RadioGroupItem value="appointment" id="appointment" />
-                        <Label htmlFor="appointment" className="font-normal">
-                          Appointment Inquiry
-                        </Label>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <RadioGroupItem value="treatment" id="treatment" />
-                        <Label htmlFor="treatment" className="font-normal">
-                          Treatment Inquiry
-                        </Label>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <RadioGroupItem value="general" id="general" />
-                        <Label htmlFor="general" className="font-normal">
-                          General Inquiry
-                        </Label>
-                      </div>
-                    </RadioGroup>
-                  </div> */}
-
                   <div className="space-y-2">
-                    <Label htmlFor="message" className="text-base">
+                    <Label htmlFor="message" className="text-lg">
                       Message <span className="text-blue-600">*</span>
                     </Label>
                     <Textarea
                       id="message"
                       required
                       placeholder="Write your message..."
-                      className="min-h-[120px] border-gray-300"
+                      className="min-h-[120px] border-gray-300 h-12"
                     />
                   </div>
-
-                  <Button
+                  {/* <Link href="/contact"> */}
+                    <Button 
                     type="submit"
-                    className="w-full bg-[#1a2e4c] px-8 py-3 text-base hover:bg-[#2a3e5c]"
-                    size="lg"
-                  >
-                    Send Message
-                  </Button>
+                    className="bg-gradient-to-br from-blue-800 to-blue-950 hover:bg-gray-100 text-white px-10 py-7 text-lg font-semibold rounded-full cursor-pointer">
+                      Send Message
+                    </Button>
+                  {/* </Link> */}
                 </form>
               </div>
             </div>

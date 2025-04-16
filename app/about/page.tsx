@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Award, CheckCircle, GraduationCap, Heart, Shield } from "lucide-react";
 import UnderstandSwiper from "@/components/UnderstandSwiper";
+import BrighterSmile from "@/components/BrighterSmile";
 
 export default function AboutPage() {
   return (
@@ -74,7 +75,7 @@ export default function AboutPage() {
             </div>
             <div className="relative h-[400px] overflow-hidden rounded-lg">
               <Image
-                src="/images/clinic-building.jpg"
+                src="/images/gallery-01.jpeg"
                 alt="Bright Smile Dental Clinic building"
                 fill
                 className="object-cover"
@@ -87,10 +88,10 @@ export default function AboutPage() {
       <section className="bg-gray-50 py-16">
         <div className="max-w-screen-2xl px-5 md:px-10 mx-auto">
           <div className="mb-12 text-center">
-            <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">
+            <h2 className="mb-6 text-3xl font-bold tracking-tight sm:text-5xl">
               Our Core Values
             </h2>
-            <p className="mx-auto max-w-2xl text-gray-600">
+            <p className="mx-auto max-w-2xl text-gray-600 text-lg">
               These principles guide everything we do at Bright Smile Dental
             </p>
           </div>
@@ -145,91 +146,37 @@ export default function AboutPage() {
       </section>
 
       {/* Comfort Section */}
-      <UnderstandSwiper />
-
-      {/* Accreditations */}
-      {/* <section className="bg-gray-50 py-16">
-        <div className="max-w-screen-2xl px-5 md:px-10 mx-auto">
-          <div className="mb-12 text-center">
-            <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">
-              Our Accreditations
-            </h2>
-            <p className="mx-auto max-w-2xl text-gray-600">
-              We&apos;re proud to be recognized by these prestigious dental
-              organizations
-            </p>
-          </div>
-          <div className="flex flex-wrap items-center justify-center gap-8">
-            {accreditations.map((accreditation, index) => (
-              <div key={index} className="flex flex-col items-center">
-                <div className="mb-3 h-20 w-40 relative">
-                  <Image
-                    src={accreditation.logo || "/placeholder.svg"}
-                    alt={accreditation.name}
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-                <span className="text-center text-sm text-gray-600">
-                  {accreditation.name}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
+      <UnderstandSwiper />  
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-blue-900 to-teal-500 py-16 text-white">
-        <div className="max-w-screen-2xl px-5 md:px-10 mx-auto text-center">
-          <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-5xl">
-            Ready for a Brighter Smile?
-          </h2>
-          <p className="mx-auto mb-8 max-w-2xl text-white/90 text-lg">
-            Schedule your appointment today and take the first step towards
-            optimal dental health
-          </p>
-          <div className="sm:flex justify-center gap-4">
-            <Link href="/appointment">
-              <Button className="bg-gradient-to-br from-white to-teal-100 hover:bg-gray-100 text-teal-500 hover:text-teal-600 px-10 py-7 text-lg font-semibold rounded-full cursor-pointer mb-4">
-                Request An Appointment
-              </Button>
-            </Link>
-            <Link href="/contact">
-              <Button className="bg-gradient-to-br from-blue-800 to-blue-950 hover:bg-gray-100 text-white  px-10 py-7 text-lg font-semibold rounded-full cursor-pointer">
-                Contact Us For Details
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <BrighterSmile />
     </main>
   );
 }
 
 const values = [
   {
-    title: "Excellence",
+    title: "Patient-Centered Care",
     description:
-      "We strive for excellence in every aspect of our practice, from clinical care to patient service.",
-    icon: Award,
-  },
-  {
-    title: "Compassion",
-    description:
-      "We treat each patient with kindness, empathy, and respect, understanding dental anxiety.",
+      "We prioritize your comfort and well-being, ensuring every visit is a positive experience tailored to your needs.",
     icon: Heart,
   },
   {
-    title: "Education",
+    title: "Advanced Technology",
     description:
-      "We believe in continuous learning and educating our patients about their oral health.",
+      "We invest in the latest dental technologies to provide precise, efficient, and pain-free treatments.",
     icon: GraduationCap,
   },
   {
-    title: "Integrity",
+    title: "Community Commitment",
     description:
-      "We maintain the highest ethical standards and always put our patients' best interests first.",
+      "We are dedicated to improving oral health in our community through education, outreach, and accessible care.",
+    icon: Award,
+  },
+  {
+    title: "Trust and Transparency",
+    description:
+      "We build trust through honest communication and ethical practices, always putting your best interests first.",
     icon: Shield,
   },
 ];
@@ -284,22 +231,3 @@ const team = [
     image: "/images/docter.png",
   },
 ];
-
-// const accreditations = [
-//   {
-//     name: "American Dental Association",
-//     logo: "/images/ada-logo.png",
-//   },
-//   {
-//     name: "Academy of General Dentistry",
-//     logo: "/images/agd-logo.png",
-//   },
-//   {
-//     name: "American Academy of Cosmetic Dentistry",
-//     logo: "/images/aacd-logo.png",
-//   },
-//   {
-//     name: "American Association of Orthodontists",
-//     logo: "/images/aao-logo.png",
-//   },
-// ];

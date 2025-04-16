@@ -147,35 +147,35 @@ const testimonials = [
     name: "Emily R.",
     quote:
       "Bright Smile Dental has completely changed how I feel about going to the dentist. The staff is so friendly, and they made me feel at ease from the moment I walked in.",
-    avatar: "/images/docter.png",
+    avatar: "/images/patient-01.png",
     rating: 5,
   },
   {
     name: "James P.",
     quote:
       "I had a root canal done here, and it was surprisingly painless. The dentist explained everything clearly, and the procedure was quick and efficient.",
-    avatar: "/images/docter.png",
+    avatar: "/images/patient-06.png",
     rating: 4,
   },
   {
     name: "Sophia L.",
     quote:
       "The team at Bright Smile Dental is amazing! They helped me with my braces, and now I can’t stop smiling. Highly recommend them!",
-    avatar: "/images/docter.png",
+    avatar: "/images/patient-03.png",
     rating: 5,
   },
   {
     name: "Michael B.",
     quote:
       "I’ve been coming here for years, and the service is always top-notch. They truly care about their patients and provide excellent care.",
-    avatar: "/images/docter.png",
+    avatar: "/images/patient-04.png",
     rating: 5,
   },
   {
     name: "Olivia T.",
     quote:
       "The best dental experience I’ve ever had. The clinic is clean, modern, and the staff is incredibly professional.",
-    avatar: "/images/docter.png",
+    avatar: "/images/patient-05.png",
     rating: 5,
   },
 ];

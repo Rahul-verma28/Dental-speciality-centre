@@ -327,11 +327,6 @@
 //   );
 // }
 
-
-
-
-
-
 "use client";
 
 import { useState } from "react";
@@ -346,12 +341,10 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
-import {
-  isSunday,
-  format,
-  addMonths,
-} from "date-fns";
+import { isSunday, format, addMonths } from "date-fns";
 import { toast } from "sonner";
+import { CalendarIcon } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export default function Appointment() {
   const [formData, setFormData] = useState({
@@ -389,7 +382,7 @@ export default function Appointment() {
       preferredDate: "",
       preferredTime: "",
     };
-  
+
     // Validate each field
     if (!formData.firstName) newErrors.firstName = "First name is required.";
     if (!formData.email) newErrors.email = "Email is required.";
@@ -403,11 +396,13 @@ export default function Appointment() {
     // Update errors state
     if (!formData.preferredTime)
       newErrors.preferredTime = "Preferred time is required.";
-  
+
     setErrors(newErrors);
     console.log("Validation errors:", newErrors);
     // Return true if there are no errors
-    return Object.keys(newErrors).every((key) => newErrors[key as keyof typeof newErrors] === "");
+    return Object.keys(newErrors).every(
+      (key) => newErrors[key as keyof typeof newErrors] === ""
+    );
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -473,16 +468,16 @@ export default function Appointment() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-  
+
     if (!validateForm()) {
       console.log("Form validation failed:", errors); // Debug: Log validation errors
       return;
     }
-    
+
     setLoading(true);
     setMessage("");
-  
-    try {  
+
+    try {
       const response = await fetch("/api/appointment", {
         method: "POST",
         headers: {
@@ -490,12 +485,12 @@ export default function Appointment() {
         },
         body: JSON.stringify(formData),
       });
-  
+
       console.log("API response received:", response); // Debug: Log the raw response object
-  
+
       const result = await response.json();
       console.log("API response JSON:", result); // Debug: Log the parsed JSON response
-  
+
       if (response.ok) {
         // setMessage("Appointment booked successfully!");
         toast.success("Appointment booked successfully!"); // Use toast for success message
@@ -535,162 +530,152 @@ export default function Appointment() {
       </section>
 
       {/* Contact Information */}
-      <section className="py-16">
-        <div className="max-w-screen-2xl px-5 md:px-10 mx-auto">
-          <div className="grid gap-12 md:grid-cols-2">
-            <div>
-              <h2 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl">
-                Get In Touch
-              </h2>
-              <p className="mb-8 text-gray-600">
-                Whether you&apos;re a new patient or a returning one, we&apos;re
-                here to help you with any questions or concerns. Feel free to
-                reach out to us using any of the methods below.
-              </p>
-
-              <div className="mt-8">
-                <h3 className="mb-4 font-medium">Connect With Us</h3>
+      <section className="py-16 light-mode-background-appointments">
+        <div className="sm:max-w-screen-lg px-5 md:px-10 mx-auto">
+          <div className="rounded-lg bg-transparent">
+            <h2 className="mb-20 text-3xl sm:text-5xl font-bold text-center">Book an Appointment</h2>
+            <form className="space-y-3 sm:space-y-6" onSubmit={handleSubmit}>
+              <div className="grid gap-6 sm:grid-cols-2">
+                <div className="space-y-2">
+                  <Label className="text-md" htmlFor="firstName">
+                    First Name
+                  </Label>
+                  <Input
+                    id="firstName"
+                    placeholder="Enter your first name"
+                    value={formData.firstName}
+                    onChange={handleChange}
+                    className="h-12"
+                  />
+                  {errors.firstName && (
+                    <p className="text-sm text-red-600">{errors.firstName}</p>
+                  )}
+                </div>
+                <div className="space-y-2">
+                  <Label className="text-md" htmlFor="lastName">
+                    Last Name
+                  </Label>
+                  <Input
+                    id="lastName"
+                    placeholder="Enter your last name"
+                    value={formData.lastName}
+                    onChange={handleChange}
+                    className="h-12"
+                  />
+                </div>
               </div>
-            </div>
 
-            <div className="rounded-lg bg-white p-8 shadow-lg">
-              <h2 className="mb-6 text-3xl font-bold">Book an Appointment</h2>
-              <form className="space-y-6" onSubmit={handleSubmit}>
-                <div className="grid gap-6 sm:grid-cols-2">
-                  <div className="space-y-2">
-                    <Label className="text-md" htmlFor="firstName">
-                      First Name
-                    </Label>
-                    <Input
-                      id="firstName"
-                      placeholder="Enter your first name"
-                      value={formData.firstName}
-                      onChange={handleChange}
-                      className="h-12"
-                    />
-                    {errors.firstName && (
-                      <p className="text-sm text-red-600">{errors.firstName}</p>
-                    )}
-                  </div>
-                  <div className="space-y-2">
-                    <Label className="text-md" htmlFor="lastName">
-                      Last Name
-                    </Label>
-                    <Input
-                      id="lastName"
-                      placeholder="Enter your last name"
-                      value={formData.lastName}
-                      onChange={handleChange}
-                      className="h-12"
-                    />
-                  </div>
-                </div>
+              <div className="space-y-2">
+                <Label className="text-md" htmlFor="email">
+                  Email
+                </Label>
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="Enter your email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="h-12"
+                />
+                {errors.email && (
+                  <p className="text-sm text-red-600">{errors.email}</p>
+                )}
+              </div>
 
+              <div className="space-y-2">
+                <Label className="text-md" htmlFor="phone">
+                  Phone
+                </Label>
+                <Input
+                  id="phone"
+                  type="tel"
+                  placeholder="Enter your phone number"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="h-12"
+                />
+                {errors.phone && (
+                  <p className="text-sm text-red-600">{errors.phone}</p>
+                )}
+              </div>
+
+              <div className="grid gap-6 sm:grid-cols-2">
                 <div className="space-y-2">
-                  <Label className="text-md" htmlFor="email">
-                    Email
+                  <Label className="text-md" htmlFor="preferredDate">
+                    Preferred Date
                   </Label>
                   <Input
-                    id="email"
-                    type="email"
-                    placeholder="Enter your email"
-                    value={formData.email}
-                    onChange={handleChange}
+                    id="preferredDate"
+                    type="date"
+                    value={formData.preferredDate}
+                    onChange={handleDateChange}
                     className="h-12"
+                    min={format(new Date(), "yyyy-MM-dd")} // Minimum date is today
+                    max={format(addMonths(new Date(), 1), "yyyy-MM-dd")} // Maximum date is the same date next month
                   />
-                  {errors.email && (
-                    <p className="text-sm text-red-600">{errors.email}</p>
+                  {errors.preferredDate && (
+                    <p className="text-sm text-red-600">
+                      {errors.preferredDate}
+                    </p>
                   )}
                 </div>
-
                 <div className="space-y-2">
-                  <Label className="text-md" htmlFor="phone">
-                    Phone
+                  <Label className="text-md" htmlFor="preferredTime">
+                    Preferred Time
                   </Label>
-                  <Input
-                    id="phone"
-                    type="tel"
-                    placeholder="Enter your phone number"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="h-12"
-                  />
-                  {errors.phone && (
-                    <p className="text-sm text-red-600">{errors.phone}</p>
-                  )}
-                </div>
-
-                <div className="grid gap-6 sm:grid-cols-2">
-                  <div className="space-y-2">
-                    <Label className="text-md" htmlFor="preferredDate">
-                      Preferred Date
-                    </Label>
-                    <Input
-                      id="preferredDate"
-                      type="date"
-                      value={formData.preferredDate}
-                      onChange={handleDateChange}
-                      className="h-12"
-                      min={format(new Date(), "yyyy-MM-dd")} // Minimum date is today
-                      max={format(addMonths(new Date(), 1), "yyyy-MM-dd")} // Maximum date is the same date next month
-                    />
-                    {errors.preferredDate && (
-                      <p className="text-sm text-red-600">
-                        {errors.preferredDate}
-                      </p>
-                    )}
-                  </div>
-                  <div className="space-y-2">
-                    <Label className="text-md" htmlFor="preferredTime">
-                      Preferred Time
-                    </Label>
-                    <Select
-                      onValueChange={handleSelectChange}
-                      value={formData.preferredTime}
+                  <Select
+                    onValueChange={handleSelectChange}
+                    value={formData.preferredTime}
+                  >
+                    <SelectTrigger
+                      id="preferredTime"
+                      className="py-6 w-[200px]"
                     >
-                      <SelectTrigger id="preferredTime" className="py-6">
-                        <SelectValue placeholder="Select a time" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="morning">
-                          Morning (8AM - 12PM)
-                        </SelectItem>
-                        <SelectItem value="afternoon">
-                          Afternoon (12PM - 4PM)
-                        </SelectItem>
-                        <SelectItem value="evening">
-                          Evening (4PM - 6PM)
-                        </SelectItem>
-                      </SelectContent>
-                    </Select>
-                    {errors.preferredTime && (
-                      <p className="text-sm text-red-600">
-                        {errors.preferredTime}
-                      </p>
-                    )}
-                  </div>
+                      <SelectValue placeholder="Select a time" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="morning">
+                        Morning (8AM - 12PM)
+                      </SelectItem>
+                      <SelectItem value="afternoon">
+                        Afternoon (12PM - 4PM)
+                      </SelectItem>
+                      <SelectItem value="evening">
+                        Evening (4PM - 6PM)
+                      </SelectItem>
+                    </SelectContent>
+                  </Select>
+                  {errors.preferredTime && (
+                    <p className="text-sm text-red-600">
+                      {errors.preferredTime}
+                    </p>
+                  )}
                 </div>
+              </div>
 
-                <Button
-                  type="submit"
+              {/* <Button
                   className="w-full h-12"
+                  >
+                  </Button> */}
+
+              <Button
+                  type="submit"
                   disabled={loading}
-                >
-                  {loading ? "Booking..." : "Book Appointment"}
-                </Button>
-              </form>
-              {message && (
-                <p
-                  className={`mt-4 text-center ${
-                    message.includes("successfully")
-                      ? "text-green-600"
-                      : "text-red-600"
-                  }`}
-                >
-                  {message}
-                </p>
-              )}
-            </div>
+               className="bg-gradient-to-br from-blue-800 to-blue-950 hover:bg-gray-100 text-white  px-10 py-7 text-lg font-semibold rounded-full cursor-pointer">
+                {loading ? "Booking..." : "Book Appointment"}
+              </Button>
+            </form>
+            {message && (
+              <p
+                className={`mt-4 text-center ${
+                  message.includes("successfully")
+                    ? "text-green-600"
+                    : "text-red-600"
+                }`}
+              >
+                {message}
+              </p>
+            )}
           </div>
         </div>
       </section>

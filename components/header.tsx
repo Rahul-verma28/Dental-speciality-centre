@@ -26,21 +26,21 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Services", href: "/services" },
-    { name: "Gallery", href: "/gallery" },
-    { name: "Contact", href: "/contact" },
+    { name: "HOME", href: "/" },
+    { name: "ABOUT US", href: "/about" },
+    { name: "SERVICES", href: "/services" },
+    { name: "GALLERY", href: "/gallery" },
+    { name: "CONTACT US", href: "/contact" },
   ];
 
   return (
     <header
       // className="sticky top-0 z-50 w-full transition-all duration-200"
-      className={`fixed top-0 z-50 w-full transition-all duration-200 backdrop-blur-sm  ${
-        isScrolled && "bg-blue-300/80 shadow-2xl"
-      }`}
+      className={`sticky top-0 z-50 w-full transition-all duration-200 backdrop-blur-sm shadow-2xl bg-gradient-to-r from-blue-300/80 to-teal-700/80
+        // ${ isScrolled && " shadow-2xl bg-gradient-to-r from-blue-300/80 to-teal-700/80" }`
+      }
     >
-      <div className="max-w-screen-2xl px-5 md:px-10 mx-auto flex h-20 items-center justify-between">
+      <div className="max-w-screen-2xl px-5 md:px-10 mx-auto flex h-28 items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <div className="relative h-20 w-40">
             <Image
@@ -53,14 +53,14 @@ export default function Header() {
           {/* <span className="text-xl font-bold text-blue-600">Bright Smile Dental</span> */}
         </Link>
 
-        <nav className="hidden md:flex md:items-center md:gap-8">
+        <nav className="hidden md:flex md:items-center gap-2">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className={`text-lg font-medium transition-colors hover:text-blue-900 hover:border-b-2 border-blue-950 py-6 ${
+              className={`text-lg font-medium transition-colors hover:bg-gradient-to-br from-blue-300 to-teal-400/80 px-5 py-2 rounded-4xl ${
                 pathname === link.href
-                  ? "text-blue-900 border-b-2"
+                  ? "text-blue-950 border-b-2"
                   : "text-white"
               }`}
             >
@@ -76,9 +76,11 @@ export default function Header() {
               (555) 123-4567
             </span>
           </div>
-          <Button className="bg-gradient-to-br from-white to-blue-100 hover:bg-gray-100 text-blue-900 hover:text-teal-600 px-5 py-6 text-md font-semibold rounded-full cursor-pointer">
-            <Link href="/appointment">Request an Appointment</Link>
-          </Button>
+          <Link href="/appointment">
+            <Button className=" bg-gradient-to-br from-white to-teal-100 hover:bg-gray-100 text-teal-500 hover:text-teal-600 px-10 py-7 text-lg font-semibold rounded-full cursor-pointer">
+              Book Appointment
+            </Button>
+          </Link>
         </div>
 
         <Sheet>
@@ -88,7 +90,10 @@ export default function Header() {
               <span className="sr-only">Toggle menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="left" className="bg-blue-300/80 shadow-2xl backdrop-blur-sm md:hidden">
+          <SheetContent
+            side="left"
+            className="bg-gradient-to-br from-blue-300 to-teal-600 shadow-2xl backdrop-blur-sm md:hidden"
+          >
             <div className="flex flex-col px-5">
               <div className="flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-2">
@@ -103,12 +108,12 @@ export default function Header() {
                 </Link>
               </div>
 
-              <nav className="mt-8 flex flex-col gap-4">
+              <nav className="mt-8 flex flex-col gap-4 px-4">
                 {navLinks.map((link) => (
                   <Link
                     key={link.name}
                     href={link.href}
-                    className={`text-base font-medium transition-colors hover:text-blue-600 ${
+                    className={` font-medium transition-colors hover:text-blue-600 text-lg  ${
                       pathname === link.href ? "text-blue-600" : "text-white"
                     }`}
                   >

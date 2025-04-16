@@ -8,7 +8,16 @@ export interface IAppointment extends Document {
   preferredDate: Date
   preferredTime: string
   termsAccepted: boolean
+  status: AppointmentStatus
   createdAt: Date
+}
+
+// Define appointment status options
+export enum AppointmentStatus {
+  PENDING = "pending",
+  CONFIRMED = "confirmed",
+  COMPLETED = "completed",
+  CANCELLED = "cancelled",
 }
 
 const AppointmentSchema: Schema = new Schema({
@@ -45,6 +54,11 @@ const AppointmentSchema: Schema = new Schema({
   createdAt: {
     type: Date,
     default: Date.now,
+  },
+  status: {
+    type: String,
+    enum: Object.values(AppointmentStatus),
+    default: AppointmentStatus.PENDING,
   },
 })
 
