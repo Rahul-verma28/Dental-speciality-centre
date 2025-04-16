@@ -105,7 +105,7 @@ export default function TestimonialSlider() {
                   <div className="mb-4 inline-flex rounded-full bg-blue-100 p-2 text-blue-600">
                     <Quote className="h-4 w-4" />
                   </div>
-                  <blockquote className="mb-6 text-xl italic text-gray-700">"{testimonial.quote}"</blockquote>
+                  <blockquote className="mb-6 text-xl italic text-gray-700">&apos;{testimonial.quote}&apos;</blockquote>
                   <div className="mt-auto flex items-center gap-4">
                     <div className="relative h-12 w-12 overflow-hidden rounded-full">
                       <Image

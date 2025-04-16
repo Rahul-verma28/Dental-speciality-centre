@@ -1,13 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import {
-  BanknoteX,
-  Bed,
-  BriefcaseMedicalIcon,
-  Clock,
-  Star,
-} from "lucide-react";
+import {Star} from "lucide-react";
 import TestimonialCarousel from "@/components/testimonial-carousel";
 import StatCounter from "@/components/stat-counter";
 import Carousel from "@/components/carousel";

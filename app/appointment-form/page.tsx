@@ -378,79 +378,90 @@
 
 
 
-"use client";
+// "use client";
 
-import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
+// import { useState, useEffect } from "react";
 
-export default function AppointmentList() {
-  const [appointments, setAppointments] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
+// export default function AppointmentList() {
+//   const [appointments, setAppointments] = useState([]);
+//   const [loading, setLoading] = useState(true);
+//   const [error, setError] = useState("");
 
-  // Fetch appointments from the API
-  useEffect(() => {
-    const fetchAppointments = async () => {
-      try {
-        const response = await fetch("/api/appointment");
-        const data = await response.json();
+//   // Fetch appointments from the API
+//   useEffect(() => {
+//     const fetchAppointments = async () => {
+//       try {
+//         const response = await fetch("/api/appointment");
+//         const data = await response.json();
 
-        if (response.ok) {
-          setAppointments(data.appointments);
-        } else {
-          setError(data.message || "Failed to fetch appointments.");
-        }
-      } catch (err) {
-        console.error("Error fetching appointments:", err);
-        setError("An error occurred while fetching appointments.");
-      } finally {
-        setLoading(false);
-      }
-    };
+//         if (response.ok) {
+//           setAppointments(data.appointments);
+//         } else {
+//           setError(data.message || "Failed to fetch appointments.");
+//         }
+//       } catch (err) {
+//         console.error("Error fetching appointments:", err);
+//         setError("An error occurred while fetching appointments.");
+//       } finally {
+//         setLoading(false);
+//       }
+//     };
 
-    fetchAppointments();
-  }, []);
+//     fetchAppointments();
+//   }, []);
 
+//   return (
+//     <main className="flex min-h-screen flex-col p-8 bg-gray-200">
+//       <h1 className="text-3xl font-bold mb-6">Appointments</h1>
+
+//       {loading ? (
+//         <p>Loading appointments...</p>
+//       ) : error ? (
+//         <p className="text-red-600">{error}</p>
+//       ) : (
+//         <div className="overflow-x-auto bg-white">
+//           <table className="min-w-full border-collapse border border-gray-200">
+//             <thead>
+//               <tr className="bg-gray-100">
+//                 <th className="border border-gray-300 px-4 py-2 text-left">Name</th>
+//                 <th className="border border-gray-300 px-4 py-2 text-left">Email</th>
+//                 <th className="border border-gray-300 px-4 py-2 text-left">Phone</th>
+//                 <th className="border border-gray-300 px-4 py-2 text-left">Preferred Date</th>
+//                 <th className="border border-gray-300 px-4 py-2 text-left">Preferred Time</th>
+//                 <th className="border border-gray-300 px-4 py-2 text-left">Status</th>
+//               </tr>
+//             </thead>
+//             <tbody>
+//               {appointments.map((appointment) => (
+//                 <tr key={appointment._id} className="hover:bg-gray-50">
+//                   <td className="border border-gray-300 px-4 py-2">
+//                     {appointment.firstName} {appointment.lastName}
+//                   </td>
+//                   <td className="border border-gray-300 px-4 py-2">{appointment.email}</td>
+//                   <td className="border border-gray-300 px-4 py-2">{appointment.phone}</td>
+//                   <td className="border border-gray-300 px-4 py-2">
+//                     {new Date(appointment.preferredDate).toLocaleDateString()}
+//                   </td>
+//                   <td className="border border-gray-300 px-4 py-2">{appointment.preferredTime}</td>
+//                   <td className="border border-gray-300 px-4 py-2">{appointment.status}</td>
+//                 </tr>
+//               ))}
+//             </tbody>
+//           </table>
+//         </div>
+//       )}
+//     </main>
+//   );
+// }
+
+
+
+import React from 'react'
+
+const page = () => {
   return (
-    <main className="flex min-h-screen flex-col p-8 bg-gray-200">
-      <h1 className="text-3xl font-bold mb-6">Appointments</h1>
-
-      {loading ? (
-        <p>Loading appointments...</p>
-      ) : error ? (
-        <p className="text-red-600">{error}</p>
-      ) : (
-        <div className="overflow-x-auto bg-white">
-          <table className="min-w-full border-collapse border border-gray-200">
-            <thead>
-              <tr className="bg-gray-100">
-                <th className="border border-gray-300 px-4 py-2 text-left">Name</th>
-                <th className="border border-gray-300 px-4 py-2 text-left">Email</th>
-                <th className="border border-gray-300 px-4 py-2 text-left">Phone</th>
-                <th className="border border-gray-300 px-4 py-2 text-left">Preferred Date</th>
-                <th className="border border-gray-300 px-4 py-2 text-left">Preferred Time</th>
-                <th className="border border-gray-300 px-4 py-2 text-left">Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              {appointments.map((appointment) => (
-                <tr key={appointment._id} className="hover:bg-gray-50">
-                  <td className="border border-gray-300 px-4 py-2">
-                    {appointment.firstName} {appointment.lastName}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2">{appointment.email}</td>
-                  <td className="border border-gray-300 px-4 py-2">{appointment.phone}</td>
-                  <td className="border border-gray-300 px-4 py-2">
-                    {new Date(appointment.preferredDate).toLocaleDateString()}
-                  </td>
-                  <td className="border border-gray-300 px-4 py-2">{appointment.preferredTime}</td>
-                  <td className="border border-gray-300 px-4 py-2">{appointment.status}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      )}
-    </main>
-  );
+    <div>page</div>
+  )
 }
+
+export default page

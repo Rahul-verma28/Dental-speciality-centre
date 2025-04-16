@@ -1,6 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { Award, CheckCircle, GraduationCap, Heart, Shield } from "lucide-react";
 import UnderstandSwiper from "@/components/UnderstandSwiper";
 import BrighterSmile from "@/components/BrighterSmile";

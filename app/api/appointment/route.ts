@@ -1,7 +1,40 @@
-import { type NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import Appointment from "@/lib/models/Appointment";
-import { sendAppointmentEmail } from "@/lib/email";
 import { connectToDB } from "@/lib/mongoDB";
+import { sendAppointmentEmail } from "@/lib/email";
+
+export async function GET(
+  request: NextRequest,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  try {
+    const { id } = await params;
+
+    await connectToDB();
+
+    const appointment = await Appointment.findById(id);
+
+    if (!appointment) {
+      return NextResponse.json(
+        { success: false, message: "Appointment not found" },
+        { status: 404 }
+      );
+    }
+
+    return NextResponse.json({
+      success: true,
+      message: "Appointment fetched successfully",
+      appointment,
+    });
+  } catch (error) {
+    console.error("Error fetching appointment:", error);
+    return NextResponse.json(
+      { success: false, message: "Failed to fetch appointment" },
+      { status: 500 }
+    );
+  }
+}
+
 
 export async function POST(request: NextRequest) {
   try {
@@ -61,34 +94,6 @@ export async function POST(request: NextRequest) {
       {
         success: false,
         message: "Failed to book appointment",
-      },
-      { status: 500 }
-    );
-  }
-}
-
-export async function GET(request: NextRequest) {
-  try {
-    // Connect to the database
-    await connectToDB();
-
-    // Fetch all appointments from the database
-    const appointments = await Appointment.find({}).sort({ createdAt: -1 });
-
-    console.log("Fetched appointments:", appointments);
-
-    // Return success response with appointments data
-    return NextResponse.json({
-      success: true,
-      message: "Appointments fetched successfully",
-      appointments: appointments,
-    });
-  } catch (error) {
-    console.error("Error fetching appointments:", error);
-    return NextResponse.json(
-      {
-        success: false,
-        message: "Failed to fetch appointments",
       },
       { status: 500 }
     );

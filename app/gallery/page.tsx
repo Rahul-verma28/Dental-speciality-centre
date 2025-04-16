@@ -426,8 +426,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Star, Play, Quote } from "lucide-react";
+import { Quote } from "lucide-react";
 import GalleryGrid from "@/components/gallery-grid";
 import TestimonialSlider from "@/components/testimonial-slider";
 import BrighterSmile from "@/components/BrighterSmile";
@@ -465,7 +464,7 @@ export default function GalleryPage() {
             </h2>
             <p className="mb-8 text-lg text-gray-600">
               At Bright Smile Dental, we take pride in creating beautiful,
-              healthy smiles that boost our patients' confidence and improve
+              healthy smiles that boost our patients&apos; confidence and improve
               their quality of life. Browse our gallery to see examples of our
               work and the real results our patients have experienced.
             </p>
@@ -533,10 +532,10 @@ export default function GalleryPage() {
               </h2>
               </div>
               <blockquote className="mb-6 text-lg italic text-gray-500">
-                "I've been terrified of dentists my entire life, but Dr. Johnson
+              &apos;I&apos;ve been terrified of dentists my entire life, but Dr. Johnson
                 and her team completely changed that. They were patient, gentle,
                 and took the time to explain everything. Now I actually look
-                forward to my dental appointments!"
+                forward to my dental appointments!&apos;
               </blockquote>
               <div className="flex items-center gap-4">
                 <div className="relative h-12 w-12 overflow-hidden rounded-full">

@@ -343,8 +343,6 @@ import {
 import { Label } from "@/components/ui/label";
 import { isSunday, format, addMonths } from "date-fns";
 import { toast } from "sonner";
-import { CalendarIcon } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 export default function Appointment() {
   const [formData, setFormData] = useState({

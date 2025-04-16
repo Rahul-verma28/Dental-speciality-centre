@@ -39,19 +39,19 @@ export default function TermsAndConditions() {
             </h2>
             <ul className="list-disc pl-6 space-y-1 text-gray-700">
               <li>
-                <strong>"You" or "User":</strong> Refers to the individual using
+                <strong>&apos;You&apos; or &apos;User&apos;:</strong> Refers to the individual using
                 our website or services.
               </li>
               <li>
-                <strong>"Dental Speciality Centre":</strong> Refers to our
+                <strong>&apos;Dental Speciality Centre&apos;:</strong> Refers to our
                 clinic and its affiliates.
               </li>
               <li>
-                <strong>"Services":</strong> Refers to the dental care,
+                <strong>&apos;Services&apos;:</strong> Refers to the dental care,
                 consultations, and other offerings provided by our clinic.
               </li>
               <li>
-                <strong>"Content":</strong> Refers to all materials, services,
+                <strong>&apos;Content&apos;:</strong> Refers to all materials, services,
                 and information available on our website.
               </li>
             </ul>
