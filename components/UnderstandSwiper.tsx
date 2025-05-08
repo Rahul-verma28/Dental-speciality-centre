@@ -12,6 +12,7 @@ import {
   BanknoteX,
   HandHeart,
 } from "lucide-react";
+import * as motion from "motion/react-client";
 
 const values = [
   {
@@ -21,18 +22,18 @@ const values = [
   },
   {
     imgSrc: "/images/concert_image2.png",
-    description: "We make sure you are comfortable while you are with us",
-    icon: Bed,
-  },
-  {
-    imgSrc: "/images/concert_image3.png",
     description: "We won’t surprise you with any extra meds/tests",
     icon: BriefcaseMedicalIcon,
   },
   {
-    imgSrc: "/images/concert_image4.png",
+    imgSrc: "/images/concert_image3.png",
     description: "Transparency is the base of trust – no hidden cost",
     icon: BanknoteX,
+  },
+  {
+    imgSrc: "/images/concert_image4.png",
+    description: "We make sure you are comfortable while you are with us",
+    icon: Bed,
   },
   {
     imgSrc: "/images/concert_image5.png",
@@ -44,9 +45,14 @@ const values = [
 export default function UnderstandSwiper() {
   return (
     <section className="bg-gray-50 py-16">
-      <div className="max-w-screen-2xl px-5 md:px-10 mx-auto">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="max-w-screen-2xl px-5 md:px-10 mx-auto"
+      >
         <div className="mb-12 text-center">
-          <h2 className="mb-3 text-3xl font-bold tracking-tight sm:text-5xl">
+          <h2 className="mb-3 text-3xl font-bold tracking-tight sm:text-5xl text-[#1a2e4c]">
             We understand!
           </h2>
           <p className="mx-auto max-w-2xl text-gray-600 font-semibold text-xl">
@@ -67,12 +73,15 @@ export default function UnderstandSwiper() {
             delay: 2500,
             disableOnInteraction: false,
           }}
-          modules={[ Autoplay]}
+          modules={[Autoplay]}
           className="w-full"
         >
           {values.map((value, index) => (
             <SwiperSlide key={index}>
-              <div
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
                 key={index}
                 className="relative rounded-lg overflow-hidden shadow-sm group"
               >
@@ -88,13 +97,15 @@ export default function UnderstandSwiper() {
                   {/* <div className=" w-fit"> */}
                   <value.icon className="h-9 w-9 font-bold mb-2" />
                   {/* </div> */}
-                  <p className="w-[80%] md:w-[70%]  text-gray-100">{value.description}</p>
+                  <p className="w-[80%] md:w-[70%]  text-gray-100">
+                    {value.description}
+                  </p>
                 </div>
-              </div>
+              </motion.div>
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
+      </motion.div>
     </section>
   );
 }

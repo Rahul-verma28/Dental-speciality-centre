@@ -1,12 +1,18 @@
 import Image from "next/image";
 import React from "react";
+import * as motion from "motion/react-client";
 
 const GeneralDentistry = () => {
   return (
     <section className="bg-gray-50 py-16">
-      <div className="max-w-screen-2xl px-5 md:px-10 mx-auto">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+        className="max-w-screen-2xl px-5 md:px-10 mx-auto"
+      >
         <div className="mb-12 text-center">
-          <h2 className="mb-3 text-3xl font-bold tracking-tight sm:text-5xl">
+          <h2 className="mb-3 text-3xl font-bold tracking-tight sm:text-5xl text-[#1a2e4c]">
             General Dentistry
           </h2>
           <p className="mx-auto max-w-2xl text-gray-600 font-semibold text-xl">
@@ -16,7 +22,10 @@ const GeneralDentistry = () => {
         </div>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {general.map((general, index) => (
-            <div
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
               key={index}
               className={`relative rounded-3xl overflow-hidden shadow-sm group ${
                 index % 2 === 0 ? "text-left" : "text-right"
@@ -38,10 +47,10 @@ const GeneralDentistry = () => {
                 <h2 className="text-xl font-semibold mb-2">{general.title}</h2>
                 <p className="text-md">{general.description}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import * as motion from "motion/react-client";
 
 const Carousel = () => {
   const [slides] = useState([
@@ -12,7 +13,7 @@ const Carousel = () => {
         "A smiling dental professional with a patient in a modern clinic.",
       title: "Your Smile, Our Priority",
       description:
-        "At Dental Speciality Centre, we blend advanced technology with gentle care to give you the confidence to smile brighter.",
+        "At Dental & Aesthetic Care Centre, we blend advanced technology with gentle care to give you the confidence to smile brighter.",
     },
     {
       imgSrc: "/images/hero-02.jpeg",
@@ -69,17 +70,13 @@ const Carousel = () => {
             className="min-w-full flex-shrink-0 relative h-[85vh] "
           >
             {/* Title and description */}
-            {/* <div className="lg:px-20 max-w-screen-2xl mx-auto lg:py-14 absolute inset-0 z-10 flex flex-col items-center justify-evenly gap-2  px-10 py-12">
-              <div className="w-full lg:w-[90%] flex flex-col space-y-4">
-                <h3 className="text-3xl md:text-7xl font-bold text-white">
-                  {slide.title}
-                </h3>
-                <p className="md:w-1/2 w-full text-xl text-gray-200">
-                  {slide.description}
-                </p>
-              </div>
-            </div> */}
-            <div className="max-w-3xl space-y-6 absolute inset-0 z-10 flex flex-col items-center justify-center px-4 text-center mx-auto">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4, ease: "easeOut", delay: 0.1 }}
+              viewport={{ amount: 0.3 }} 
+              className="max-w-3xl space-y-6 absolute inset-0 z-10 flex flex-col items-center justify-center px-4 text-center mx-auto"
+            >
               <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
                 {slide.title}
               </h1>
@@ -98,7 +95,7 @@ const Carousel = () => {
                   </Button>
                 </Link>
               </div>
-            </div>
+            </motion.div>
             <img
               className="absolute w-full h-full inset-0 object-cover brightness-70"
               src={slide.imgSrc}
@@ -109,7 +106,7 @@ const Carousel = () => {
       </div>
 
       {/* Navigation Dots */}
-      {/* <div
+      <div
         className="absolute rounded bottom-3 md:bottom-5 left-1/2 z-20 flex -translate-x-1/2 gap-4 md:gap-3 px-1.5 py-1 md:px-2"
         role="group"
         aria-label="slides"
@@ -117,96 +114,16 @@ const Carousel = () => {
         {slides.map((_, index) => (
           <button
             key={index}
-            className={`w-4 h-4 rounded-full transition ${
+            className={`w-4 h-4 rounded-full transition cursor-pointer ${
               currentSlideIndex === index ? "bg-white" : "bg-white/50"
             }`}
             onClick={() => setCurrentSlideIndex(index)}
             aria-label={`Slide ${index + 1}`}
           ></button>
         ))}
-      </div> */}
+      </div>
     </div>
   );
 };
 
 export default Carousel;
-
-// "use client"
-// import * as React from "react"
-// import Autoplay from "embla-carousel-autoplay"
-
-// import { Card, CardContent } from "@/components/ui/card"
-// import {
-//   Carousel,
-//   CarouselContent,
-//   CarouselItem,
-//   CarouselNext,
-//   CarouselPrevious,
-// } from "@/components/ui/carousel"
-
-// export function Carousels() {
-//   const plugin = React.useRef(
-//     Autoplay({ delay: 2000, stopOnInteraction: true })
-//   )
-
-//   return (
-//     <Carousel
-//       plugins={[plugin.current]}
-//       className="w-full max-w-xs"
-//       onMouseEnter={plugin.current.stop}
-//       onMouseLeave={plugin.current.reset}
-//     >
-//       <CarouselContent>
-//         {Array.from({ length: 5 }).map((_, index) => (
-//           <CarouselItem key={index}>
-//             <div className="p-1">
-//               <Card>
-//                 <CardContent className="flex aspect-square items-center justify-center p-6">
-//                   <span className="text-4xl font-semibold">{index + 1}</span>
-//                 </CardContent>
-//               </Card>
-//             </div>
-//           </CarouselItem>
-//         ))}
-//       </CarouselContent>
-//       <CarouselPrevious />
-//       <CarouselNext />
-//     </Carousel>
-//   )
-// }
-
-// "use client";
-
-// import * as React from "react";
-// import Autoplay from "embla-carousel-autoplay";
-
-// import { Card, CardContent } from "@/components/ui/card";
-// import {
-//   Carousel,
-//   CarouselContent,
-//   CarouselItem,
-// } from "@/components/ui/carousel";
-
-// export function Carousels() {
-//   const plugin = React.useRef(
-//     Autoplay({ delay: 4000, stopOnInteraction: false })
-//   );
-
-//   return (
-//     <Carousel plugins={[plugin.current]} className="w-full max-w-xs">
-//       <CarouselContent>
-//         {Array.from({ length: 5 }).map((_, index) => (
-//           <CarouselItem key={index}>
-//             <div className="p-1">
-//               <Card>
-//                 <CardContent className="flex aspect-square items-center justify-center p-6">
-//                   <span className="text-4xl font-semibold">{index + 1}</span>
-//                 </CardContent>
-//               </Card>
-//             </div>
-//           </CarouselItem>
-//         ))}
-//       </CarouselContent>
-//     </Carousel>
-//   );
-// }

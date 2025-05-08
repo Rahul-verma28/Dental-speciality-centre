@@ -132,7 +132,6 @@
 //   )
 // }
 
-
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -141,6 +140,7 @@ import "swiper/css/pagination";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import Image from "next/image";
 import { Star } from "lucide-react";
+import * as motion from "motion/react-client";
 
 const testimonials = [
   {
@@ -182,13 +182,18 @@ const testimonials = [
 
 export default function TestimonialCarousel() {
   return (
-    <section className="py-20 bg-gradient-to-br from-[#e6f0ff] to-[#ffffff]">
-      <div className="max-w-screen-xl px-5 md:px-10 mx-auto">
+    <section className="pt-10 bg-gradient-to-tl from-[#e6f0ff] to-[#ffffff]">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="max-w-screen-2xl px-5 md:px-10 mx-auto"
+      >
         <div className="mb-14 text-center">
-          <h2 className="mb-4 text-4xl sm:text-5xl font-extrabold text-gray-800">
+          <h2 className="mb-4 text-4xl sm:text-5xl font-bold text-[#1a2e4c]">
             What Our Patients Say
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Real reviews from happy patients who trusted us with their smile
           </p>
         </div>
@@ -204,9 +209,9 @@ export default function TestimonialCarousel() {
         >
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>
-              <div className="max-w-3xl mb-20 mx-auto bg-white p-10 rounded-3xl shadow-xl text-center hover:shadow-2xl transition duration-300">
+              <div className="max-w-3xl mb-10 mx-auto bg-white p-10 rounded-3xl shadow-xl text-center hover:shadow-2xl transition duration-300">
                 <div className="flex justify-center mb-6">
-                  <div className="relative h-20 w-20 rounded-full overflow-hidden border-4 border-blue-100">
+                  <div className="relative p-5 h-20 w-20 rounded-full overflow-hidden border-2 border-blue-100">
                     <Image
                       src={testimonial.avatar}
                       alt={testimonial.name}
@@ -223,18 +228,22 @@ export default function TestimonialCarousel() {
                     <Star
                       key={i}
                       className={`h-5 w-5 ${
-                        i < testimonial.rating ? "text-yellow-400" : "text-gray-300"
+                        i < testimonial.rating
+                          ? "text-yellow-400"
+                          : "text-gray-300"
                       }`}
                       fill={i < testimonial.rating ? "currentColor" : "none"}
                     />
                   ))}
                 </div>
-                <p className="text-lg font-bold text-blue-600">{testimonial.name}</p>
+                <p className="text-lg font-bold text-blue-600">
+                  {testimonial.name}
+                </p>
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
+      </motion.div>
     </section>
   );
 }

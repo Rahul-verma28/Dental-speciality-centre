@@ -20,6 +20,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import * as motion from "motion/react-client";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact Us",
+};
 
 export default function ContactPage() {
   return (
@@ -34,21 +40,31 @@ export default function ContactPage() {
           priority
         />
         <div className="absolute inset-0 flex items-center justify-center bg-black/30">
-          <div className="container text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="container text-center"
+          >
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
               Contact Us
             </h1>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+            <p className="mx-auto mt-4 max-w-2xl text-xl text-white/90">
               We&apos;re here to answer your questions and schedule your
               appointment
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Contact Form Section */}
       <section className="py-16 light-mode-background-services">
-        <div className="max-w-screen-2xl px-5 md:px-10 mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="max-w-screen-2xl px-5 md:px-10 mx-auto"
+        >
           <div className="mx-auto overflow-hidden rounded-2xl shadow-lg lg:max-w-6xl">
             <div className="grid md:grid-cols-2">
               <div className="bg-[#1a2e4c] p-8 text-white">
@@ -68,12 +84,11 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold">Phone</h3>
-                      <a
-                        href="tel:+15551234567"
+                      <p
                         className="mt-1 block  text-gray-200"
                       >
-                        (555) 123-4567
-                      </a>
+                        (+91) 7978779649
+                      </p>
                     </div>
                   </div>
 
@@ -83,12 +98,11 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold">Email</h3>
-                      <a
-                        href="mailto:info@brightsmile.com"
+                      <p
                         className="mt-1 block  text-gray-200"
                       >
-                        info@brightsmile.com
-                      </a>
+                        Support@dentalspecialitycentre.in
+                      </p>
                     </div>
                   </div>
 
@@ -99,9 +113,8 @@ export default function ContactPage() {
                     <div>
                       <h3 className="text-lg font-semibold">Location</h3>
                       <address className="mt-1 not-italic  text-gray-200">
-                        123 Smile Street, Dental District
-                        <br />
-                        Cityville, State 12345
+                      E-792 Chittaranjan Park, New Delhi
+                    
                       </address>
                     </div>
                   </div>
@@ -115,11 +128,11 @@ export default function ContactPage() {
                       <div className="mt-2 space-y-1 text-gray-200">
                         <div className="flex justify-between">
                           <span>Monday - Saturday:</span>
-                          <span className="font-medium">8:00 AM - 9:00 PM</span>
+                          <span className="font-medium pl-2"> 11.00 AM – 8.00 PM</span>
                         </div>
                         <div className="flex justify-between">
                           <span>Sunday:</span>
-                          <span className="font-medium">Closed</span>
+                          <span className="font-medium pl-4">On prior appointment basis only</span>
                         </div>
                       </div>
                     </div>
@@ -212,37 +225,48 @@ export default function ContactPage() {
                     />
                   </div>
                   {/* <Link href="/contact"> */}
-                    <Button 
+                  <Button
                     type="submit"
-                    className="bg-gradient-to-br from-blue-800 to-blue-950 hover:bg-gray-100 text-white px-10 py-7 text-lg font-semibold rounded-full cursor-pointer">
-                      Send Message
-                    </Button>
+                    className="bg-gradient-to-br from-blue-800 to-blue-950 hover:bg-gray-100 text-white px-10 py-7 text-lg font-semibold rounded-full cursor-pointer"
+                  >
+                    Send Message
+                  </Button>
                   {/* </Link> */}
                 </form>
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Map Section */}
       <section className="py-8 w-full">
-        <div className="max-w-screen-2xl px-5 md:px-10 mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="max-w-screen-2xl px-5 md:px-10 mx-auto"
+        >
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224346.44405290353!2d76.89712797304075!3d28.527297841148833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1744469573508!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12687.789096595514!2d77.24136680579437!3d28.536237761475945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce34dd43276f9%3A0xbfa418ad9a1d0a49!2sDr.%20Priyanka%20Goswami%20-%20Dental%20%26%20Aesthetic%20Care%20Centre!5e1!3m2!1sen!2sin!4v1746008120704!5m2!1sen!2sin"
             className="w-full h-[500px] rounded-2xl"
             style={{ border: "0" }}
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             title="Google Maps Embed"
-          />
-        </div>
+          ></iframe>
+        </motion.div>
       </section>
 
       {/* FAQ Section */}
       <section className="bg-gray-50 py-16">
-        <div className="max-w-screen-2xl px-5 md:px-10 mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="max-w-screen-2xl px-5 md:px-10 mx-auto"
+        >
           <div className="mb-12 text-center">
             <h2 className="mb-5 text-3xl font-bold tracking-tight sm:text-5xl">
               Frequently Asked Questions
@@ -266,49 +290,119 @@ export default function ContactPage() {
               ))}
             </Accordion>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Floating Call Button */}
-      <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="fixed bottom-6 right-6 z-50 flex items-center gap-3"
+      >
         <div className="hidden rounded-full bg-[#1a2e4c] px-6 py-3 text-white shadow-lg md:block">
-          <span className="text-lg font-medium">+1 (555) 123-4567</span>
+          <span className="text-lg font-medium">(+91) 7978779649</span>
         </div>
         <a
-          href="tel:+15551234567"
+          href="tel:7978779649"
           className="flex h-14 w-14 items-center justify-center rounded-full bg-[#1a2e4c] text-white shadow-lg transition-transform hover:scale-105"
         >
           <Phone className="h-6 w-6" />
         </a>
-      </div>
+      </motion.div>
     </main>
   );
 }
 
 const faqs = [
   {
-    question: "How often should I visit the dentist?",
+    question: "What services does your dental clinic offer?",
     answer:
-      "We recommend visiting the dentist every six months for regular check-ups and cleanings. However, some patients may need more frequent visits depending on their oral health needs.",
+      "We offer a wide range of dental services, including preventive care for children and adults, cosmetic dentistry, restorative treatments, orthodontics, and oral surgery.",
   },
   {
-    question: "What should I do in case of a dental emergency?",
+    question: "How often should I visit the dentist for check-ups?",
     answer:
-      "If you experience a dental emergency, call our office immediately. We offer same-day emergency appointments whenever possible. For after-hours emergencies, our answering service will direct you to the on-call dentist who can provide guidance until you can be seen in our office.",
+      "It's generally recommended to visit the dentist every six months for regular check-ups and cleanings. However, this may vary based on individual oral health needs.",
   },
   {
-    question: "How long does teeth whitening last?",
+    question: "What age should children start seeing a dentist?",
     answer:
-      "Professional teeth whitening results can last anywhere from 6 months to 2 years, depending on your habits. Consuming staining foods and beverages, smoking, and poor oral hygiene can shorten the lifespan of your whitening treatment.",
+      "Children should start seeing a dentist around their first birthday or when their first tooth erupts. Early dental visits help establish good oral health habits and prevent dental problems.",
   },
   {
-    question: "Are dental X-rays safe?",
+    question: "What payment options are available for dental treatments?",
     answer:
-      "Yes, dental X-rays are safe. Modern digital X-rays use very low doses of radiation. We also use protective equipment like lead aprons to minimize exposure. The benefits of detecting dental problems early through X-rays far outweigh the minimal risks.",
+      "We accept various payment options, including cash, credit cards, and flexible financing plans. Our goal is to make dental care accessible and affordable for everyone.",
   },
   {
-    question: "How can I prevent cavities?",
+    question: "Do you use 3D scanning technology for dental treatments?",
     answer:
-      "Prevent cavities by brushing twice daily with fluoride toothpaste, flossing daily, limiting sugary foods and drinks, getting regular dental check-ups, and considering preventive treatments like dental sealants and fluoride applications.",
+      "Yes, we utilize state-of-the-art 3D scanning technology for various dental procedures, such as consultations, creating digital impressions for crowns, bridges, and Invisalign aligners. This technology enhances precision, comfort, and efficiency in treatment planning and delivery.",
+  },
+  {
+    question: "Can you help with dental emergencies?",
+    answer:
+      "Yes, we provide emergency dental care for issues like severe toothaches, broken teeth, and other urgent dental problems. Contact us immediately if you have a dental emergency.",
+  },
+  {
+    question: "What should I do if I have a dental emergency after hours?",
+    answer:
+      "If you experience a dental emergency outside of regular business hours, please call our emergency contact number for instructions and immediate assistance.",
+  },
+  {
+    question: "What should I do if I have dental anxiety?",
+    answer:
+      "Our clinic is experienced in helping patients with dental anxiety feel comfortable and relaxed during their visits. We offer sedation options and a compassionate approach to care.",
+  },
+  {
+    question: "How can I improve my oral hygiene at home?",
+    answer:
+      "We provide personalized oral hygiene instructions and tips to help you maintain a healthy smile between visits. Proper brushing, flossing, and regular dental check-ups are essential.",
+  },
+  {
+    question: "Do you offer teeth whitening services?",
+    answer:
+      "Yes, we offer professional teeth whitening treatments to enhance the brightness of your smile. Schedule a consultation to discuss your options for a whiter, brighter smile.",
+  },
+  {
+    question: "Can you replace missing teeth?",
+    answer:
+      "Yes, we offer several options for replacing missing teeth, including dental implants, bridges, and dentures. Our team will assess your needs and recommend the best solution for you.",
+  },
+  {
+    question: "How long does a dental implant procedure take?",
+    answer:
+      "The duration of a dental implant procedure can vary depending on the individual case. Generally, it involves multiple appointments over several months to complete the process successfully. However, our clinic also offers single-day implant procedures.",
+  },
+  {
+    question: "Do you offer orthodontic treatments like braces or Invisalign?",
+    answer:
+      "Yes, we provide orthodontic treatments, including traditional braces and Invisalign clear aligners, to straighten teeth and correct bite issues for both children and adults. Schedule a consultation to discuss your orthodontic needs.",
+  },
+  {
+    question: "Can you help with TMJ (Temporomandibular Joint) disorders?",
+    answer:
+      "Yes, we offer diagnosis and treatment for TMJ disorders, including custom mouthguards, lifestyle recommendations, and therapeutic options to alleviate pain and improve jaw function.",
+  },
+  {
+    question: "Can you help with snoring and sleep apnoea?",
+    answer:
+      "Yes, we provide oral appliance therapy for snoring and mild to moderate sleep apnoea. These custom devices can help improve breathing and quality of sleep for patients with these conditions.",
+  },
+  {
+    question: "How can I schedule an appointment with your clinic?",
+    answer:
+      "Scheduling an appointment is easy! You can call our office during business hours, use our online appointment request form on the website, or visit us in person to schedule your visit.",
+  },
+  {
+    question: "Do you offer free consultations for certain treatments?",
+    answer:
+      "Yes, we offer free consultations on OPEN DAY EVENTS for specific treatments such as cosmetic dentistry, orthodontics, and dental implants. During the consultation, we'll discuss your goals and treatment options.",
+  },
+  {
+    question: "What safety measures do you have in place during the COVID-19 pandemic?",
+    answer:
+      "We prioritize the safety of our patients and staff. We adhere to strict infection control protocols, sanitize our facilities regularly, screen patients for symptoms, and follow guidelines from health authorities to ensure a safe environment for dental care.",
   },
 ];

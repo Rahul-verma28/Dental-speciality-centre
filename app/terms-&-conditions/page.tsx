@@ -1,18 +1,21 @@
-"use client";
-
 import React from "react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms and Conditions",
+}
 
 export default function TermsAndConditions() {
   return (
     <main className="flex min-h-screen flex-col bg-gray-50">
-      <section className="max-w-screen-2xl px-5 md:px-10 mx-auto">
+      <section className="max-w-screen-2xl p-5 md:p-10 mx-auto">
         {/* Header Section */}
         <div className="mb-12 text-center">
           <h1 className="text-4xl font-bold tracking-tight text-blue-900 sm:text-5xl">
             Terms and Conditions
           </h1>
           <p className="mt-4 text-lg text-gray-600">
-            Welcome to Dental Speciality Centre. Please read these terms and
+            Welcome to Dental & Aesthetic Care Centre. Please read these terms and
             conditions carefully before using our website or services.
           </p>
         </div>
@@ -43,7 +46,7 @@ export default function TermsAndConditions() {
                 our website or services.
               </li>
               <li>
-                <strong>&apos;Dental Speciality Centre&apos;:</strong> Refers to our
+                <strong>&apos;Dental & Aesthetic Care Centre&apos;:</strong> Refers to our
                 clinic and its affiliates.
               </li>
               <li>
@@ -97,7 +100,7 @@ export default function TermsAndConditions() {
               Limitation of Liability
             </h2>
             <p className="text-gray-700">
-              Dental Speciality Centre is not liable for any indirect,
+              Dental & Aesthetic Care Centre is not liable for any indirect,
               incidental, or consequential damages arising from the use of our
               website or services. Our liability is limited to the amount paid
               by you for the specific service in question.
@@ -140,7 +143,7 @@ export default function TermsAndConditions() {
               Indemnity
             </h2>
             <p className="text-gray-700">
-              You agree to indemnify and hold Dental Speciality Centre harmless
+              You agree to indemnify and hold Dental & Aesthetic Care Centre harmless
               from any claims, damages, or expenses arising from your use of our
               website or services, or your violation of these Terms and
               Conditions.

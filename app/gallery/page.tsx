@@ -166,7 +166,7 @@
 //           <div className="mb-12 text-center">
 //             <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Patient Testimonials</h2>
 //             <p className="mx-auto max-w-2xl text-gray-600">
-//               Read what our patients have to say about their experience at Bright Smile Dental
+//               Read what our patients have to say about their experience at Dental & Aesthetic Care Centre
 //             </p>
 //           </div>
 
@@ -398,7 +398,7 @@
 // const videoTestimonials = [
 //   {
 //     title: "Emily's Smile Makeover Journey",
-//     description: "Emily shares her experience getting a complete smile makeover at Bright Smile Dental.",
+//     description: "Emily shares her experience getting a complete smile makeover at Dental & Aesthetic Care Centre.",
 //     thumbnail: "/images/video-thumb-1.jpg",
 //   },
 //   {
@@ -430,6 +430,12 @@ import { Quote } from "lucide-react";
 import GalleryGrid from "@/components/gallery-grid";
 import TestimonialSlider from "@/components/testimonial-slider";
 import BrighterSmile from "@/components/BrighterSmile";
+import * as motion from "motion/react-client";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Gallery",
+}
 
 export default function GalleryPage() {
   return (
@@ -444,98 +450,120 @@ export default function GalleryPage() {
           priority
         />
         <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-r from-black/50 to-black/30">
-          <div className="max-w-screen-2xl px-5 md:px-10 mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="max-w-screen-2xl px-5 md:px-10 mx-auto text-center"
+          >
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
               Our Smile Gallery
             </h1>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+            <p className="mx-auto mt-4 max-w-2xl text-xl text-white/90">
               Beautiful smiles created by our expert dental team
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Gallery Introduction */}
       <section className="bg-white py-16">
         <div className="max-w-screen-2xl px-5 md:px-10 mx-auto">
-          <div className="mx-auto max-w-3xl text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="mx-auto max-w-3xl text-center"
+          >
             <h2 className="mb-6 text-3xl font-bold tracking-tight text-[#1a2e4c] sm:text-5xl">
               Transforming Smiles, Changing Lives
             </h2>
             <p className="mb-8 text-lg text-gray-600">
-              At Bright Smile Dental, we take pride in creating beautiful,
-              healthy smiles that boost our patients&apos; confidence and improve
-              their quality of life. Browse our gallery to see examples of our
-              work and the real results our patients have experienced.
+              At Dental & Aesthetic Care Centre, we take pride in creating beautiful,
+              healthy smiles that boost our patients&apos; confidence and
+              improve their quality of life. Browse our gallery to see examples
+              of our work and the real results our patients have experienced.
             </p>
             <div className="sm:flex justify-center gap-4">
-                <Link href="/appointment">
-                  <Button className="mr-2 bg-gradient-to-br from-white to-teal-100 hover:bg-gray-100 text-teal-500 hover:text-teal-600 px-10 py-7 text-lg font-semibold rounded-full cursor-pointer mb-4">
-                    Book Your Consultation
-                  </Button>
-                </Link>
-                <Link href="/services">
-                  <Button className="bg-gradient-to-br from-blue-800 to-blue-950 hover:bg-gray-100 text-white  px-10 py-7 text-lg font-semibold rounded-full cursor-pointer">
-                    Explore Our Services
-                  </Button>
-                </Link>
-              </div>
-          </div>
+              <Link href="/appointment">
+                <Button className="mr-2 bg-gradient-to-br from-white to-teal-100 hover:bg-gray-100 text-teal-500 hover:text-teal-600 px-10 py-7 text-lg font-semibold rounded-full cursor-pointer mb-4">
+                  Book Your Consultation
+                </Button>
+              </Link>
+              <Link href="/services">
+                <Button className="bg-gradient-to-br from-blue-800 to-blue-950 hover:bg-gray-100 text-white  px-10 py-7 text-lg font-semibold rounded-full cursor-pointer">
+                  Explore Our Services
+                </Button>
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Gallery Grid */}
       <section className="bg-gray-50 py-16">
-        <div className="max-w-screen-2xl px-5 md:px-10 mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="max-w-screen-2xl px-5 md:px-10 mx-auto"
+        >
           <div className="mb-12 text-center">
             <h2 className="mb-6 text-3xl font-bold tracking-tight text-[#1a2e4c] sm:text-5xl">
               Smile Gallery
             </h2>
             <p className="mx-auto max-w-2xl text-gray-600 text-lg">
-              Explore our collection of beautiful smiles created at Bright Smile
-              Dental
+              Explore our collection of beautiful smiles created at Dental & Aesthetic Care Centre
             </p>
           </div>
 
           <GalleryGrid />
-        </div>
+        </motion.div>
       </section>
 
       {/* Testimonials */}
       <section className="py-16">
-        <div className="max-w-screen-2xl px-5 md:px-10 mx-auto">
+        <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="max-w-screen-2xl px-5 md:px-10 mx-auto">
           <div className="mb-12 text-center">
             <h2 className="mb-6 text-3xl font-bold tracking-tight text-[#1a2e4c] sm:text-5xl">
               What Our Patients Say
             </h2>
             <p className="mx-auto max-w-2xl text-gray-600 text-lg">
               Read what our patients have to say about their experience at
-              Bright Smile Dental
+              Dental & Aesthetic Care Centre
             </p>
           </div>
 
           <TestimonialSlider />
-        </div>
+        </motion.div>
       </section>
 
       {/* Featured Video Testimonial */}
       <section className="py-16">
         <div className="max-w-screen-2xl px-5 md:px-10 mx-auto">
-          <div className="grid gap-8 md:grid-cols-2">
+          <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="grid gap-8 md:grid-cols-2">
             <div className="flex flex-col justify-center">
               <div className=" flex items-center gap-4">
-              <div className="mb-4 w-fit rounded-full bg-blue-400/20 p-3">
-                <Quote className="h-8 w-8 text-blue-300" />
-              </div>
-              <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-5xl">
-                Hear From Our Patients
-              </h2>
+                <div className="mb-4 w-fit rounded-full bg-blue-400/20 p-3">
+                  <Quote className="h-8 w-8 text-blue-300" />
+                </div>
+                <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-5xl">
+                  Hear From Our Patients
+                </h2>
               </div>
               <blockquote className="mb-6 text-lg italic text-gray-500">
-              &apos;I&apos;ve been terrified of dentists my entire life, but Dr. Johnson
-                and her team completely changed that. They were patient, gentle,
-                and took the time to explain everything. Now I actually look
-                forward to my dental appointments!&apos;
+                &apos;I&apos;ve been terrified of dentists my entire life, but
+                Dr. Johnson and her team completely changed that. They were
+                patient, gentle, and took the time to explain everything. Now I
+                actually look forward to my dental appointments!&apos;
               </blockquote>
               <div className="flex items-center gap-4">
                 <div className="relative h-12 w-12 overflow-hidden rounded-full">
@@ -568,7 +596,7 @@ export default function GalleryPage() {
                 </div>
               </div> */}
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 

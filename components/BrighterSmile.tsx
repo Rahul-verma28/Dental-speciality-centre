@@ -1,11 +1,17 @@
 import Link from "next/link";
 import React from "react";
 import { Button } from "./ui/button";
+import * as motion from "motion/react-client"
+
 
 const BrighterSmile = () => {
   return (
     <section className="bg-gradient-to-r from-blue-900 to-teal-500 py-16 text-white">
-      <div className="max-w-screen-2xl px-5 md:px-10 mx-auto text-center">
+      <motion.div 
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="max-w-screen-2xl px-5 md:px-10 mx-auto text-center">
         <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-5xl">
           Ready for a Brighter Smile?
         </h2>
@@ -16,7 +22,7 @@ const BrighterSmile = () => {
         <div className="sm:flex justify-center gap-4">
           <Link href="/appointment">
             <Button className="bg-gradient-to-br from-white to-teal-100 hover:bg-gray-100 text-teal-500 hover:text-teal-600 px-10 py-7 text-lg font-semibold rounded-full cursor-pointer mb-4">
-              Request An Appointment
+              Request An Appointment 
             </Button>
           </Link>
           <Link href="/contact">
@@ -25,7 +31,7 @@ const BrighterSmile = () => {
             </Button>
           </Link>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
