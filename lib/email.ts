@@ -46,15 +46,7 @@ export const sendAppointmentEmail = async ({
       to: `${email}, Support@dentalspecialitycentre.in`, // Send to both patient and admin
       subject: "Your Appointment Confirmation - Dental & Aesthetic Care Centre",
       html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e0e0e0; border-radius: 5px;">
-      <div style="text-align: center; margin-top: 10px;">
-        <img 
-          src="https://www.dentalspecialitycentre.in/appointment.jpg" 
-          alt="Dental & Aesthetic Care Centre Logo" 
-          style="max-width: 200px; height: auto; border-radius: 5px;" 
-        />
-      </div>
-          
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e0e0e0; border-radius: 5px;">          
           <h2 style="color: #1a2e4c; text-align: center;">Appointment Confirmation</h2>
           
           <p>Dear ${firstName} ${lastName},</p>
