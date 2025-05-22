@@ -1,31 +1,13 @@
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-// import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import {
-  Phone,
-  Mail,
-  MapPin,
-  Link,
-  Clock,
-  Twitter,
-  Instagram,
-  Facebook,
-} from "lucide-react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import * as motion from "motion/react-client";
-import { Metadata } from "next";
+import Image from "next/image"
+import { Phone, Mail, MapPin, Link, Clock, Twitter, Instagram, Facebook } from "lucide-react"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import * as motion from "motion/react-client"
+import type { Metadata } from "next"
+import ContactForm from "@/components/ContactForm"
 
 export const metadata: Metadata = {
   title: "Contact Us",
-};
+}
 
 export default function ContactPage() {
   return (
@@ -46,12 +28,9 @@ export default function ContactPage() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="container text-center"
           >
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
-              Contact Us
-            </h1>
+            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">Contact Us</h1>
             <p className="mx-auto mt-4 max-w-2xl text-xl text-white/90">
-              We&apos;re here to answer your questions and schedule your
-              appointment
+              We&apos;re here to answer your questions and schedule your appointment
             </p>
           </motion.div>
         </div>
@@ -68,13 +47,10 @@ export default function ContactPage() {
           <div className="mx-auto overflow-hidden rounded-2xl shadow-lg lg:max-w-6xl">
             <div className="grid md:grid-cols-2">
               <div className="bg-[#1a2e4c] p-8 text-white">
-                <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-5xl">
-                  Get In Touch
-                </h2>
+                <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-5xl">Get In Touch</h2>
                 <p className="mb-8 text-gray-200 text-lg">
-                  Whether you&apos;re a new patient or a returning one,
-                  we&apos;re here to help you with any questions or concerns.
-                  Feel free to reach out to us using any of the methods below.
+                  Whether you&apos;re a new patient or a returning one, we&apos;re here to help you with any questions
+                  or concerns. Feel free to reach out to us using any of the methods below.
                 </p>
 
                 <div className="space-y-6">
@@ -84,11 +60,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold">Phone</h3>
-                      <p
-                        className="mt-1 block  text-gray-200"
-                      >
-                        (+91) 7978779649
-                      </p>
+                      <p className="mt-1 block text-gray-200">(+91) 7978779649</p>
                     </div>
                   </div>
 
@@ -98,11 +70,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold">Email</h3>
-                      <p
-                        className="mt-1 block  text-gray-200"
-                      >
-                        Support@dentalspecialitycentre.in
-                      </p>
+                      <p className="mt-1 block text-gray-200">Support@dentalspecialitycentre.in</p>
                     </div>
                   </div>
 
@@ -112,10 +80,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold">Location</h3>
-                      <address className="mt-1 not-italic  text-gray-200">
-                      E-792 Chittaranjan Park, New Delhi
-                    
-                      </address>
+                      <address className="mt-1 not-italic text-gray-200">E-792 Chittaranjan Park, New Delhi</address>
                     </div>
                   </div>
 
@@ -168,71 +133,8 @@ export default function ContactPage() {
               </div>
 
               {/* Right Panel - Contact Form */}
-              <div className=" p-8 md:p-12">
-                <form className="space-y-6">
-                  <div className="grid gap-6 md:grid-cols-2">
-                    <div className="space-y-2">
-                      <Label htmlFor="first-name" className="text-lg">
-                        First Name <span className="text-blue-600">*</span>
-                      </Label>
-                      <Input
-                        id="first-name"
-                        required
-                        className="border-gray-300 h-12"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="last-name" className="text-lg">
-                        Last Name
-                      </Label>
-                      <Input id="last-name" className="border-gray-300 h-12" />
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="email" className="text-lg">
-                      Email <span className="text-blue-600">*</span>
-                    </Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      required
-                      className="border-gray-300 h-12"
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="phone" className="text-lg">
-                      Phone Number <span className="text-blue-600">*</span>
-                    </Label>
-                    <Input
-                      id="phone"
-                      type="tel"
-                      required
-                      className="border-gray-300 h-12"
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="message" className="text-lg">
-                      Message <span className="text-blue-600">*</span>
-                    </Label>
-                    <Textarea
-                      id="message"
-                      required
-                      placeholder="Write your message..."
-                      className="min-h-[120px] border-gray-300 h-12"
-                    />
-                  </div>
-                  {/* <Link href="/contact"> */}
-                  <Button
-                    type="submit"
-                    className="bg-gradient-to-br from-blue-800 to-blue-950 hover:bg-gray-100 text-white px-10 py-7 text-lg font-semibold rounded-full cursor-pointer"
-                  >
-                    Send Message
-                  </Button>
-                  {/* </Link> */}
-                </form>
+              <div className="p-8 md:p-12">
+                <ContactForm />
               </div>
             </div>
           </div>
@@ -268,9 +170,7 @@ export default function ContactPage() {
           className="max-w-screen-2xl px-5 md:px-10 mx-auto"
         >
           <div className="mb-12 text-center">
-            <h2 className="mb-5 text-3xl font-bold tracking-tight sm:text-5xl">
-              Frequently Asked Questions
-            </h2>
+            <h2 className="mb-5 text-3xl font-bold tracking-tight sm:text-5xl">Frequently Asked Questions</h2>
             <p className="mx-auto max-w-2xl text-gray-600 text-lg">
               Find answers to common questions about our dental services
             </p>
@@ -280,12 +180,8 @@ export default function ContactPage() {
             <Accordion type="single" collapsible className="w-full">
               {faqs.map((faq, index) => (
                 <AccordionItem key={index} value={`item-${index}`}>
-                  <AccordionTrigger className="text-left text-xl">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-lg text-gray-700">
-                    {faq.answer}
-                  </AccordionContent>
+                  <AccordionTrigger className="text-left text-xl">{faq.question}</AccordionTrigger>
+                  <AccordionContent className="text-lg text-gray-700">{faq.answer}</AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>
@@ -311,7 +207,7 @@ export default function ContactPage() {
         </a>
       </motion.div>
     </main>
-  );
+  )
 }
 
 const faqs = [
@@ -405,4 +301,4 @@ const faqs = [
     answer:
       "We prioritize the safety of our patients and staff. We adhere to strict infection control protocols, sanitize our facilities regularly, screen patients for symptoms, and follow guidelines from health authorities to ensure a safe environment for dental care.",
   },
-];
+]
