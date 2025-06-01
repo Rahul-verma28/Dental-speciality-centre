@@ -97,53 +97,6 @@ const galleryItems = [
   },
 ]
 
-// export default function GalleryGrid() {
-//   const [selectedCategory, setSelectedCategory] = useState<string>("all")
-
-//   const filteredItems =
-//     selectedCategory === "all" ? galleryItems : galleryItems.filter((item) => item.category === selectedCategory)
-
-//   return (
-//     <div>
-//       {/* Category filters */}
-//       <div className="mb-8 flex flex-wrap justify-center gap-2">
-//         {["all","clinic tour", "clinic cases", "posters", "street view"].map((category) => (
-//           <Button
-//             key={category}
-//             size={"lg"}
-//             variant={selectedCategory === category ? "default" : "outline"}
-//             className={cn("capitalize", selectedCategory === category && "bg-[#1a2e4c] hover:bg-[#2a3e5c] cursor-pointer text-lg")}
-//             onClick={() => setSelectedCategory(category)}
-//           >
-//             {category === "all" ? "All " : `${category}`}
-//           </Button>
-//         ))}
-//       </div>
-
-//       {/* Gallery grid */}
-//       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-//         {filteredItems.map((item) => (
-//           <div
-//             key={item.image}
-//             className="group cursor-pointer overflow-hidden rounded-lg bg-white shadow-sm transition-all hover:shadow-md"
-//             // onClick={() => setSelectedImage(item.id)}
-//           >
-//             <div className="relative aspect-[4/3] overflow-hidden">
-//               <Image
-//                 src={item.image || "/placeholder.svg"}
-//                 alt={item.image}
-//                 fill
-//                 className="object-cover transition-transform duration-500 group-hover:scale-110"
-//               />
-//               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   )
-// }
-
 export default function GalleryGrid() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [showAll, setShowAll] = useState<boolean>(false);

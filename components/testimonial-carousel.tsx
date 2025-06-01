@@ -1,180 +1,45 @@
-// "use client"
-
-// import { useState, useEffect } from "react"
-// import Image from "next/image"
-// import { Card, CardContent } from "@/components/ui/card"
-// import { Star, ChevronLeft, ChevronRight } from "lucide-react"
-// import { Button } from "@/components/ui/button"
-
-// export default function TestimonialCarousel() {
-//   const [activeIndex, setActiveIndex] = useState(0)
-//   const [autoplay, setAutoplay] = useState(true)
-
-//   const testimonials = [
-//     {
-//       name: "Jennifer L.",
-//       service: "Cosmetic Dentistry",
-//       quote:
-//         "I've been self-conscious about my smile for years. Dr. Johnson and her team transformed my teeth with veneers, and I couldn't be happier with the results. The entire process was comfortable and the staff was so supportive.",
-//       rating: 5,
-//       avatar: "/images/testimonial-1.jpg",
-//     },
-//     {
-//       name: "Michael T.",
-//       service: "Orthodontics",
-//       quote:
-//         "My teenager needed braces, and we were dreading the process. Dr. Chen made it so easy and painless. The staff is always friendly and accommodating with scheduling. The results are amazing!",
-//       rating: 5,
-//       avatar: "/images/testimonial-2.jpg",
-//     },
-//     {
-//       name: "Sarah K.",
-//       service: "General Dentistry",
-//       quote:
-//         "I used to be terrified of going to the dentist until I found Bright Smile. They're so gentle and patient. They take the time to explain everything and make sure you're comfortable. Best dental experience ever!",
-//       rating: 5,
-//       avatar: "/images/testimonial-3.jpg",
-//     },
-//   ]
-
-//   useEffect(() => {
-//     let interval: NodeJS.Timeout
-
-//     if (autoplay) {
-//       interval = setInterval(() => {
-//         setActiveIndex((prevIndex) => (prevIndex + 1) % testimonials.length)
-//       }, 3000)
-//     }
-
-//     return () => clearInterval(interval)
-//   }, [autoplay, testimonials.length])
-
-//   const handlePrev = () => {
-//     setAutoplay(false)
-//     setActiveIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length)
-//   }
-
-//   const handleNext = () => {
-//     setAutoplay(false)
-//     setActiveIndex((prevIndex) => (prevIndex + 1) % testimonials.length)
-//   }
-
-//   return (
-//     <div className="relative">
-//       <div className="overflow-hidden">
-//         <div
-//           className="flex transition-transform duration-500 ease-in-out"
-//           style={{ transform: `translateX(-${activeIndex * 100}%)` }}
-//         >
-//           {testimonials.map((testimonial, index) => (
-//             <div key={index} className="w-full flex-shrink-0 px-4">
-//               <Card className="mx-auto max-w-3xl">
-//                 <CardContent className="p-6 md:p-8">
-//                   <div className="mb-4 flex">
-//                     {[...Array(5)].map((_, i) => (
-//                       <Star
-//                         key={i}
-//                         className={`h-5 w-5 ${i < testimonial.rating ? "fill-yellow-400 text-yellow-400" : "text-gray-300"}`}
-//                       />
-//                     ))}
-//                   </div>
-//                   <blockquote className="mb-6 text-lg italic text-gray-600 md:text-xl">
-//                   &ldquo;{testimonial.quote}&rdquo;
-//                   </blockquote>
-//                   <div className="flex items-center gap-4">
-//                     <div className="relative h-12 w-12 overflow-hidden rounded-full md:h-16 md:w-16">
-//                       <Image
-//                         src={testimonial.avatar || "/placeholder.svg"}
-//                         alt={testimonial.name}
-//                         fill
-//                         className="object-cover"
-//                       />
-//                     </div>
-//                     <div>
-//                       <div className="font-medium md:text-lg">{testimonial.name}</div>
-//                       <div className="text-sm text-blue-600 md:text-base">{testimonial.service}</div>
-//                     </div>
-//                   </div>
-//                 </CardContent>
-//               </Card>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-
-//       <div className="mt-6 flex justify-center gap-2">
-//         <Button variant="outline" size="icon" onClick={handlePrev} className="rounded-full">
-//           <ChevronLeft className="h-5 w-5" />
-//           <span className="sr-only">Previous testimonial</span>
-//         </Button>
-
-//         {testimonials.map((_, index) => (
-//           <Button
-//             key={index}
-//             variant="ghost"
-//             size="sm"
-//             onClick={() => {
-//               setAutoplay(false)
-//               setActiveIndex(index)
-//             }}
-//             className={`h-2 min-w-0 rounded-full p-0 ${activeIndex === index ? "w-6 bg-blue-600" : "w-2 bg-gray-300"}`}
-//           >
-//             <span className="sr-only">Go to testimonial {index + 1}</span>
-//           </Button>
-//         ))}
-
-//         <Button variant="outline" size="icon" onClick={handleNext} className="rounded-full">
-//           <ChevronRight className="h-5 w-5" />
-//           <span className="sr-only">Next testimonial</span>
-//         </Button>
-//       </div>
-//     </div>
-//   )
-// }
-
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import Image from "next/image";
-import { Star } from "lucide-react";
+import { Quote, Star } from "lucide-react";
 import * as motion from "motion/react-client";
 
 const testimonials = [
   {
-    name: "Emily R.",
+    name: "Akanksha Devgun",
     quote:
-      "Bright Smile Dental has completely changed how I feel about going to the dentist. The staff is so friendly, and they made me feel at ease from the moment I walked in.",
+      "I recently visited this dental clinic for my smile correction, and I’m thrilled to share my wonderful experience. From the moment I walked in, the atmosphere was welcoming and calming. Dr. Priyanka, the dentist, was fantastic. She had a reassuring demeanor and was very thorough in her examination. Her clear explanations about my dental health and treatment options showed her commitment to patient care. I felt well-informed and confident in the treatment plan she recommended.",
     avatar: "/images/patient-01.png",
     rating: 5,
   },
   {
-    name: "James P.",
+    name: "Nandini Verma",
     quote:
-      "I had a root canal done here, and it was surprisingly painless. The dentist explained everything clearly, and the procedure was quick and efficient.",
+      "Hi, my mother got treated with Dr. Priyanka. She was having fobia of dental treatment and with this fobia she went to many doctors but didn't get treated her teeth but Dr. Priyanka treated her so well that she has completed her treatment very nicely and without any fear. She is very good doctor and makes her patients so comfortable and treats very well. Thank u Dr. Priyanka for completing the entire process very politely and patiently.",
     avatar: "/images/patient-06.png",
-    rating: 4,
+    rating: 5,
   },
   {
-    name: "Sophia L.",
+    name: "Anup Haldar",
     quote:
-      "The team at Bright Smile Dental is amazing! They helped me with my braces, and now I can’t stop smiling. Highly recommend them!",
+      " 	I am very grateful to c.r park dentist for giving me such a comfortable and pain-free root canal treatment. The staff is very friendly as well as diligent towards their work. Special thanks to Dr. Priyanka Goswami for quick and painless treatment that she gave because of which I am able to live without any pain or discomfort. Thank you so much!! I would highly recommend you all to take your treatment from here.",
     avatar: "/images/patient-03.png",
     rating: 5,
   },
   {
-    name: "Michael B.",
+    name: "Dhritiman Bharadwaj",
     quote:
-      "I’ve been coming here for years, and the service is always top-notch. They truly care about their patients and provide excellent care.",
+      "I used to get worried whenever i have a dental issue over the years and most of the time i always get treatment but without explanation of the factors related to it. Dr. Priyanka Mam, really helped me to get comfortable with the treatment, also letting me know how to take care of my gum health and other related issues that may arise. She is very sweet, professional and soft-spoken. Through my 4 visits for root canal and crown insert she always keep on asking whether i am feeling pain or any issue. I highly recommend her for your dental problems. Thank you mam.",
     avatar: "/images/patient-04.png",
     rating: 5,
   },
   {
-    name: "Olivia T.",
+    name: "Kunal Kumar",
     quote:
-      "The best dental experience I’ve ever had. The clinic is clean, modern, and the staff is incredibly professional.",
+      "I had an excellent experience with Dr. Priyanka. From the moment I walked in, the staff was friendly and welcoming. Dr. Priyanka was very professional and took the time to explain the procedures thoroughly, making sure I felt comfortable throughout. The clinic was clean and well-equipped, which further boosted my confidence in their services. The dental work was done efficiently and with minimal discomfort. I highly recommend Dr. Priyanka and this dental practice for their expertise, care, and exceptional customer service",
     avatar: "/images/patient-05.png",
     rating: 5,
   },
@@ -209,16 +74,9 @@ export default function TestimonialCarousel() {
         >
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>
-              <div className="max-w-3xl mb-10 mx-auto bg-white p-10 rounded-3xl shadow-xl text-center hover:shadow-2xl transition duration-300">
-                <div className="flex justify-center mb-6">
-                  <div className="relative p-5 h-20 w-20 rounded-full overflow-hidden border-2 border-blue-100">
-                    <Image
-                      src={testimonial.avatar}
-                      alt={testimonial.name}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
+              <div className="max-w-4xl mb-10 mx-auto bg-white p-10 rounded-3xl shadow-xl text-center hover:shadow-2xl transition duration-300">
+                <div className="mb-4 w-fit rounded-full bg-blue-400/20 p-3 mx-auto">
+                  <Quote className="h-8 w-8 text-blue-300" />
                 </div>
                 <blockquote className="text-xl italic text-gray-700 mb-4">
                   “{testimonial.quote}”
@@ -239,6 +97,7 @@ export default function TestimonialCarousel() {
                 <p className="text-lg font-bold text-blue-600">
                   {testimonial.name}
                 </p>
+                
               </div>
             </SwiperSlide>
           ))}

@@ -1,64 +1,63 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react"
+import { Star, ChevronLeft, ChevronRight, Quote, UserCircle2 } from "lucide-react"
 
 // Testimonial data
 const testimonials = [
   {
     id: 1,
-    name: "Jennifer L.",
+    name: "Anjana Rakshit",
     service: "Cosmetic Dentistry",
     quote:
-      "I've been self-conscious about my smile for years. Dr. Johnson and her team transformed my teeth with veneers, and I couldn't be happier with the results. The entire process was comfortable and the staff was so supportive.",
+      "My experience at Dr. Priyanka Goswami's clinic was excellent. Her clinic is very well equipped and she made me feel comfortable and at ease. Throughout my treatment she was also very caring. Would definitely recommend!",
     rating: 5,
     avatar: "/images/patient-01.png",
   },
   {
     id: 2,
-    name: "Michael T.",
+    name: "Trishita Chakraborty",
     service: "Orthodontics",
     quote:
-      "My teenager needed braces, and we were dreading the process. Dr. Chen made it so easy and painless. The staff is always friendly and accommodating with scheduling. The results are amazing!",
+      "Dr. Priyanka Goswami offers exceptional dental and aesthetic care with a perfect blend of professionalism and expertise. Her attention to detail and patient care is remarkable, and I’m thrilled with the results of my treatment. Highly recommended for anyone seeking quality dental services.",
     rating: 5,
     avatar: "/images/patient-02.png",
   },
   {
     id: 3,
-    name: "Sarah K.",
+    name: "Ritu",
     service: "General Dentistry",
     quote:
-      "I used to be terrified of going to the dentist until I found Bright Smile. They're so gentle and patient. They take the time to explain everything and make sure you're comfortable. Best dental experience ever!",
+      "My Root Canal treatment was handled with all the details and clearing doubts. Her clinic is well equipped with advanced technology. A fearless experience of dental care. Dr. Priyanka is a dentist who genuinely cares for your Smile 😊",
     rating: 5,
     avatar: "/images/patient-03.png",
   },
   {
     id: 4,
-    name: "David W.",
+    name: "Sushmita Nager",
     service: "Emergency Dental Care",
     quote:
-      "When I cracked my tooth on a Friday evening, I thought I'd be in pain all weekend. Bright Smile got me in within an hour! Dr. Johnson fixed me up, and I was pain-free by dinner time. Incredible service!",
+      "Dr. Goswami is very welcoming and a great doctor. She makes her patients feel comfortable during dental treatments and also take utmost care of her patients. Her follow up is very good post any surgery and quite responsive.",
     rating: 5,
     avatar: "/images/patient-04.png",
   },
   {
     id: 5,
-    name: "Lisa M.",
+    name: "Aritro Palit",
     service: "Teeth Whitening",
     quote:
-      "After years of coffee stains, my teeth were looking yellow. The professional whitening at Bright Smile made such a difference! My teeth are several shades whiter, and I keep getting compliments.",
+      "Dr Priyanka Goswami is an excellent dentist. She takes time to understand your problems and suggests very satisfactory treatment. Highly recomended.",
     rating: 4,
     avatar: "/images/patient-05.png",
   },
   {
     id: 6,
-    name: "Robert J.",
+    name: "Sukanya Dasgupta",
     service: "Dental Implants",
     quote:
-      "I needed an implant after losing a tooth. The procedure was much easier than I expected, and the result looks completely natural. No one can tell which tooth is the implant!",
+      "I highly recommend Dental & Aesthetic Care Centre, where Dr. Priyanka Goswami excels in providing exceptional dental care. Her meticulous approach and extensive expertise make every procedure seamless.",
     rating: 5,
     avatar: "/images/patient-06.png",
   },
@@ -107,16 +106,8 @@ export default function TestimonialSlider() {
                   </div>
                   <blockquote className="mb-6 text-xl italic text-gray-700">&apos;{testimonial.quote}&apos;</blockquote>
                   <div className="mt-auto flex items-center gap-4">
-                    <div className="relative h-12 w-12 overflow-hidden rounded-full">
-                      <Image
-                        src={testimonial.avatar || "/placeholder.svg"}
-                        alt={testimonial.name}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
                     <div>
-                      <div className="font-medium">{testimonial.name}</div>
+                      <div className="font-medium flex items-center gap-1"><UserCircle2/> {testimonial.name}</div>
                       <div className="text-sm text-blue-600">{testimonial.service}</div>
                       <div className="mt-1 flex">
                         {[...Array(5)].map((_, i) => (

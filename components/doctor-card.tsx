@@ -20,7 +20,7 @@ export default function DoctorCard({
 }: DoctorCardProps) {
   if (featured) {
     return (
-      <Card className="overflow-hidden">
+      <Card className="overflow-hidden hover:shadow-xl transition-all">
         <div className="grid md:grid-cols-2">
           <div className="relative h-[500px] md:h-auto">
             <Image

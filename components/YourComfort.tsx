@@ -39,9 +39,6 @@ const YourComfort = () => {
               />
               {/* Text Content */}
               <div className="relative z-10 p-6 pt-40 text-white">
-                {/* <div className=" w-fit"> */}
-                {/* <value.icon className="h-9 w-9 font-bold mb-2" /> */}
-                {/* </div> */}
                 <p className=" w-[70%] text-gray-100">{value.description}</p>
               </div>
             </motion.div>

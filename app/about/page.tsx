@@ -24,6 +24,69 @@ export const metadata: Metadata = {
   title: "About Us",
 };
 
+const remainingDoctors = [
+  {
+    name: "Dr. Rajkumari Eliza Devi",
+    role: "MDS Oral Medicine and Radiology",
+    education: [
+      "BDS (Kalinga Institute of Dental Sciences, KIIT University)",
+      "MDS (Saraswati Dental College & Hospital, Ram Manohar Lohia Awadh University)",
+    ],
+    bio: "Dr. Rajkumari Eliza Devi is an expert in oral medicine and radiology, ensuring accurate diagnoses and effective treatment plans.",
+    image: "/images/docter.png",
+  },
+  {
+    name: "Dr. Tarun Mittal",
+    role: "MDS Periodontology",
+    education: [
+      "BDS (Sudha Rastogi Dental College, Pt. Bhagwad Dayal University, Rohtak)",
+      "MDS (Inderprastha Dental College & Hospital, CCU University)",
+    ],
+    bio: "Dr. Tarun Mittal is an expert in periodontology, ensuring patients receive the best care for their gum health.",
+    image: "/images/docter.png",
+  },
+  {
+    name: "Dr. Mayank Sharma",
+    role: "MDS Oral & Maxillofacial Surgery",
+    education: [
+      "BDS (Sudha Rastogi Dental College, MDU Rohtak)",
+      "MDS (ITS Dental College, CCS University)",
+    ],
+    bio: "Dr. Mayank Sharma specializes in oral and maxillofacial surgery, providing advanced surgical care for complex dental needs.",
+    image: "/images/docter.png",
+  },
+  {
+    name: "Dr. Pritam Mohanty",
+    role: "MDS Orthodontics and Dentofacial Orthopaedics, Platinum Invisalign Provider, Cleft Specialist",
+    education: [
+      "BDS (Kalinga Institute of Dental Sciences, KIIT University)",
+      "MDS (Saraswati Dental College & Hospital, Ram Manohar Lohia Awadh University)",
+    ],
+    bio: "Dr. Pritam Mohanty is a Platinum Invisalign Provider and cleft specialist, transforming smiles with advanced orthodontic care.",
+    image: "/images/docter.png",
+  },
+  {
+    name: "Dr. Debarghya Bhattacharya",
+    role: "MDS Prosthodontics",
+    education: [
+      "BDS (Inderprastha Dental College & Hospital, CCU University)",
+      "MDS (Inderprastha Dental College & Hospital, CCU University)",
+    ],
+    bio: "Dr. Debarghya Bhattacharya specializes in prosthodontics, restoring smiles with precision-crafted crowns, bridges, and dentures.",
+    image: "/images/docter.png",
+  },
+  {
+    name: "Dr. Subhabrata Lodh",
+    role: "Consultant Anaesthetist",
+    education: [
+      "MBBS (Medical College, Kolkata)",
+      "MD (Anaesthesiology, AIIMS New Delhi)",
+    ],
+    bio: "Dr. Subhabrata Lodh is an experienced consultant anaesthetist, ensuring patient safety and comfort during procedures.",
+    image: "/images/docter.png",
+  },
+];
+
 export default function AboutPage() {
   return (
     <main className="flex min-h-screen flex-col">
@@ -78,8 +141,8 @@ export default function AboutPage() {
                 profound - to provide advanced, evidence-based dentistry at an
                 affordable cost, ensuring that everyone can access quality
                 dental care without breaking the bank. We believe that a
-                pleasing dental experience shouldn&apos;t be a luxury but a right for
-                all.
+                pleasing dental experience shouldn&apos;t be a luxury but a
+                right for all.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
@@ -151,72 +214,16 @@ export default function AboutPage() {
             </div>
 
             {/* Remaining cards */}
-            <DoctorCard
-              name="Dr. Rohit Lal"
-              role="MDS Restorative Dentistry"
-              education={[
-                "BDS (ITS Dental College, CCU University)",
-                "MDS (MM College of Dental Sciences and Research Centre, MM University Maulana Ambala)",
-              ]}
-              bio="Dr. Rohit Lal specializes in restorative dentistry and is passionate about helping patients regain their confidence through a healthy smile."
-              image="/images/docter.png"
-              // image="/images/dr-rohit-lal.png"
-            />
-            <DoctorCard
-              name="Dr. Tarun Mittal"
-              role="MDS Periodontology and Implantology"
-              education={[
-                "BDS (Sudha Rastogi Dental College, Pt. Bhagwad Dayal University, Rohtak)",
-                "MDS (Inderprastha Dental College & Hospital, CCU University)",
-              ]}
-              bio="Dr. Tarun Mittal is an expert in periodontology and implantology, ensuring patients receive the best care for their gum health and dental implants."
-              image="/images/docter.png"
-              // image="/images/dr-tarun-mittal.png"
-            />
-            <DoctorCard
-              name="Dr. Amit Bhatia"
-              role="MDS Comprehensive Dental Care"
-              education={[
-                "BDS (Sudha Rastogi Dental College, MDU Rohtak)",
-                "MDS (IDST Institute of Dental College & Technology, CCU University)",
-              ]}
-              bio="Dr. Amit Bhatia is dedicated to providing comprehensive dental care with a focus on patient comfort and satisfaction."
-              image="/images/docter.png"
-              // image="/images/dr-amit-bhatia.png"
-            />
-            <DoctorCard
-              name="Dr. Parineeta"
-              role="MDS Pediatric Dentistry"
-              education={[
-                "BDS (Sudha Rastogi Dental College, Pt. Bhagwad Dayal University, Rohtak)",
-                "MDS (Inderprastha Dental College & Hospital, CCU University)",
-              ]}
-              bio="Dr. Parineeta is known for her gentle approach and expertise in pediatric dentistry, making dental visits enjoyable for children."
-              image="/images/docter.png"
-              // image="/images/dr-parineeta.png"
-            />
-            <DoctorCard
-              name="Dr. Debarghya Bhattacharya"
-              role="MDS Prosthodontics and Crown & Bridge"
-              education={[
-                "BDS (Inderprastha Dental College & Hospital, CCU University)",
-                "MDS (Inderprastha Dental College & Hospital, CCU University)",
-              ]}
-              bio="Dr. Debarghya Bhattacharya specializes in prosthodontics, helping patients restore their smiles with precision-crafted crowns, bridges, and dentures."
-              image="/images/docter.png"
-              // image="/images/dr-debarghya-bhattacharya.png"
-            />
-            <DoctorCard
-              name="Dr. Rajkumari Eliza Devi"
-              role="MDS Oral Medicine and Radiology"
-              education={[
-                "BDS (Kalinga Institute of Dental Sciences, KIIT University)",
-                "MDS (Saraswati Dental College & Hospital, Ram Manohar Lohia Awadh University)",
-              ]}
-              bio="Dr. Rajkumari Eliza Devi is an expert in oral medicine and radiology, ensuring accurate diagnoses and effective treatment plans."
-              image="/images/docter.png"
-              // image="/images/dr-rajkumari-eliza-devi.png"
-            />
+            {remainingDoctors.map((doctor) => (
+              <DoctorCard
+                key={doctor.name}
+                name={doctor.name}
+                role={doctor.role}
+                education={doctor.education}
+                bio={doctor.bio}
+                image={doctor.image}
+              />
+            ))}
           </div>
         </motion.div>
       </section>
@@ -266,11 +273,12 @@ export default function AboutPage() {
 
       {/* Sets us Apart */}
       <section className="bg-gray-50 py-16">
-      <motion.div
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-           className="max-w-screen-2xl px-5 md:px-10 mx-auto">
+          className="max-w-screen-2xl px-5 md:px-10 mx-auto"
+        >
           <div className="mb-12 text-center">
             <h2 className="mb-2 text-3xl font-bold tracking-tight text-[#1a2e4c] sm:text-5xl">
               What Sets Us Apart
@@ -334,19 +342,20 @@ export default function AboutPage() {
 
       {/* Visit Us */}
       <section className="py-16">
-      <motion.div
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-screen-2xl px-5 md:px-10 mx-auto">
+          className="max-w-screen-2xl px-5 md:px-10 mx-auto"
+        >
           <div className="grid gap-8 md:grid-cols-2">
             <div className="flex flex-col justify-center">
               <h2 className="mb-4 text-3xl font-bold tracking-tight text-[#1a2e4c] sm:text-5xl">
                 Visit Us
               </h2>
               <p className="mb-6 text-gray-600 text-lg">
-                We&apos;re conveniently located in the Market 2 area of Chittaranjan
-                Park. Plenty of free parking available.
+                We&apos;re conveniently located in the Market 2 area of
+                Chittaranjan Park. Plenty of free parking available.
               </p>
 
               <div className="mb-6 space-y-4">
@@ -403,407 +412,3 @@ export default function AboutPage() {
     </main>
   );
 }
-
-// const values = [
-//   {
-//     title: "Patient-Centered Care",
-//     description:
-//       "We prioritize your comfort and well-being, ensuring every visit is a positive experience tailored to your needs.",
-//     icon: Heart,
-//   },
-//   {
-//     title: "Advanced Technology",
-//     description:
-//       "We invest in the latest dental technologies to provide precise, efficient, and pain-free treatments.",
-//     icon: GraduationCap,
-//   },
-//   {
-//     title: "Community Commitment",
-//     description:
-//       "We are dedicated to improving oral health in our community through education, outreach, and accessible care.",
-//     icon: Award,
-//   },
-//   {
-//     title: "Trust and Transparency",
-//     description:
-//       "We build trust through honest communication and ethical practices, always putting your best interests first.",
-//     icon: Shield,
-//   },
-// ];
-
-// const team = [
-//   {
-//     name: "Dr Rajkumari Eliza Devi",
-//     role: "MDS Oral Medicine and Radiology",
-//     bio: "Dr. Johnson has over 15 years of experience in general and cosmetic dentistry. She founded Bright Smile Dental with a vision of patient-centered care.",
-//     image: "/images/docter.png",
-//   },
-//   {
-//     name: "Dr Tarun Mittal",
-//     role: "MDS Periodontology",
-//     bio: "Specializing in orthodontics, Dr. Chen helps patients achieve perfectly aligned smiles using the latest techniques and technologies.",
-//     image: "/images/docter.png",
-//   },
-//   {
-//     name: "Dr Pritam Mohanty",
-//     role: "MDS Orthodontics and Dentofacial Orthopaedics, Invisalign Provider, Cleft Specialist",
-//     bio: "With a gentle approach and special training in pediatric dentistry, Dr. Rodriguez makes dental visits enjoyable for our youngest patients.",
-//     image: "/images/docter.png",
-//   },
-//   {
-//     name: "Dr Debarghya Bhattacharya ",
-//     role: "MDS Prosthodontics ",
-//     bio: "Dr. Johnson has over 15 years of experience in general and cosmetic dentistry. She founded Bright Smile Dental with a vision of patient-centered care.",
-//     image: "/images/docter.png",
-//   },
-//   {
-//     name: "Dr Priyanka Goswami",
-//     role: "MDS Pedodontics and Preventive Dentistry",
-//     bio: "Specializing in orthodontics, Dr. Chen helps patients achieve perfectly aligned smiles using the latest techniques and technologies.",
-//     image: "/images/docter.png",
-//   },
-//   {
-//     name: "Dr Mayank Sharma",
-//     role: "MDS Periodontology",
-//     bio: "With a gentle approach and special training in pediatric dentistry, Dr. Rodriguez makes dental visits enjoyable for our youngest patients.",
-//     image: "/images/docter.png",
-//   },
-//   {
-//     name: "Dr Shivani",
-//     role: "MDS Endodontics ",
-//     bio: "With a gentle approach and special training in pediatric dentistry, Dr. Rodriguez makes dental visits enjoyable for our youngest patients.",
-//     image: "/images/docter.png",
-//   },
-//   {
-//     name: "Dr Subhabrata Lodh",
-//     role: "Consultant Anaesthetist ",
-//     bio: "With a gentle approach and special training in pediatric dentistry, Dr. Rodriguez makes dental visits enjoyable for our youngest patients.",
-//     image: "/images/docter.png",
-//   },
-// ];
-
-// import Image from "next/image"
-// import Link from "next/link"
-// import { Button } from "@/components/ui/button"
-// import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-// import { Award, Clock, Coffee, Heart, MapPin, Music, Shield, Smile, Sparkles, Star, Wifi, Zap } from "lucide-react"
-// import DoctorCard from "@/components/doctor-card"
-// import ValueCard from "@/components/value-card"
-// import TestimonialCarousel from "@/components/testimonial-carousel"
-
-// export default function AboutPage() {
-//   return (
-//     <main className="flex min-h-screen flex-col">
-//       {/* Hero Section */}
-//       <section className="relative h-[500px] w-full overflow-hidden">
-//         <Image
-//           src="/images/about-hero.jpg"
-//           alt="Dental & Aesthetic Care Centre"
-//           fill
-//           className="object-cover brightness-[0.85]"
-//           priority
-//         />
-//         <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-r from-black/60 to-black/40">
-//           <div className="max-w-screen-2xl px-5 md:px-10 mx-auto text-center">
-//             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
-//               About Dental & Aesthetic Care Centre
-//             </h1>
-//             <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
-//               Your friendly neighbourhood dental clinic in Chittaranjan Park, South Delhi
-//             </p>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Introduction Section */}
-//       <section className="bg-white py-16">
-//         <div className="max-w-screen-2xl px-5 md:px-10 mx-auto">
-//           <div className="grid gap-12 md:grid-cols-2">
-//             <div className="flex flex-col justify-center">
-//               <div className="mb-4 inline-flex rounded-full bg-blue-100 p-2 text-blue-600">
-//                 <Smile className="h-6 w-6" />
-//               </div>
-//               <h2 className="mb-4 text-3xl font-bold tracking-tight text-[#1a2e4c] sm:text-4xl">
-//                 Welcome to Dental & Aesthetic Care Centre
-//               </h2>
-//               <p className="mb-4 text-gray-600">
-//                 Established in 2021, amidst the vibrant ambiance of this bustling locality known for its delectable food
-//                 joints and welcoming community, our clinic stands as a beacon of modern dentistry with a humble touch.
-//               </p>
-//               <p className="mb-6 text-gray-600">
-//                 At Dental & Aesthetic Care Centre, our mission is simple yet profound - to provide advanced,
-//                 evidence-based dentistry at an affordable cost, ensuring that everyone can access quality dental care
-//                 without breaking the bank. We believe that a pleasing dental experience shouldn&apos;t be a luxury but a
-//                 right for all.
-//               </p>
-//               <div className="flex flex-wrap gap-4">
-//                 <Button asChild className="bg-[#1a2e4c] hover:bg-[#2a3e5c]">
-//                   <Link href="/contact">Book an Appointment</Link>
-//                 </Button>
-//                 <Button variant="outline" asChild>
-//                   <Link href="/services">Our Services</Link>
-//                 </Button>
-//               </div>
-//             </div>
-//             <div className="relative h-[400px] overflow-hidden rounded-lg shadow-lg">
-//               <Image
-//                 src="/images/clinic-interior.jpg"
-//                 alt="Dental & Aesthetic Care Centre Interior"
-//                 fill
-//                 className="object-cover"
-//               />
-//             </div>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Our Motto Section */}
-// <section className="bg-[#1a2e4c] py-16 text-white">
-//   <div className="max-w-screen-2xl px-5 md:px-10 mx-auto text-center">
-//     <h2 className="mb-8 text-3xl font-bold tracking-tight sm:text-4xl">Our Motto</h2>
-//     <div className="flex flex-col items-center justify-center gap-12 md:flex-row">
-//       <div className="flex flex-col items-center p-6">
-//         <div className="mb-4 rounded-full border-2 border-white/20 p-4">
-//           <Zap className="h-8 w-8" />
-//         </div>
-//         <h3 className="mb-2 text-2xl font-bold">PRECISE</h3>
-//       </div>
-//       <div className="hidden h-20 border-r border-white/20 md:block"></div>
-//       <div className="flex flex-col items-center p-6">
-//         <div className="mb-4 rounded-full border-2 border-white/20 p-4">
-//           <Sparkles className="h-8 w-8" />
-//         </div>
-//         <h3 className="mb-2 text-2xl font-bold">METICULOUS</h3>
-//       </div>
-//       <div className="hidden h-20 border-r border-white/20 md:block"></div>
-//       <div className="flex flex-col items-center p-6">
-//         <div className="mb-4 rounded-full border-2 border-white/20 p-4">
-//           <Heart className="h-8 w-8" />
-//         </div>
-//         <h3 className="mb-2 text-2xl font-bold">HUMANE</h3>
-//       </div>
-//     </div>
-//     <p className="mx-auto mt-8 max-w-3xl text-lg text-white/90">
-//       At Dental & Aesthetic Care Centre, we take immense pride in fostering lifelong relationships with our
-//       patients, based on positive experiences and trust. Our motto encapsulates our approach to dentistry - where
-//       precision meets compassion, and attention to detail ensures your utmost comfort and satisfaction.
-//     </p>
-//   </div>
-// </section>
-
-//       {/* What Sets Us Apart */}
-//       <section className="bg-gray-50 py-16">
-//         <div className="max-w-screen-2xl px-5 md:px-10 mx-auto">
-//           <div className="mb-12 text-center">
-//             <h2 className="mb-2 text-3xl font-bold tracking-tight text-[#1a2e4c] sm:text-4xl">What Sets Us Apart</h2>
-//             <p className="mx-auto max-w-2xl text-gray-600">
-//               What sets us apart is not just our commitment to affordable excellence but also the thoughtful amenities
-//               we offer to make your visit comfortable and enjoyable for all, including children.
-//             </p>
-//           </div>
-
-//           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-//             <ValueCard
-//               icon={<Coffee className="h-6 w-6" />}
-//               title="Snacks & Beverage Station"
-//               description="Enjoy complimentary refreshments during your visit to make your experience more pleasant."
-//             />
-//             <ValueCard
-//               icon={<Music className="h-6 w-6" />}
-//               title="Curated Music Playlists"
-//               description="Relax with our carefully selected music that helps create a calming atmosphere."
-//             />
-//             <ValueCard
-//               icon={<Wifi className="h-6 w-6" />}
-//               title="Wi-Fi Connectivity"
-//               description="Stay connected with our high-speed Wi-Fi throughout your appointment."
-//             />
-//             <ValueCard
-//               icon={<Shield className="h-6 w-6" />}
-//               title="Transparent Pricing"
-//               description="No hidden fees or surprises - we believe in complete transparency with our patients."
-//             />
-//             <ValueCard
-//               icon={<Award className="h-6 w-6" />}
-//               title="Unparalleled Warranty"
-//               description="We stand behind our work with comprehensive warranty options for your peace of mind."
-//             />
-//             <ValueCard
-//               icon={<Star className="h-6 w-6" />}
-//               title="LIFETIME FREE Cleaning"
-//               description="Members enjoy lifetime free cleaning and polishing services to maintain optimal oral health."
-//             />
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Meet The Doctors */}
-// <section className="py-16">
-//   <div className="max-w-screen-2xl px-5 md:px-10 mx-auto">
-//     <div className="mb-12 text-center">
-//       <h2 className="mb-2 text-3xl font-bold tracking-tight text-[#1a2e4c] sm:text-4xl">Meet Our Doctors</h2>
-//       <p className="mx-auto max-w-2xl text-gray-600">
-//         Our team of highly qualified dental professionals is dedicated to providing you with exceptional care.
-//       </p>
-//     </div>
-
-//     <Tabs defaultValue="founder" className="w-full">
-//       <div className="mb-8 flex justify-center">
-//         <TabsList>
-//           <TabsTrigger value="founder">Founder</TabsTrigger>
-//           <TabsTrigger value="consultants">Consultants</TabsTrigger>
-//         </TabsList>
-//       </div>
-
-//       <TabsContent value="founder" className="mt-0">
-//         <div className="flex justify-center">
-//           <div className="max-w-3xl">
-//             <DoctorCard
-//               name="Dr. Priyanka Goswami"
-//               role="Founder"
-//               education={[
-//                 "BDS (Kalinga Institute of Dental Sciences, KIIT University)",
-//                 "MDS (Inderprastha Dental College & Hospital, CCU University)",
-//               ]}
-//               bio="Dr. Priyanka Goswami is motivated by the profound impact she can make on her patients&apos; lives through dentistry. Inspired by their smiles and gratitude, she strives to become a better dentist every day, believing in the transformative power of oral health care to enhance well-being and confidence. Her dedication to excellence and genuine care for her patients drive her relentless pursuit of improving lives through dentistry."
-//               image="/dr-priyanka.png"
-//               featured={true}
-//             />
-//           </div>
-//         </div>
-//       </TabsContent>
-
-//       <TabsContent value="consultants" className="mt-0">
-//         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-//           <DoctorCard
-//             name="Dr. Rohit Lal"
-//             education={[
-//               "BDS (ITS Dental College, CCU University)",
-//               "MDS (MM College of Dental Sciences and Research Centre, MM University Maulana Ambala)",
-//             ]}
-//             image="/images/doctor-1.jpg"
-//           />
-//           <DoctorCard
-//             name="Dr. Tarun Mittal"
-//             education={[
-//               "BDS (Sudha Rastogi Dental College, Pt. Bhagwad Dayal University, Rohtak)",
-//               "MDS (Inderprastha Dental College & Hospital, CCU University)",
-//             ]}
-//             image="/images/doctor-2.jpg"
-//           />
-//           <DoctorCard
-//             name="Dr. Amit Bhatia"
-//             education={[
-//               "BDS (Sudha Rastogi Dental College, MDU Rohtak)",
-//               "MDS (IDST Institute of Dental College & Technology, CCU University)",
-//             ]}
-//             image="/images/doctor-3.jpg"
-//           />
-//           <DoctorCard
-//             name="Dr. Parineeta"
-//             education={[
-//               "BDS (Sudha Rastogi Dental College, Pt. Bhagwad Dayal University, Rohtak)",
-//               "MDS (Inderprastha Dental College & Hospital, CCU University)",
-//             ]}
-//             image="/images/doctor-4.jpg"
-//           />
-//           <DoctorCard
-//             name="Dr. Debarghya Bhattacharya"
-//             education={[
-//               "BDS (Inderprastha Dental College & Hospital, CCU University)",
-//               "MDS (Inderprastha Dental College & Hospital, CCU University)",
-//             ]}
-//             image="/images/doctor-5.jpg"
-//           />
-//           <DoctorCard
-//             name="Dr. Rajkumari Eliza Devi"
-//             education={[
-//               "BDS (Kalinga Institute of Dental Sciences, KIIT University)",
-//               "MDS (Saraswati Dental College & Hospital, Ram Manohar Lohia Awadh University)",
-//             ]}
-//             image="/images/doctor-6.jpg"
-//           />
-//         </div>
-//       </TabsContent>
-//     </Tabs>
-//   </div>
-// </section>
-
-//       {/* Testimonials */}
-//       <section className="bg-gray-50 py-16">
-//         <div className="max-w-screen-2xl px-5 md:px-10 mx-auto">
-//           <div className="mb-12 text-center">
-//             <h2 className="mb-2 text-3xl font-bold tracking-tight text-[#1a2e4c] sm:text-4xl">What Our Patients Say</h2>
-//             <p className="mx-auto max-w-2xl text-gray-600">
-//               Don&apos;t just take our word for it - hear from our satisfied patients
-//             </p>
-//           </div>
-//           <TestimonialCarousel />
-//         </div>
-//       </section>
-
-// {/* Visit Us */}
-// <section className="py-16">
-//   <div className="max-w-screen-2xl px-5 md:px-10 mx-auto">
-//     <div className="grid gap-8 md:grid-cols-2">
-//       <div className="flex flex-col justify-center">
-//         <div className="mb-4 inline-flex rounded-full bg-blue-100 p-2 text-blue-600">
-//           <MapPin className="h-6 w-6" />
-//         </div>
-//         <h2 className="mb-4 text-3xl font-bold tracking-tight text-[#1a2e4c] sm:text-4xl">Visit Us</h2>
-//         <p className="mb-6 text-gray-600">
-//           We&apos;re conveniently located in the Market 2 area of Chittaranjan Park. Plenty of free parking available.
-//         </p>
-
-//         <div className="mb-6 space-y-4">
-//           <div className="flex items-start gap-3">
-//             <MapPin className="mt-1 h-5 w-5 flex-shrink-0 text-blue-600" />
-//             <div>
-//               <h3 className="font-medium">Location</h3>
-//               <p className="text-gray-600">E-792 Chittaranjan Park, New Delhi</p>
-//             </div>
-//           </div>
-//           <div className="flex items-start gap-3">
-//             <Clock className="mt-1 h-5 w-5 flex-shrink-0 text-blue-600" />
-//             <div>
-//               <h3 className="font-medium">Hours</h3>
-//               <p className="text-gray-600">Mon – Sat: 11.00 AM – 8.00 PM</p>
-//               <p className="text-gray-600">Sun: On prior appointment basis only</p>
-//             </div>
-//           </div>
-//         </div>
-
-//         <div className="flex flex-wrap gap-4">
-//           <Button asChild className="bg-[#1a2e4c] hover:bg-[#2a3e5c]">
-//             <Link href="https://maps.google.com/?q=E-792+Chittaranjan+Park,+New+Delhi" target="_blank">
-//               Get Directions
-//             </Link>
-//           </Button>
-//           <Button variant="outline" asChild>
-//             <Link href="/contact">Contact Us</Link>
-//           </Button>
-//         </div>
-//       </div>
-//       <div className="relative h-[400px] overflow-hidden rounded-lg shadow-lg">
-//         <Image src="/images/clinic-map.jpg" alt="Clinic Location Map" fill className="object-cover" />
-//       </div>
-//     </div>
-//   </div>
-// </section>
-
-//       {/* CTA Section */}
-//       <section className="bg-gradient-to-r from-blue-600 to-teal-500 py-16 text-white">
-//         <div className="max-w-screen-2xl px-5 md:px-10 mx-auto text-center">
-//           <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">Ready to Experience Our Care?</h2>
-//           <p className="mx-auto mb-8 max-w-2xl text-white/90">
-//             Schedule your appointment today and let us be your partners in achieving optimal dental health, one smile at
-//             a time.
-//           </p>
-//           <Button size="lg" variant="secondary" asChild>
-//             <Link href="/contact">Book Your Appointment</Link>
-//           </Button>
-//         </div>
-//       </section>
-//     </main>
-//   )
-// }

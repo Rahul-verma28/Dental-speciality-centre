@@ -560,10 +560,7 @@ export default function GalleryPage() {
                 </h2>
               </div>
               <blockquote className="mb-6 text-lg italic text-gray-500">
-                &apos;I&apos;ve been terrified of dentists my entire life, but
-                Dr. Johnson and her team completely changed that. They were
-                patient, gentle, and took the time to explain everything. Now I
-                actually look forward to my dental appointments!&apos;
+                I had an excellent experience with Dr. Priyanka. From the moment I walked in, the staff was friendly and welcoming. Dr. Priyanka was very professional and took the time to explain the procedures thoroughly, making sure I felt comfortable throughout. The clinic was clean and well-equipped, which further boosted my confidence in their services. The dental work was done efficiently and with minimal discomfort. I highly recommend Dr. Priyanka and this dental practice for their expertise, care, and exceptional customer service
               </blockquote>
               <div className="flex items-center gap-4">
                 <div className="relative h-12 w-12 overflow-hidden rounded-full">

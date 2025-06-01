@@ -60,7 +60,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold">Phone</h3>
-                      <p className="mt-1 block text-gray-200">(+91) 7978779649</p>
+                      <p className="mt-1 block text-gray-200">(+91) 1135619736</p>
                     </div>
                   </div>
 
@@ -197,7 +197,7 @@ export default function ContactPage() {
         className="fixed bottom-6 right-6 z-50 flex items-center gap-3"
       >
         <div className="hidden rounded-full bg-[#1a2e4c] px-6 py-3 text-white shadow-lg md:block">
-          <span className="text-lg font-medium">(+91) 7978779649</span>
+          <span className="text-lg font-medium">(+91) 1135619736</span>
         </div>
         <a
           href="tel:7978779649"

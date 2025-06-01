@@ -289,13 +289,36 @@ const AppointmentForm = () => {
                     <SelectValue placeholder="Select a time" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="morning">
-                      Morning (8AM - 12PM)
+                    <SelectItem value="10:30 AM - 11:00 AM">
+                      10:30 AM - 11:00 AM
                     </SelectItem>
-                    <SelectItem value="afternoon">
-                      Afternoon (12PM - 4PM)
+                    <SelectItem value="11:00 AM - 11:30 AM">
+                      11:00 AM - 11:30 AM
                     </SelectItem>
-                    <SelectItem value="evening">Evening (4PM - 6PM)</SelectItem>
+                    <SelectItem value="11:30 AM - 12:00 PM">
+                      11:30 AM - 12:00 PM
+                    </SelectItem>
+                    <SelectItem value="12:00 PM - 12:30 PM">
+                      12:00 PM - 12:30 PM
+                    </SelectItem>
+                    <SelectItem value="12:30 PM - 1:00 PM">
+                      12:30 PM - 1:00 PM
+                    </SelectItem>
+                    <SelectItem value="5:00 PM - 5:30 PM">
+                      5:00 PM - 5:30 PM
+                    </SelectItem>
+                    <SelectItem value="5:30 PM - 6:00 PM">
+                      5:30 PM - 6:00 PM
+                    </SelectItem>
+                    <SelectItem value="6:00 PM - 6:30 PM">
+                      6:00 PM - 6:30 PM
+                    </SelectItem>
+                    <SelectItem value="6:30 PM - 7:00 PM">
+                      6:30 PM - 7:00 PM
+                    </SelectItem>
+                    <SelectItem value="7:00 PM - 7:30 PM">
+                      7:00 PM - 7:30 PM
+                    </SelectItem>
                   </SelectContent>
                 </Select>
                 {errors.preferredTime && (

@@ -3,167 +3,158 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Terms and Conditions",
-}
+};
 
 export default function TermsAndConditions() {
   return (
     <main className="flex min-h-screen flex-col bg-gray-50">
-      <section className="max-w-screen-2xl p-5 md:p-10 mx-auto">
+      <section className="max-w-screen-xl px-5 md:px-10 mx-auto py-10">
         {/* Header Section */}
         <div className="mb-12 text-center">
           <h1 className="text-4xl font-bold tracking-tight text-blue-900 sm:text-5xl">
-            Terms and Conditions
+            Terms & Conditions
           </h1>
           <p className="mt-4 text-lg text-gray-600">
-            Welcome to Dental & Aesthetic Care Centre. Please read these terms and
-            conditions carefully before using our website or services.
+            At Dental & Aesthetic Care Centre, we are committed to protecting
+            your privacy and ensuring the security of your personal information.
           </p>
         </div>
 
         {/* Content Section */}
-        <div className="bg-white rounded-lg shadow-lg p-8 space-y-10">
-          {/* Agreement Section */}
-          <section>
-            <h2 className="text-2xl font-semibold text-blue-800 mb-3">
-              Agreement
-            </h2>
-            <p className="text-gray-700">
-              By accessing or using our website and services, you agree to be
-              bound by these Terms and Conditions, along with our Privacy
-              Policy. If you do not agree to these terms, please refrain from
-              using our services.
-            </p>
-          </section>
+        <div className="">
+          <p className="mb-6">
+            This Privacy Policy describes how Dental & Aesthetic Care Centre
+            (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) collects, uses,
+            and discloses information, including personal information, that we
+            may obtain through our website ([website URL]) and any related
+            services (collectively, the &quot;Services&quot;).
+          </p>
 
-          {/* Definitions Section */}
-          <section>
-            <h2 className="text-2xl font-semibold text-blue-800 mb-3">
-              Definitions
-            </h2>
-            <ul className="list-disc pl-6 space-y-1 text-gray-700">
+          <section className="mb-6">
+            <h3 className="text-lg font-semibold mb-2">
+              1. Information We Collect
+            </h3>
+            <ul className="list-disc pl-5 space-y-1">
               <li>
-                <strong>&apos;You&apos; or &apos;User&apos;:</strong> Refers to the individual using
-                our website or services.
+                <strong>Personal Information:</strong> Information that can be
+                used to identify you, such as your name, contact information,
+                date of birth, and medical history.
               </li>
               <li>
-                <strong>&apos;Dental & Aesthetic Care Centre&apos;:</strong> Refers to our
-                clinic and its affiliates.
+                <strong>Health Information:</strong> Information related to your
+                dental health, treatments, and services received.
               </li>
               <li>
-                <strong>&apos;Services&apos;:</strong> Refers to the dental care,
-                consultations, and other offerings provided by our clinic.
+                <strong>Device Information:</strong> Information about your
+                device, such as IP address, browser type, and operating system.
               </li>
               <li>
-                <strong>&apos;Content&apos;:</strong> Refers to all materials, services,
-                and information available on our website.
+                <strong>Usage Information:</strong> Information about how you
+                interact with our website and Services, such as pages visited
+                and actions taken.
               </li>
             </ul>
           </section>
 
-          {/* Use of Services */}
-          <section>
-            <h2 className="text-2xl font-semibold text-blue-800 mb-3">
-              Use of Services
-            </h2>
-            <p className="text-gray-700">
-              Our services are intended for personal and non-commercial use. You
-              agree not to:
-            </p>
-            <ul className="list-disc pl-6 mt-2 space-y-1 text-gray-700">
-              <li>Modify, copy, or distribute any content from our website.</li>
+          <section className="mb-6">
+            <h3 className="text-lg font-semibold mb-2">
+              2. How We Use Your Information
+            </h3>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Providing and improving our Services.</li>
               <li>
-                Use our services for any unlawful or unauthorized purposes.
+                Communicating with you about appointments, treatments, and other
+                matters.
               </li>
               <li>
-                Interfere with the proper functioning of our website or
-                services.
+                Personalizing your experience and delivering relevant content.
+              </li>
+              <li>
+                Analyzing trends and statistics to enhance our website and
+                Services.
+              </li>
+              <li>
+                Complying with legal obligations and protecting our rights.
               </li>
             </ul>
           </section>
 
-          {/* Payment Terms */}
-          <section>
-            <h2 className="text-2xl font-semibold text-blue-800 mb-3">
-              Payment Terms
-            </h2>
-            <p className="text-gray-700">
-              If you book a service that requires payment, you agree to provide
-              accurate billing information. Payments can be made via credit
-              card, debit card, or other accepted methods. All payments are
-              subject to the terms and conditions of the payment provider.
+          <section className="mb-6">
+            <h3 className="text-lg font-semibold mb-2">
+              3. Information Sharing
+            </h3>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>With your consent.</li>
+              <li>
+                With our service providers who assist us in operating our
+                website and providing our Services.
+              </li>
+              <li>
+                To comply with legal requirements or respond to legal requests.
+              </li>
+              <li>
+                In connection with a merger, acquisition, or other business
+                transaction.
+              </li>
+            </ul>
+          </section>
+
+          <section className="mb-6">
+            <h3 className="text-lg font-semibold mb-2">4. Data Security</h3>
+            <p>
+              We take reasonable measures to protect the security of your
+              information, but please be aware that no method of transmission
+              over the internet or electronic storage is completely secure.
             </p>
           </section>
 
-          {/* Limitation of Liability */}
-          <section>
-            <h2 className="text-2xl font-semibold text-blue-800 mb-3">
-              Limitation of Liability
-            </h2>
-            <p className="text-gray-700">
-              Dental & Aesthetic Care Centre is not liable for any indirect,
-              incidental, or consequential damages arising from the use of our
-              website or services. Our liability is limited to the amount paid
-              by you for the specific service in question.
+          <section className="mb-6">
+            <h3 className="text-lg font-semibold mb-2">5. Your Choices</h3>
+            <p>
+              You have certain choices regarding the collection and use of your
+              information, including opting out of certain communications and
+              cookies. Please refer to our Cookie Policy for more information.
             </p>
           </section>
 
-          {/* Termination */}
-          <section>
-            <h2 className="text-2xl font-semibold text-blue-800 mb-3">
-              Termination
-            </h2>
-            <p className="text-gray-700">
-              We reserve the right to terminate or suspend your access to our
-              services at any time, without notice, if we determine that you
-              have violated these Terms and Conditions.
+          <section className="mb-6">
+            <h3 className="text-lg font-semibold mb-2">
+              6. Children&apos;s Privacy
+            </h3>
+            <p>
+              Our website and Services are not directed to children under the
+              age of 13, and we do not knowingly collect personal information
+              from children.
             </p>
           </section>
 
-          {/* Privacy Policy */}
-          <section>
-            <h2 className="text-2xl font-semibold text-blue-800 mb-3">
-              Privacy Policy
-            </h2>
-            <p className="text-gray-700">
-              Your use of our services is also governed by our{" "}
-              <a
-                href="/privacy-policy"
-                className="text-blue-600 underline"
-              >
-                Privacy Policy
-              </a>
-              . Please review it to understand how we collect, use, and protect
-              your personal information.
+          <section className="mb-6">
+            <h3 className="text-lg font-semibold mb-2">
+              7. Changes to This Privacy Policy
+            </h3>
+            <p>
+              We may update this Privacy Policy from time to time, and any
+              changes will be effective when posted. We encourage you to review
+              this page periodically for the latest information.
             </p>
           </section>
 
-          {/* Indemnity */}
           <section>
-            <h2 className="text-2xl font-semibold text-blue-800 mb-3">
-              Indemnity
-            </h2>
-            <p className="text-gray-700">
-              You agree to indemnify and hold Dental & Aesthetic Care Centre harmless
-              from any claims, damages, or expenses arising from your use of our
-              website or services, or your violation of these Terms and
-              Conditions.
+            <h3 className="text-lg font-semibold mb-2">8. Contact Us</h3>
+            <p>
+              If you have any questions or concerns about our Privacy Policy,
+              please contact us at [contact email or phone number].
             </p>
           </section>
+          <h2 className="mt-8 text-2xl font-bold">Updates to This Policy</h2>
+          <p className="py-4 text-gray-700">
+            We may update this Privacy Policy from time to time to reflect
+            changes in our practices or legal requirements. We encourage you to
+            review this page periodically to stay informed about how we protect
+            your information.
+          </p>
 
-          {/* Updates */}
-          <section>
-            <h2 className="text-2xl font-semibold text-blue-800 mb-3">
-              Updates to These Terms
-            </h2>
-            <p className="text-gray-700">
-              We may update these Terms and Conditions from time to time. We
-              encourage you to review this page periodically to stay informed
-              about any changes.
-            </p>
-            <p className="text-sm text-gray-500 mt-2">
-              Last updated: April 16, 2025
-            </p>
-          </section>
+          <p className="text-gray-500">Last Updated: April 16, 2025</p>
         </div>
       </section>
     </main>

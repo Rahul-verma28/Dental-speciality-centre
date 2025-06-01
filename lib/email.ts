@@ -1,14 +1,20 @@
-import nodemailer from "nodemailer"
+import nodemailer from "nodemailer";
 
 interface SendContactEmailParams {
-  email: string
-  firstName: string
-  lastName: string
-  phone: string
-  message: string
+  email: string;
+  firstName: string;
+  lastName: string;
+  phone: string;
+  message: string;
 }
 
-export const sendContactEmail = async ({ email, firstName, lastName, phone, message }: SendContactEmailParams) => {
+export const sendContactEmail = async ({
+  email,
+  firstName,
+  lastName,
+  phone,
+  message,
+}: SendContactEmailParams) => {
   try {
     const transport = nodemailer.createTransport({
       host: process.env.EMAIL_HOST,
@@ -18,7 +24,7 @@ export const sendContactEmail = async ({ email, firstName, lastName, phone, mess
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
       },
-    })
+    });
 
     const mailOptions = {
       from: process.env.EMAIL_FROM || process.env.EMAIL_USER,
@@ -44,33 +50,33 @@ export const sendContactEmail = async ({ email, firstName, lastName, phone, mess
           <p>Best regards,<br>The Dental & Aesthetic Care Centre Team</p>
           
           <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e0e0e0; color: #666; font-size: 12px;">
-            <p>E-792 Chittaranjan Park, New Delhi<br>Phone: (+91) 7978779649</p>
+            <p>E-792 Chittaranjan Park, New Delhi<br>Phone: (+91) 1135619736</p>
           </div>
         </div>
       `,
-    }
+    };
 
-    const mailResponse = await transport.sendMail(mailOptions)
-    return mailResponse
+    const mailResponse = await transport.sendMail(mailOptions);
+    return mailResponse;
   } catch (error) {
     if (error instanceof Error) {
-      console.log(error.message)
-      throw new Error(error.message)
+      console.log(error.message);
+      throw new Error(error.message);
     } else {
-      console.log(String(error))
-      throw new Error(String(error))
+      console.log(String(error));
+      throw new Error(String(error));
     }
   }
-}
+};
 
 // Export the appointment email function as well
 interface SendAppointmentEmailParams {
-  email: string
-  firstName: string
-  lastName: string
-  preferredDate: string
-  preferredTime: string
-  phone: string
+  email: string;
+  firstName: string;
+  lastName: string;
+  preferredDate: string;
+  preferredTime: string;
+  phone: string;
 }
 
 export const sendAppointmentEmail = async ({
@@ -90,7 +96,7 @@ export const sendAppointmentEmail = async ({
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
       },
-    })
+    });
 
     // Format the date
     const formattedDate = new Date(preferredDate).toLocaleDateString("en-US", {
@@ -98,14 +104,7 @@ export const sendAppointmentEmail = async ({
       year: "numeric",
       month: "long",
       day: "numeric",
-    })
-
-    // Format the time slot
-    const timeSlot = {
-      morning: "Morning (8AM - 12PM)",
-      afternoon: "Afternoon (12PM - 4PM)",
-      evening: "Evening (4PM - 6PM)",
-    }[preferredTime]
+    });
 
     const mailOptions = {
       from: process.env.EMAIL_FROM || process.env.EMAIL_USER,
@@ -122,7 +121,7 @@ export const sendAppointmentEmail = async ({
           <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; margin: 20px 0;">
             <h3 style="color: #1a2e4c; margin-top: 0;">Appointment Details:</h3>
             <p><strong>Date:</strong> ${formattedDate}</p>
-            <p><strong>Time:</strong> ${timeSlot}</p>
+            <p><strong>Time:</strong> ${preferredTime}</p>
             <p><strong>Name:</strong> ${firstName} ${lastName}</p>
             <p><strong>Phone:</strong> ${phone}</p>
             <p><strong>Email:</strong> ${email}</p>
@@ -133,21 +132,21 @@ export const sendAppointmentEmail = async ({
           <p>Best regards,<br>The Dental & Aesthetic Care Centre Team</p>
           
           <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e0e0e0; color: #666; font-size: 12px;">
-            <p>E-792 Chittaranjan Park, New Delhi<br>Phone: (+91) 7978779649</p>
+            <p>E-792 Chittaranjan Park, New Delhi<br>Phone: (+91) 1135619736</p>
           </div>
         </div>
       `,
-    }
+    };
 
-    const mailResponse = await transport.sendMail(mailOptions)
-    return mailResponse
+    const mailResponse = await transport.sendMail(mailOptions);
+    return mailResponse;
   } catch (error) {
     if (error instanceof Error) {
-      console.log(error.message)
-      throw new Error(error.message)
+      console.log(error.message);
+      throw new Error(error.message);
     } else {
-      console.log(String(error))
-      throw new Error(String(error))
+      console.log(String(error));
+      throw new Error(String(error));
     }
   }
-}
+};
