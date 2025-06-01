@@ -22,9 +22,9 @@ export default function DoctorCard({
     return (
       <Card className="overflow-hidden hover:shadow-xl transition-all">
         <div className="grid md:grid-cols-2">
-          <div className="relative h-[500px] md:h-auto">
+          <div className="relative h-[700px]">
             <Image
-              src={image || "/placeholder.svg?height=400&width=300"}
+              src={image || "/doctors/docter.png"}
               alt={name}
               fill
               className="object-cover"
@@ -51,9 +51,9 @@ export default function DoctorCard({
 
   return (
     <Card className="overflow-hidden transition-all hover:shadow-xl">
-      <div className="relative h-[300px]">
+      <div className="relative h-[500px]">
         <Image
-          src={image || "/placeholder.svg?height=250&width=300"}
+          src={image || "/doctors/docter.png"}
           alt={name}
           fill
           className="object-cover"

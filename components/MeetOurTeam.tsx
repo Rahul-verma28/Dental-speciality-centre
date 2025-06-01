@@ -64,7 +64,7 @@ export default function MeetOurTeam() {
       <div className="max-w-screen-2xl p-5 md:px-10 mx-auto">
         <div className="mb-12 text-center">
           <h2 className="mb-3 text-3xl font-bold tracking-tight sm:text-5xl text-[#1a2e4c]">
-            Meet The Docters
+            Meet The Doctors
           </h2>
           <p className="mx-auto max-w-2xl text-gray-600 text-xl">
             Our experienced professionals are dedicated to providing you with

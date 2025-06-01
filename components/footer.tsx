@@ -23,19 +23,18 @@ export default function Footer() {
       >
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <Link href="/">
-              <div className="relative h-20 w-40">
+            <div className="relative h-30 w-30">
+              <Link href="/">
                 <Image
                   src="/logo.png"
                   alt="Dental Speciality cntre Logo"
                   fill
                   className="object-contain"
                 />
-              </div>
-              {/* <span className="text-xl font-bold text-white">Dental Speciality cntre</span> */}
-            </Link>
+              </Link>
+            </div>
             <p className="mb-4 text-gray-400">
-              Providing exceptional dental care with a gentle touch for over 15
+              Providing exceptional dental care with a gentle touch for over 10
               years.
             </p>
             <div className="flex gap-4">
@@ -161,9 +160,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
                 <MapPin className="mt-1 h-5 w-5 flex-shrink-0 text-blue-400" />
-                <span>
-                E-792 Chittaranjan Park, New Delhi
-                </span>
+                <span>E-792 Chittaranjan Park, New Delhi</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 flex-shrink-0 text-blue-400" />
@@ -189,8 +186,8 @@ export default function Footer() {
         <div className="max-w-screen-2xl px-5 md:px-10 mx-auto flex flex-col items-center justify-between gap-4 text-sm md:flex-row">
           <div>
             <p>
-              © {new Date().getFullYear()} Dental & Aesthetic Care Centre. All rights
-              reserved.
+              © {new Date().getFullYear()} Dental & Aesthetic Care Centre. All
+              rights reserved.
             </p>
           </div>
           <p>

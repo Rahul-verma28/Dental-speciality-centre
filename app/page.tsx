@@ -164,9 +164,9 @@ export default function Home() {
           className="max-w-screen-2xl px-5 md:px-10 mx-auto "
         >
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4 bg-linear-to-br from-gray-600 to-gray-950 rounded-2xl p-8 py-25">
-            <StatCounter end={15} suffix="+" label="Years Experience" />
-            <StatCounter end={10000} suffix="+" label="Happy Patients" />
-            <StatCounter end={25} suffix="+" label="Dental Experts" />
+            <StatCounter end={10} suffix="+" label="Years Experience" />
+            <StatCounter end={7000} suffix="+" label="Happy Patients" />
+            <StatCounter end={15} suffix="+" label="Dental Experts" />
             <StatCounter end={100} suffix="%" label="Satisfaction" />
           </div>
         </motion.div>

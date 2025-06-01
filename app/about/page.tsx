@@ -33,7 +33,7 @@ const remainingDoctors = [
       "MDS (Saraswati Dental College & Hospital, Ram Manohar Lohia Awadh University)",
     ],
     bio: "Dr. Rajkumari Eliza Devi is an expert in oral medicine and radiology, ensuring accurate diagnoses and effective treatment plans.",
-    image: "/images/docter.png",
+    image: "/doctors/Eliza.png",
   },
   {
     name: "Dr. Tarun Mittal",
@@ -43,7 +43,7 @@ const remainingDoctors = [
       "MDS (Inderprastha Dental College & Hospital, CCU University)",
     ],
     bio: "Dr. Tarun Mittal is an expert in periodontology, ensuring patients receive the best care for their gum health.",
-    image: "/images/docter.png",
+    image: "/doctors/Tarun.png",
   },
   {
     name: "Dr. Mayank Sharma",
@@ -53,7 +53,7 @@ const remainingDoctors = [
       "MDS (ITS Dental College, CCS University)",
     ],
     bio: "Dr. Mayank Sharma specializes in oral and maxillofacial surgery, providing advanced surgical care for complex dental needs.",
-    image: "/images/docter.png",
+    image: "/doctors/Mayank.png",
   },
   {
     name: "Dr. Pritam Mohanty",
@@ -63,7 +63,7 @@ const remainingDoctors = [
       "MDS (Saraswati Dental College & Hospital, Ram Manohar Lohia Awadh University)",
     ],
     bio: "Dr. Pritam Mohanty is a Platinum Invisalign Provider and cleft specialist, transforming smiles with advanced orthodontic care.",
-    image: "/images/docter.png",
+    image: "/doctors/Pritam.png",
   },
   {
     name: "Dr. Debarghya Bhattacharya",
@@ -73,7 +73,7 @@ const remainingDoctors = [
       "MDS (Inderprastha Dental College & Hospital, CCU University)",
     ],
     bio: "Dr. Debarghya Bhattacharya specializes in prosthodontics, restoring smiles with precision-crafted crowns, bridges, and dentures.",
-    image: "/images/docter.png",
+    image: "/doctors/docter.png",
   },
   {
     name: "Dr. Subhabrata Lodh",
@@ -83,7 +83,7 @@ const remainingDoctors = [
       "MD (Anaesthesiology, AIIMS New Delhi)",
     ],
     bio: "Dr. Subhabrata Lodh is an experienced consultant anaesthetist, ensuring patient safety and comfort during procedures.",
-    image: "/images/docter.png",
+    image: "/doctors/Subhabrata.png",
   },
 ];
 
@@ -189,7 +189,7 @@ export default function AboutPage() {
         >
           <div className="mb-12 text-center">
             <h2 className="mb-3 text-3xl font-bold tracking-tight sm:text-5xl text-[#1a2e4c]">
-              Meet The Docters
+              Meet The Doctors
             </h2>
             <p className="mx-auto max-w-2xl text-gray-600 text-xl">
               Our experienced professionals are dedicated to providing you with

@@ -44,7 +44,7 @@ export default function Header() {
     >
       <div className="max-w-screen-2xl px-5 md:px-10 mx-auto flex h-28 items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <div className="relative h-20 w-40">
+          <div className="relative h-28 w-40">
             <Image
               src="/logo.png"
               alt="Bright Smile Dental Logo"
