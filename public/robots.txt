@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Block admin pages if any
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /api/
+
+Sitemap: https://www.dentalspecialitycentre.in/sitemap.xml

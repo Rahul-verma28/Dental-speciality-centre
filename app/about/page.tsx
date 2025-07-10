@@ -21,7 +21,20 @@ import DoctorCard from "@/components/doctor-card";
 import ValueCard from "@/components/value-card";
 
 export const metadata: Metadata = {
-  title: "About Us",
+  title: "About Us - Expert Dental Team | Dental Speciality Center Delhi",
+  description:
+    "Meet our expert dental team led by Dr. Priyanka Goswami. MDS specialists in orthodontics, implants, and pediatric dentistry in Delhi.",
+  keywords:
+    "dental team delhi, dr priyanka goswami, dental specialists delhi, best dentists chittaranjan park",
+  openGraph: {
+    title: "About Dental Speciality Center - Expert Dental Team in Delhi",
+    description:
+      "Meet our expert dental team and learn about our mission to provide excellent dental care in Delhi.",
+    images: ["/images/gallery-01.jpeg"],
+  },
+  alternates: {
+    canonical: "https://www.dentalspecialitycentre.in/about",
+  },
 };
 
 const remainingDoctors = [

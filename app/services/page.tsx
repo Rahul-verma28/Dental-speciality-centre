@@ -21,7 +21,17 @@ import GeneralDentistry from "@/components/GeneralDentistry";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Dental Services - Dental Speciality Center",
+  description: "Comprehensive dental services in Delhi: dental implants, orthodontics, root canal, teeth whitening, pediatric dentistry. Book consultation today!",
+  keywords: "dental services delhi, dental implants delhi, orthodontics delhi, root canal delhi, teeth whitening delhi",
+  openGraph: {
+    title: "Dental Services in Delhi | Dental Speciality Center",
+    description: "Complete range of dental services including implants, orthodontics, and cosmetic dentistry in Delhi.",
+    images: ["/images/gallery-01.jpeg"],
+  },
+  alternates: {
+    canonical: "https://www.dentalspecialitycentre.in/services",
+  },
 }
 
 export default function ServicesPage() {

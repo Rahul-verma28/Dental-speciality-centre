@@ -12,6 +12,23 @@ import YourComfort from "@/components/YourComfort";
 import GeneralDentistry from "@/components/GeneralDentistry";
 import * as motion from "motion/react-client";
 
+// filepath: d:\RahulVerma\Development\Nextjs\dental-speciality-center\app\page.tsx
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: "Dental Speciality Center",
+  description: "Premier dental clinic in Delhi offering dental implants, orthodontics, root canal, cosmetic dentistry. Expert doctors, modern equipment. Book appointment: +91-11-35619736",
+  keywords: "best dentist delhi, dental clinic chittaranjan park, dental implants delhi, orthodontist delhi, root canal delhi",
+  openGraph: {
+    title: "Best Dental Clinic in Delhi | Dental Speciality Center",
+    description: "Expert dental care in Delhi. Book your appointment today!",
+    images: ["/images/gallery-01.jpeg"],
+  },
+  alternates: {
+    canonical: "https://www.dentalspecialitycentre.in",
+  },
+}
+
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">

@@ -6,7 +6,17 @@ import type { Metadata } from "next"
 import ContactForm from "@/components/ContactForm"
 
 export const metadata: Metadata = {
-  title: "Contact Us",
+  title: "Contact Us - Book Appointment | Dental Speciality Center Delhi",
+  description: "Contact Dental Speciality Center in Chittaranjan Park, Delhi. Book appointment: +91-1135619736. Address: E-792 Chittaranjan Park, New Delhi.",
+  keywords: "dental clinic contact delhi, book dental appointment delhi, dental clinic chittaranjan park contact",
+  openGraph: {
+    title: "Contact Dental Speciality Center - Book Your Appointment",
+    description: "Get in touch with us to book your dental appointment in Delhi.",
+    images: ["/images/gallery-01.jpeg"],
+  },
+  alternates: {
+    canonical: "https://www.dentalspecialitycentre.in/contact",
+  },
 }
 
 export default function ContactPage() {
