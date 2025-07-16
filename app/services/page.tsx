@@ -76,7 +76,7 @@ export default function ServicesPage() {
               Comprehensive Dental Care
             </h2>
             <p className="mx-auto max-w-2xl text-gray-600 text-xl mt-5">
-              At Bright Smile Dental, we offer a wide range of services to meet
+              At Dental & Aesthetic Care Centre, we offer a wide range of services to meet
               all your dental needs
             </p>
           </div>

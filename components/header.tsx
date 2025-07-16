@@ -47,12 +47,12 @@ export default function Header() {
           <div className="relative h-18 sm:h-24 w-24 md:w-28">
             <Image
               src="/logo.png"
-              alt="Bright Smile Dental Logo"
+              alt="Dental & Aesthetic Care Centre Logo"
               fill
               className="object-contain"
             />
           </div>
-          {/* <span className="text-xl font-bold text-blue-600">Bright Smile Dental</span> */}
+          {/* <span className="text-xl font-bold text-blue-600">Dental & Aesthetic Care Centre</span> */}
         </Link>
 
         <nav className="hidden xl:flex md:items-center gap-2">
@@ -81,7 +81,7 @@ export default function Header() {
               <div className="relative h-20 w-32 sm:w-40">
                 <Image
                   src="/invisalign-02.png"
-                  alt="Bright Smile Dental Logo"
+                  alt="Dental & Aesthetic Care Centre Logo"
                   fill
                   className="object-contain"
                 />
@@ -110,7 +110,7 @@ export default function Header() {
                     <div className="relative h-20 w-20">
                       <Image
                         src="/logo.png"
-                        alt="Bright Smile Dental Logo"
+                        alt="Dental & Aesthetic Care Centre Logo"
                         fill
                         className="object-contain"
                       />

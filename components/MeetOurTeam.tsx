@@ -13,7 +13,7 @@ const team = [
   {
     name: "Dr Rajkumari Eliza Devi",
     role: "MDS Oral Medicine and Radiology",
-    bio: "Dr. Johnson has over 15 years of experience in general and cosmetic dentistry. She founded Bright Smile Dental with a vision of patient-centered care.",
+    bio: "Dr. Johnson has over 15 years of experience in general and cosmetic dentistry. She founded Dental & Aesthetic Care Centre with a vision of patient-centered care.",
     image: "/doctors/Eliza.png"
   },
   {
@@ -31,7 +31,7 @@ const team = [
   {
     name: "Dr Debarghya Bhattacharya ",
     role: "MDS Prosthodontics ",
-    bio: "Dr. Johnson has over 15 years of experience in general and cosmetic dentistry. She founded Bright Smile Dental with a vision of patient-centered care.",
+    bio: "Dr. Johnson has over 15 years of experience in general and cosmetic dentistry. She founded Dental & Aesthetic Care Centre with a vision of patient-centered care.",
     image: "/doctors/docter.png",
   },
   {

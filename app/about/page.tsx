@@ -183,7 +183,7 @@ export default function AboutPage() {
             <div className="relative h-[400px] overflow-hidden rounded-lg">
               <Image
                 src="/images/gallery-01.jpeg"
-                alt="Bright Smile Dental Clinic building"
+                alt="Dental & Aesthetic Care Centre Clinic building"
                 fill
                 className="object-cover"
               />
