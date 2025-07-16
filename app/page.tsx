@@ -11,9 +11,8 @@ import BrighterSmile from "@/components/BrighterSmile";
 import YourComfort from "@/components/YourComfort";
 import GeneralDentistry from "@/components/GeneralDentistry";
 import * as motion from "motion/react-client";
-
-// filepath: d:\RahulVerma\Development\Nextjs\dental-speciality-center\app\page.tsx
 import { Metadata } from 'next'
+import WarrantyCTA from "@/components/WarrantyCTA";
 
 export const metadata: Metadata = {
   title: "Dental Speciality Center",
@@ -191,6 +190,9 @@ export default function Home() {
 
       {/* Your Comfort */}
       <YourComfort />
+
+      {/* Warranty Section */}
+      <WarrantyCTA/>
 
       {/* Comfort Section */}
       <UnderstandSwiper />

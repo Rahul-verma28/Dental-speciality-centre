@@ -1,5 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -7,16 +8,16 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicy() {
   return (
-    <main className="flex min-h-screen flex-col bg-gray-50">
+    <main className="flex flex-col bg-gray-50">
       <section className="max-w-screen-xl px-5 md:px-10 mx-auto py-10">
         {/* Header Section */}
-        <div className="mb-12 text-center">
+        <div className="mb-6 text-center">
           <h1 className="text-4xl font-bold tracking-tight text-blue-900 sm:text-5xl">
             Privacy Policy
           </h1>
           <p className="mt-4 text-lg text-gray-600">
-            At Dental & Aesthetic Care Centre, we are committed to protecting your
-            privacy and ensuring the security of your personal information.
+            At Dental & Aesthetic Care Centre, we are committed to protecting
+            your privacy and ensuring the security of your personal information.
           </p>
         </div>
 
@@ -24,10 +25,16 @@ export default function PrivacyPolicy() {
         <div className="">
           <p className="mb-6">
             This Privacy Policy describes how Dental & Aesthetic Care Centre
-            (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) collects, uses, and discloses information,
-            including personal information, that we may obtain through our
-            website ([website URL]) and any related services (collectively, the
-            &quot;Services&quot;).
+            (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) collects, uses,
+            and discloses information, including personal information, that we
+            may obtain through our website{" "}
+            <Link
+              className="text-md font-semibold hover:text-blue-500 hover:underline"
+              href=" https://www.dentalspecialitycentre.in"
+            >
+              [Dental & Aesthetic Care Centre]
+            </Link>{" "}
+            and any related services (collectively, the &quot;Services&quot;).
           </p>
 
           <section className="mb-6">
@@ -146,9 +153,7 @@ export default function PrivacyPolicy() {
               please contact us at [contact email or phone number].
             </p>
           </section>
-          <h2 className="mt-8 text-2xl font-bold">
-            Updates to This Policy
-          </h2>
+          <h2 className="mt-8 text-2xl font-bold">Updates to This Policy</h2>
           <p className="py-4 text-gray-700">
             We may update this Privacy Policy from time to time to reflect
             changes in our practices or legal requirements. We encourage you to

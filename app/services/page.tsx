@@ -173,7 +173,7 @@ export default function ServicesPage() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-screen-2xl px-5 md:px-10 mx-auto"
         >
-          <div className="grid gap-8 md:grid-cols-2">
+          <div className="grid md:grid-cols-2">
             <div className="flex flex-col justify-center">
               <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-5xl text-[#1a2e4c]">
                 Insurance & Payment Options

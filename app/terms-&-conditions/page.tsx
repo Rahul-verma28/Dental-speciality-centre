@@ -1,5 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Terms and Conditions",
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function TermsAndConditions() {
   return (
-    <main className="flex min-h-screen flex-col bg-gray-50">
+    <main className="flex flex-col bg-gray-50">
       <section className="max-w-screen-xl px-5 md:px-10 mx-auto py-10">
         {/* Header Section */}
         <div className="mb-12 text-center">
@@ -23,11 +24,17 @@ export default function TermsAndConditions() {
         {/* Content Section */}
         <div className="">
           <p className="mb-6">
-            This Privacy Policy describes how Dental & Aesthetic Care Centre
+            This Terms & Conditions describes how Dental & Aesthetic Care Centre
             (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) collects, uses,
             and discloses information, including personal information, that we
-            may obtain through our website ([website URL]) and any related
-            services (collectively, the &quot;Services&quot;).
+            may obtain through our website{" "}
+            <Link
+              className="text-md font-semibold hover:text-blue-500 hover:underline"
+              href=" https://www.dentalspecialitycentre.in"
+            >
+              [Dental & Aesthetic Care Centre]
+            </Link>{" "}
+            and any related services (collectively, the &quot;Services&quot;).
           </p>
 
           <section className="mb-6">
@@ -130,10 +137,10 @@ export default function TermsAndConditions() {
 
           <section className="mb-6">
             <h3 className="text-lg font-semibold mb-2">
-              7. Changes to This Privacy Policy
+              7. Changes to This Terms & Conditions
             </h3>
             <p>
-              We may update this Privacy Policy from time to time, and any
+              We may update this Terms & Conditions from time to time, and any
               changes will be effective when posted. We encourage you to review
               this page periodically for the latest information.
             </p>
@@ -142,13 +149,13 @@ export default function TermsAndConditions() {
           <section>
             <h3 className="text-lg font-semibold mb-2">8. Contact Us</h3>
             <p>
-              If you have any questions or concerns about our Privacy Policy,
+              If you have any questions or concerns about our Terms & Conditions,
               please contact us at [contact email or phone number].
             </p>
           </section>
           <h2 className="mt-8 text-2xl font-bold">Updates to This Policy</h2>
           <p className="py-4 text-gray-700">
-            We may update this Privacy Policy from time to time to reflect
+            We may update this Terms & Conditions from time to time to reflect
             changes in our practices or legal requirements. We encourage you to
             review this page periodically to stay informed about how we protect
             your information.

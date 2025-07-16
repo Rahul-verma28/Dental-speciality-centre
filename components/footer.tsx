@@ -14,7 +14,7 @@ import * as motion from "motion/react-client";
 
 export default function Footer() {
   return (
-    <footer className=" bg-linear-to-br from-gray-700 to-gray-950 text-gray-300">
+    <footer className="bg-gradient-to-br from-gray-700 to-gray-950 text-gray-300">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -104,6 +104,14 @@ export default function Footer() {
                   Contact Us
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/warranty"
+                  className="hover:text-blue-400 hover:underline"
+                >
+                  Warranty
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -183,43 +191,46 @@ export default function Footer() {
       </motion.div>
 
       <div className="border-t border-gray-800 py-6">
-        <div className="max-w-screen-2xl px-5 md:px-10 mx-auto flex flex-col items-center justify-between gap-4 text-sm md:flex-row">
-          <div>
-            <p>
-              © {new Date().getFullYear()} Dental & Aesthetic Care Centre. All
-              rights reserved.
-            </p>
-          </div>
-          <p>
-            Designed and Developed by{" "}
-            <Link
-              href="https://www.linkedin.com/in/rahul-verma-09227a263/"
-              target="_blank"
-              className="hover:text-blue-400 font-bold"
-            >
-              Rahul Verma <Link2 className="inline h-4 w-4" />
-            </Link>
-          </p>
-          <div className="flex gap-4">
-            <Link
-              href="/privacy-policy"
-              className="hover:text-blue-400 hover:underline"
-            >
-              Privacy & Policy
-            </Link>
-            <Link
-              href="/terms-&-conditions"
-              className="hover:text-blue-400 hover:underline"
-            >
-              Terms & Condition
-            </Link>
-            <Link
-              href="https://maps.app.goo.gl/whpT2JmaTwU7rLG3A"
-              className="hover:text-blue-400 hover:underline"
-              target="_blank"
-            >
-              Sitemap
-            </Link>
+        <div className="max-w-screen-2xl px-5 md:px-10 mx-auto text-sm text-gray-400">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="text-center md:text-left">
+              <p>
+                © {new Date().getFullYear()} Dental & Aesthetic Care Centre. All
+                rights reserved.
+              </p>
+            </div>
+            <div className="text-center">
+              <p>
+                Designed and Developed by{" "}
+                <Link
+                  href="https://www.linkedin.com/in/rahul-verma-09227a263/"
+                  target="_blank"
+                  className="hover:text-blue-400 font-bold"
+                >
+                  Rahul Verma <Link2 className="inline h-4 w-4" />
+                </Link>
+              </p>
+            </div>
+            <div className="flex gap-4 items-center justify-center justify-end">
+              <Link
+                href="/privacy-policy"
+                className="hover:text-blue-400 hover:underline"
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                href="/terms-&-conditions"
+                className="hover:text-blue-400 hover:underline"
+              >
+                Terms & Conditions
+              </Link>
+              <Link
+                href="/sitemap"
+                className="hover:text-blue-400 hover:underline"
+              >
+                Sitemap
+              </Link>
+            </div>
           </div>
         </div>
       </div>

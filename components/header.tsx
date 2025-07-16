@@ -44,7 +44,7 @@ export default function Header() {
     >
       <div className="max-w-screen-2xl px-5 md:px-10 mx-auto flex h-28 items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <div className="relative h-24 w-40">
+          <div className="relative h-18 sm:h-24 w-24 md:w-28">
             <Image
               src="/logo.png"
               alt="Bright Smile Dental Logo"
@@ -78,7 +78,7 @@ export default function Header() {
               target="_blank"
               className="flex items-center gap-2"
             >
-              <div className="relative h-20 w-40">
+              <div className="relative h-20 w-32 sm:w-40">
                 <Image
                   src="/invisalign-02.png"
                   alt="Bright Smile Dental Logo"
@@ -104,10 +104,10 @@ export default function Header() {
               side="left"
               className="bg-gradient-to-br from-blue-300 to-teal-600 shadow-2xl backdrop-blur-sm lg:hidden"
             >
-              <div className="flex flex-col px-5">
+              <div className="flex flex-col px-5 pt-3">
                 <div className="flex items-center justify-between">
                   <Link href="/" className="flex items-center gap-2">
-                    <div className="relative h-20 w-40">
+                    <div className="relative h-20 w-20">
                       <Image
                         src="/logo.png"
                         alt="Bright Smile Dental Logo"
